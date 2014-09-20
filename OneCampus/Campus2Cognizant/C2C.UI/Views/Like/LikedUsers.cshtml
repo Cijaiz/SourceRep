@@ -1,0 +1,23 @@
+﻿
+@model C2C.UI.ViewModels.LikeViewModel
+
+<div class="share-heading">
+    <h3>People who like this
+    </h3>
+</div>
+
+ <div class="groups-show-all" id="div_LikedUsers">
+   @Html.Partial("_LikedUserList", @Model.UsersList)
+</div>
+
+<script>
+    var likePageCount=@Model.UserCount
+</script>
+
+
+
+
+
+
+
+

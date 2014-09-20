@@ -1,0 +1,71 @@
+<html>
+ 
+<body>
+<div>
+<p>
+  Welcome to One-Campus Site.
+</p>
+</div>
+@if(Model.Status == "Success")
+{
+<div id="Success">
+<div>
+<p>
+@Model.SuccessCount import was Successful
+</p>
+<p>
+@Model.FailureCount import failed
+</p>
+</div>
+@if(Model.FailureCount  >0)
+{
+<div>
+<p>
+Details of the failed imports is listed below
+</p>
+</div>
+<div>
+<table>
+<tr>
+<td>
+CandidateId
+</td>
+<td>
+Message
+</td>
+</tr>
+@foreach (var item in Model.FailureList)
+{
+    <tr>
+    <td>
+    @item.CandidateId
+    </td>
+    <td>
+    @item.Message
+    </td>
+    </tr>
+}
+</table>
+</div>
+}
+</div>
+}
+else
+{
+<div id="Failure">
+<h3>Hello Admin</h3>
+<p> The CHire Import Failed..The file you are trying to import is already imported..
+Please Specify Valid filename
+</p>
+</div>
+}
+<div>
+<p>Thanks</p>
+</div>
+<div>
+<p>OneCampus</p>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,2582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="C2C.DataStore.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="C2CDataStoreStoreContainer">
+          <EntitySet Name="BlogPost" EntityType="C2C.DataStore.Store.BlogPost" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BlogPostGroup" EntityType="C2C.DataStore.Store.BlogPostGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentComment" EntityType="C2C.DataStore.Store.ContentComment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentLike" EntityType="C2C.DataStore.Store.ContentLike" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentShare" EntityType="C2C.DataStore.Store.ContentShare" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentSharedUsers" EntityType="C2C.DataStore.Store.ContentSharedUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentType" EntityType="C2C.DataStore.Store.ContentType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Group" EntityType="C2C.DataStore.Store.Group" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MetaMaster" EntityType="C2C.DataStore.Store.MetaMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MetaValue" EntityType="C2C.DataStore.Store.MetaValue" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Permission" EntityType="C2C.DataStore.Store.Permission" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Poll" EntityType="C2C.DataStore.Store.Poll" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PollAnswer" EntityType="C2C.DataStore.Store.PollAnswer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PollGroup" EntityType="C2C.DataStore.Store.PollGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PollResult" EntityType="C2C.DataStore.Store.PollResult" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Question" EntityType="C2C.DataStore.Store.Question" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QuestionAnswer" EntityType="C2C.DataStore.Store.QuestionAnswer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Quiz" EntityType="C2C.DataStore.Store.Quiz" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QuizParticipant" EntityType="C2C.DataStore.Store.QuizParticipant" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QuizParticipantsAnswer" EntityType="C2C.DataStore.Store.QuizParticipantsAnswer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QuizParticipantsSubjectiveAnswer" EntityType="C2C.DataStore.Store.QuizParticipantsSubjectiveAnswer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QuizQuestion" EntityType="C2C.DataStore.Store.QuizQuestion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QuizSchedule" EntityType="C2C.DataStore.Store.QuizSchedule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QuizScheduleGroup" EntityType="C2C.DataStore.Store.QuizScheduleGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="C2C.DataStore.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RolePermission" EntityType="C2C.DataStore.Store.RolePermission" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SiteSetting" EntityType="C2C.DataStore.Store.SiteSetting" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="C2C.DataStore.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserGroup" EntityType="C2C.DataStore.Store.UserGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserProfile" EntityType="C2C.DataStore.Store.UserProfile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserRole" EntityType="C2C.DataStore.Store.UserRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserSetting" EntityType="C2C.DataStore.Store.UserSetting" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WelcomeNote" EntityType="C2C.DataStore.Store.WelcomeNote" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BlogPostGroup_BlogPost" Association="C2C.DataStore.Store.FK_BlogPostGroup_BlogPost">
+            <End Role="BlogPost" EntitySet="BlogPost" />
+            <End Role="BlogPostGroup" EntitySet="BlogPostGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BlogPostGroup_Group" Association="C2C.DataStore.Store.FK_BlogPostGroup_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="BlogPostGroup" EntitySet="BlogPostGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentComment_ContentType" Association="C2C.DataStore.Store.FK_ContentComment_ContentType">
+            <End Role="ContentType" EntitySet="ContentType" />
+            <End Role="ContentComment" EntitySet="ContentComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentComment_UserProfile" Association="C2C.DataStore.Store.FK_ContentComment_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="ContentComment" EntitySet="ContentComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentLike_ContentType" Association="C2C.DataStore.Store.FK_ContentLike_ContentType">
+            <End Role="ContentType" EntitySet="ContentType" />
+            <End Role="ContentLike" EntitySet="ContentLike" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentLike_UserProfile" Association="C2C.DataStore.Store.FK_ContentLike_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="ContentLike" EntitySet="ContentLike" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentPermission_ContentType" Association="C2C.DataStore.Store.FK_ContentPermission_ContentType">
+            <End Role="ContentType" EntitySet="ContentType" />
+            <End Role="Permission" EntitySet="Permission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentShare_ContentType" Association="C2C.DataStore.Store.FK_ContentShare_ContentType">
+            <End Role="ContentType" EntitySet="ContentType" />
+            <End Role="ContentShare" EntitySet="ContentShare" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentShare_UserProfile" Association="C2C.DataStore.Store.FK_ContentShare_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="ContentShare" EntitySet="ContentShare" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentSharedUsers_ContentShare" Association="C2C.DataStore.Store.FK_ContentSharedUsers_ContentShare">
+            <End Role="ContentShare" EntitySet="ContentShare" />
+            <End Role="ContentSharedUsers" EntitySet="ContentSharedUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentSharedUsers_UserProfile" Association="C2C.DataStore.Store.FK_ContentSharedUsers_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="ContentSharedUsers" EntitySet="ContentSharedUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MetaKeyValue_MetaKeyReference" Association="C2C.DataStore.Store.FK_MetaKeyValue_MetaKeyReference">
+            <End Role="MetaMaster" EntitySet="MetaMaster" />
+            <End Role="MetaValue" EntitySet="MetaValue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollAnswer_Poll" Association="C2C.DataStore.Store.FK_PollAnswer_Poll">
+            <End Role="Poll" EntitySet="Poll" />
+            <End Role="PollAnswer" EntitySet="PollAnswer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollGroup_Group" Association="C2C.DataStore.Store.FK_PollGroup_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="PollGroup" EntitySet="PollGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollGroup_Poll" Association="C2C.DataStore.Store.FK_PollGroup_Poll">
+            <End Role="Poll" EntitySet="Poll" />
+            <End Role="PollGroup" EntitySet="PollGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollResult_Poll" Association="C2C.DataStore.Store.FK_PollResult_Poll">
+            <End Role="Poll" EntitySet="Poll" />
+            <End Role="PollResult" EntitySet="PollResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollResult_PollAnswer" Association="C2C.DataStore.Store.FK_PollResult_PollAnswer">
+            <End Role="PollAnswer" EntitySet="PollAnswer" />
+            <End Role="PollResult" EntitySet="PollResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollResult_UserProfile" Association="C2C.DataStore.Store.FK_PollResult_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="PollResult" EntitySet="PollResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionAnswer_Question" Association="C2C.DataStore.Store.FK_QuestionAnswer_Question">
+            <End Role="Question" EntitySet="Question" />
+            <End Role="QuestionAnswer" EntitySet="QuestionAnswer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizParticipant_QuizSchedule" Association="C2C.DataStore.Store.FK_QuizParticipant_QuizSchedule">
+            <End Role="QuizSchedule" EntitySet="QuizSchedule" />
+            <End Role="QuizParticipant" EntitySet="QuizParticipant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizParticipant_UserProfile" Association="C2C.DataStore.Store.FK_QuizParticipant_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="QuizParticipant" EntitySet="QuizParticipant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizParticipantsAnswer_QuizParticipant" Association="C2C.DataStore.Store.FK_QuizParticipantsAnswer_QuizParticipant">
+            <End Role="QuizParticipant" EntitySet="QuizParticipant" />
+            <End Role="QuizParticipantsAnswer" EntitySet="QuizParticipantsAnswer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizParticipantsAnswer_QuizParticipant1" Association="C2C.DataStore.Store.FK_QuizParticipantsAnswer_QuizParticipant1">
+            <End Role="QuizParticipant" EntitySet="QuizParticipant" />
+            <End Role="QuizParticipantsAnswer" EntitySet="QuizParticipantsAnswer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizParticipantsAnswer_QuizQuestion" Association="C2C.DataStore.Store.FK_QuizParticipantsAnswer_QuizQuestion">
+            <End Role="QuizQuestion" EntitySet="QuizQuestion" />
+            <End Role="QuizParticipantsAnswer" EntitySet="QuizParticipantsAnswer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizQuestion_Question" Association="C2C.DataStore.Store.FK_QuizQuestion_Question">
+            <End Role="Question" EntitySet="Question" />
+            <End Role="QuizQuestion" EntitySet="QuizQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizQuestion_Quiz" Association="C2C.DataStore.Store.FK_QuizQuestion_Quiz">
+            <End Role="Quiz" EntitySet="Quiz" />
+            <End Role="QuizQuestion" EntitySet="QuizQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizSchedule_Quiz" Association="C2C.DataStore.Store.FK_QuizSchedule_Quiz">
+            <End Role="Quiz" EntitySet="Quiz" />
+            <End Role="QuizSchedule" EntitySet="QuizSchedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizScheduleGroup_Group" Association="C2C.DataStore.Store.FK_QuizScheduleGroup_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="QuizScheduleGroup" EntitySet="QuizScheduleGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizScheduleGroup_QuizSchedule" Association="C2C.DataStore.Store.FK_QuizScheduleGroup_QuizSchedule">
+            <End Role="QuizSchedule" EntitySet="QuizSchedule" />
+            <End Role="QuizScheduleGroup" EntitySet="QuizScheduleGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolePermission_Permission" Association="C2C.DataStore.Store.FK_RolePermission_Permission">
+            <End Role="Permission" EntitySet="Permission" />
+            <End Role="RolePermission" EntitySet="RolePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolePermission_Role" Association="C2C.DataStore.Store.FK_RolePermission_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="RolePermission" EntitySet="RolePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroup_Group" Association="C2C.DataStore.Store.FK_UserGroup_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="UserGroup" EntitySet="UserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroup_UserProfile" Association="C2C.DataStore.Store.FK_UserGroup_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UserGroup" EntitySet="UserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProfile_User" Association="C2C.DataStore.Store.FK_UserProfile_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserProfile" EntitySet="UserProfile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_Role" Association="C2C.DataStore.Store.FK_UserRole_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_UserProfile" Association="C2C.DataStore.Store.FK_UserRole_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSetting_UserProfile" Association="C2C.DataStore.Store.FK_UserSetting_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UserSetting" EntitySet="UserSetting" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BlogPost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="PostContent" Type="nvarchar(max)" />
+          <Property Name="Author" Type="nvarchar" MaxLength="50" />
+          <Property Name="VisibleFrom" Type="datetime" Nullable="false" />
+          <Property Name="VisibleTill" Type="datetime" />
+          <Property Name="IsArchived" Type="bit" Nullable="false" />
+          <Property Name="BlogCategoryId" Type="int" Nullable="false" />
+          <Property Name="Notify" Type="bit" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BlogPostGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BlogPostId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContentComment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CommentedBy" Type="int" Nullable="false" />
+          <Property Name="CommentedOn" Type="datetime" Nullable="false" />
+          <Property Name="ContentTypeId" Type="smallint" Nullable="false" />
+          <Property Name="ContentId" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" Nullable="false" MaxLength="550" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ContentLike">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LikedBy" Type="int" Nullable="false" />
+          <Property Name="LikedOn" Type="datetime" Nullable="false" />
+          <Property Name="ContentTypeId" Type="smallint" Nullable="false" />
+          <Property Name="ContentId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContentShare">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SharedBy" Type="int" Nullable="false" />
+          <Property Name="SharedOn" Type="datetime" Nullable="false" />
+          <Property Name="ContentTypeId" Type="smallint" Nullable="false" />
+          <Property Name="ContentId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="ContentSharedUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContentShareId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContentType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsCollege" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="MetaMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" Nullable="false" />
+          <Property Name="KeyReference" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="MetaValue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MetaMasterId" Type="smallint" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="ContentTypeId" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Poll">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="VisibleFrom" Type="datetime" Nullable="false" />
+          <Property Name="VisibleTill" Type="datetime" Nullable="false" />
+          <Property Name="Notify" Type="bit" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PollAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PollId" Type="int" Nullable="false" />
+          <Property Name="Answer" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PollGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PollId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PollResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PollId" Type="int" Nullable="false" />
+          <Property Name="PollAnswerId" Type="int" Nullable="false" />
+          <Property Name="AnsweredBy" Type="int" Nullable="false" />
+          <Property Name="AnsweredOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="QuestionType" Type="tinyint" Nullable="false" />
+          <Property Name="Weightage" Type="tinyint" Nullable="false" />
+          <Property Name="NegativeMarkPercentage" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuestionAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionId" Type="int" Nullable="false" />
+          <Property Name="Answer" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsCorrect" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Quiz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Rules" Type="nvarchar(max)" />
+          <Property Name="QuestionCount" Type="int" Nullable="false" />
+          <Property Name="Duration" Type="int" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="QuizParticipant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="QuizScheduleId" Type="int" Nullable="false" />
+          <Property Name="Score" Type="int" Nullable="false" />
+          <Property Name="LaunchedOn" Type="datetime" Nullable="false" />
+          <Property Name="SubmittedOn" Type="datetime" />
+          <Property Name="Attempt" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuizParticipantsAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="QuizQuestionId" Type="int" Nullable="false" />
+          <Property Name="QuizParticipantId" Type="int" Nullable="false" />
+          <Property Name="AnswerId" Type="int" Nullable="false" />
+          <Property Name="IsSubjective" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuizParticipantsSubjectiveAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Answer" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuizQuestion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="QuizId" Type="int" Nullable="false" />
+          <Property Name="QuestionId" Type="int" Nullable="false" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuizSchedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="QuizId" Type="int" Nullable="false" />
+          <Property Name="VisibleFrom" Type="datetime" Nullable="false" />
+          <Property Name="VisibleTill" Type="datetime" Nullable="false" />
+          <Property Name="ShowResultOnCompletion" Type="bit" Nullable="false" />
+          <Property Name="IsResultPublished" Type="bit" Nullable="false" />
+          <Property Name="Notify" Type="bit" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="QuizScheduleGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="QuizScheduleId" Type="int" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="RolePermission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="PermissionId" Type="int" Nullable="false" />
+          <Property Name="HasPermission" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="SiteSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Version" Type="smallint" Nullable="false" />
+          <Property Name="IsFederationEnabled" Type="bit" Nullable="false" />
+          <Property Name="TranslateClaimsToUserProperties" Type="bit" Nullable="false" />
+          <Property Name="TranslateClaimsToRoles" Type="bit" Nullable="false" />
+          <Property Name="StsIssuerUrl" Type="varchar(max)" />
+          <Property Name="StsLoginUrl" Type="varchar(max)" />
+          <Property Name="CtsLoginUrl" Type="varchar(max)" />
+          <Property Name="Realm" Type="varchar(max)" />
+          <Property Name="ReturnUrlBase" Type="varchar(max)" />
+          <Property Name="AudienceUrl" Type="varchar(max)" />
+          <Property Name="X509CertificateThumbprint" Type="varchar(max)" />
+          <Property Name="ModerateComment" Type="bit" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="255" />
+          <Property Name="PasswordSalt" Type="nvarchar" MaxLength="255" />
+          <Property Name="RetryAttempt" Type="tinyint" Nullable="false" />
+          <Property Name="LastLogon" Type="datetime" />
+          <Property Name="LastBadLogon" Type="datetime" />
+          <Property Name="AccountValidity" Type="datetime" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="IsLocked" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="CollegeId" Type="int" />
+          <Property Name="ProfilePhoto" Type="varchar" MaxLength="250" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="NotificationSetting" Type="smallint" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WelcomeNote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OfferExtendedStartDate" Type="date" Nullable="false" />
+          <Property Name="OfferExtendedEndDate" Type="date" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_BlogPostGroup_BlogPost">
+          <End Role="BlogPost" Type="C2C.DataStore.Store.BlogPost" Multiplicity="1" />
+          <End Role="BlogPostGroup" Type="C2C.DataStore.Store.BlogPostGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogPost">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogPostGroup">
+              <PropertyRef Name="BlogPostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BlogPostGroup_Group">
+          <End Role="Group" Type="C2C.DataStore.Store.Group" Multiplicity="1" />
+          <End Role="BlogPostGroup" Type="C2C.DataStore.Store.BlogPostGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogPostGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentComment_ContentType">
+          <End Role="ContentType" Type="C2C.DataStore.Store.ContentType" Multiplicity="1" />
+          <End Role="ContentComment" Type="C2C.DataStore.Store.ContentComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentComment">
+              <PropertyRef Name="ContentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentComment_UserProfile">
+          <End Role="UserProfile" Type="C2C.DataStore.Store.UserProfile" Multiplicity="1" />
+          <End Role="ContentComment" Type="C2C.DataStore.Store.ContentComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentComment">
+              <PropertyRef Name="CommentedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentLike_ContentType">
+          <End Role="ContentType" Type="C2C.DataStore.Store.ContentType" Multiplicity="1" />
+          <End Role="ContentLike" Type="C2C.DataStore.Store.ContentLike" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentLike">
+              <PropertyRef Name="ContentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentLike_UserProfile">
+          <End Role="UserProfile" Type="C2C.DataStore.Store.UserProfile" Multiplicity="1" />
+          <End Role="ContentLike" Type="C2C.DataStore.Store.ContentLike" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentLike">
+              <PropertyRef Name="LikedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentPermission_ContentType">
+          <End Role="ContentType" Type="C2C.DataStore.Store.ContentType" Multiplicity="1" />
+          <End Role="Permission" Type="C2C.DataStore.Store.Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Permission">
+              <PropertyRef Name="ContentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentShare_ContentType">
+          <End Role="ContentType" Type="C2C.DataStore.Store.ContentType" Multiplicity="1" />
+          <End Role="ContentShare" Type="C2C.DataStore.Store.ContentShare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentShare">
+              <PropertyRef Name="ContentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentShare_UserProfile">
+          <End Role="UserProfile" Type="C2C.DataStore.Store.UserProfile" Multiplicity="1" />
+          <End Role="ContentShare" Type="C2C.DataStore.Store.ContentShare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentShare">
+              <PropertyRef Name="SharedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentSharedUsers_ContentShare">
+          <End Role="ContentShare" Type="C2C.DataStore.Store.ContentShare" Multiplicity="1" />
+          <End Role="ContentSharedUsers" Type="C2C.DataStore.Store.ContentSharedUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentShare">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentSharedUsers">
+              <PropertyRef Name="ContentShareId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentSharedUsers_UserProfile">
+          <End Role="UserProfile" Type="C2C.DataStore.Store.UserProfile" Multiplicity="1" />
+          <End Role="ContentSharedUsers" Type="C2C.DataStore.Store.ContentSharedUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentSharedUsers">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MetaKeyValue_MetaKeyReference">
+          <End Role="MetaMaster" Type="C2C.DataStore.Store.MetaMaster" Multiplicity="1" />
+          <End Role="MetaValue" Type="C2C.DataStore.Store.MetaValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MetaMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MetaValue">
+              <PropertyRef Name="MetaMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollAnswer_Poll">
+          <End Role="Poll" Type="C2C.DataStore.Store.Poll" Multiplicity="1" />
+          <End Role="PollAnswer" Type="C2C.DataStore.Store.PollAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poll">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollAnswer">
+              <PropertyRef Name="PollId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollGroup_Group">
+          <End Role="Group" Type="C2C.DataStore.Store.Group" Multiplicity="1" />
+          <End Role="PollGroup" Type="C2C.DataStore.Store.PollGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollGroup_Poll">
+          <End Role="Poll" Type="C2C.DataStore.Store.Poll" Multiplicity="1" />
+          <End Role="PollGroup" Type="C2C.DataStore.Store.PollGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poll">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollGroup">
+              <PropertyRef Name="PollId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollResult_Poll">
+          <End Role="Poll" Type="C2C.DataStore.Store.Poll" Multiplicity="1" />
+          <End Role="PollResult" Type="C2C.DataStore.Store.PollResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poll">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollResult">
+              <PropertyRef Name="PollId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollResult_PollAnswer">
+          <End Role="PollAnswer" Type="C2C.DataStore.Store.PollAnswer" Multiplicity="1" />
+          <End Role="PollResult" Type="C2C.DataStore.Store.PollResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PollAnswer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollResult">
+              <PropertyRef Name="PollAnswerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollResult_UserProfile">
+          <End Role="UserProfile" Type="C2C.DataStore.Store.UserProfile" Multiplicity="1" />
+          <End Role="PollResult" Type="C2C.DataStore.Store.PollResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollResult">
+              <PropertyRef Name="AnsweredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionAnswer_Question">
+          <End Role="Question" Type="C2C.DataStore.Store.Question" Multiplicity="1" />
+          <End Role="QuestionAnswer" Type="C2C.DataStore.Store.QuestionAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuestionAnswer">
+              <PropertyRef Name="QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizParticipant_QuizSchedule">
+          <End Role="QuizSchedule" Type="C2C.DataStore.Store.QuizSchedule" Multiplicity="1" />
+          <End Role="QuizParticipant" Type="C2C.DataStore.Store.QuizParticipant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuizSchedule">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizParticipant">
+              <PropertyRef Name="QuizScheduleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizParticipant_UserProfile">
+          <End Role="UserProfile" Type="C2C.DataStore.Store.UserProfile" Multiplicity="1" />
+          <End Role="QuizParticipant" Type="C2C.DataStore.Store.QuizParticipant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizParticipant">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizParticipantsAnswer_QuizParticipant">
+          <End Role="QuizParticipant" Type="C2C.DataStore.Store.QuizParticipant" Multiplicity="1" />
+          <End Role="QuizParticipantsAnswer" Type="C2C.DataStore.Store.QuizParticipantsAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuizParticipant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizParticipantsAnswer">
+              <PropertyRef Name="QuizParticipantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizParticipantsAnswer_QuizParticipant1">
+          <End Role="QuizParticipant" Type="C2C.DataStore.Store.QuizParticipant" Multiplicity="1" />
+          <End Role="QuizParticipantsAnswer" Type="C2C.DataStore.Store.QuizParticipantsAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuizParticipant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizParticipantsAnswer">
+              <PropertyRef Name="QuizParticipantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizParticipantsAnswer_QuizQuestion">
+          <End Role="QuizQuestion" Type="C2C.DataStore.Store.QuizQuestion" Multiplicity="1" />
+          <End Role="QuizParticipantsAnswer" Type="C2C.DataStore.Store.QuizParticipantsAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuizQuestion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizParticipantsAnswer">
+              <PropertyRef Name="QuizQuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizQuestion_Question">
+          <End Role="Question" Type="C2C.DataStore.Store.Question" Multiplicity="1" />
+          <End Role="QuizQuestion" Type="C2C.DataStore.Store.QuizQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizQuestion">
+              <PropertyRef Name="QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizQuestion_Quiz">
+          <End Role="Quiz" Type="C2C.DataStore.Store.Quiz" Multiplicity="1" />
+          <End Role="QuizQuestion" Type="C2C.DataStore.Store.QuizQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quiz">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizQuestion">
+              <PropertyRef Name="QuizId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizSchedule_Quiz">
+          <End Role="Quiz" Type="C2C.DataStore.Store.Quiz" Multiplicity="1" />
+          <End Role="QuizSchedule" Type="C2C.DataStore.Store.QuizSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quiz">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizSchedule">
+              <PropertyRef Name="QuizId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizScheduleGroup_Group">
+          <End Role="Group" Type="C2C.DataStore.Store.Group" Multiplicity="1" />
+          <End Role="QuizScheduleGroup" Type="C2C.DataStore.Store.QuizScheduleGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizScheduleGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizScheduleGroup_QuizSchedule">
+          <End Role="QuizSchedule" Type="C2C.DataStore.Store.QuizSchedule" Multiplicity="0..1" />
+          <End Role="QuizScheduleGroup" Type="C2C.DataStore.Store.QuizScheduleGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuizSchedule">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizScheduleGroup">
+              <PropertyRef Name="QuizScheduleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolePermission_Permission">
+          <End Role="Permission" Type="C2C.DataStore.Store.Permission" Multiplicity="1" />
+          <End Role="RolePermission" Type="C2C.DataStore.Store.RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permission">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolePermission">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolePermission_Role">
+          <End Role="Role" Type="C2C.DataStore.Store.Role" Multiplicity="1" />
+          <End Role="RolePermission" Type="C2C.DataStore.Store.RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolePermission">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroup_Group">
+          <End Role="Group" Type="C2C.DataStore.Store.Group" Multiplicity="1" />
+          <End Role="UserGroup" Type="C2C.DataStore.Store.UserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroup_UserProfile">
+          <End Role="UserProfile" Type="C2C.DataStore.Store.UserProfile" Multiplicity="1" />
+          <End Role="UserGroup" Type="C2C.DataStore.Store.UserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserGroup">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProfile_User">
+          <End Role="User" Type="C2C.DataStore.Store.User" Multiplicity="1" />
+          <End Role="UserProfile" Type="C2C.DataStore.Store.UserProfile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_Role">
+          <End Role="Role" Type="C2C.DataStore.Store.Role" Multiplicity="1" />
+          <End Role="UserRole" Type="C2C.DataStore.Store.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_UserProfile">
+          <End Role="UserProfile" Type="C2C.DataStore.Store.UserProfile" Multiplicity="1" />
+          <End Role="UserRole" Type="C2C.DataStore.Store.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSetting_UserProfile">
+          <End Role="UserProfile" Type="C2C.DataStore.Store.UserProfile" Multiplicity="1" />
+          <End Role="UserSetting" Type="C2C.DataStore.Store.UserSetting" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserSetting">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="C2C.DataStore" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="C2CStoreEntities" annotation:LazyLoadingEnabled="true" a:TypeAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <EntitySet Name="BlogPosts" EntityType="C2C.DataStore.BlogPost" />
+          <EntitySet Name="BlogPostGroups" EntityType="C2C.DataStore.BlogPostGroup" />
+          <EntitySet Name="ContentComments" EntityType="C2C.DataStore.ContentComment" />
+          <EntitySet Name="ContentLikes" EntityType="C2C.DataStore.ContentLike" />
+          <EntitySet Name="ContentShares" EntityType="C2C.DataStore.ContentShare" />
+          <EntitySet Name="ContentSharedUsers" EntityType="C2C.DataStore.ContentSharedUser" />
+          <EntitySet Name="ContentTypes" EntityType="C2C.DataStore.ContentType" />
+          <EntitySet Name="Groups" EntityType="C2C.DataStore.Group" />
+          <EntitySet Name="MetaMasters" EntityType="C2C.DataStore.MetaMaster" />
+          <EntitySet Name="MetaValues" EntityType="C2C.DataStore.MetaValue" />
+          <EntitySet Name="Permissions" EntityType="C2C.DataStore.Permission" />
+          <EntitySet Name="Polls" EntityType="C2C.DataStore.Poll" />
+          <EntitySet Name="PollAnswers" EntityType="C2C.DataStore.PollAnswer" />
+          <EntitySet Name="PollGroups" EntityType="C2C.DataStore.PollGroup" />
+          <EntitySet Name="PollResults" EntityType="C2C.DataStore.PollResult" />
+          <EntitySet Name="Roles" EntityType="C2C.DataStore.Role" />
+          <EntitySet Name="RolePermissions" EntityType="C2C.DataStore.RolePermission" />
+          <EntitySet Name="SiteSettings" EntityType="C2C.DataStore.SiteSetting" />
+          <EntitySet Name="Users" EntityType="C2C.DataStore.User" />
+          <EntitySet Name="UserGroups" EntityType="C2C.DataStore.UserGroup" />
+          <EntitySet Name="UserProfiles" EntityType="C2C.DataStore.UserProfile" />
+          <EntitySet Name="UserRoles" EntityType="C2C.DataStore.UserRole" />
+          <EntitySet Name="UserSettings" EntityType="C2C.DataStore.UserSetting" />
+          <EntitySet Name="WelcomeNotes" EntityType="C2C.DataStore.WelcomeNote" />
+          <AssociationSet Name="FK_BlogPostGroup_BlogPost" Association="C2C.DataStore.FK_BlogPostGroup_BlogPost">
+            <End Role="BlogPost" EntitySet="BlogPosts" />
+            <End Role="BlogPostGroup" EntitySet="BlogPostGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BlogPostGroup_Group" Association="C2C.DataStore.FK_BlogPostGroup_Group">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="BlogPostGroup" EntitySet="BlogPostGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentComment_ContentType" Association="C2C.DataStore.FK_ContentComment_ContentType">
+            <End Role="ContentType" EntitySet="ContentTypes" />
+            <End Role="ContentComment" EntitySet="ContentComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentComment_UserProfile" Association="C2C.DataStore.FK_ContentComment_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="ContentComment" EntitySet="ContentComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentLike_ContentType" Association="C2C.DataStore.FK_ContentLike_ContentType">
+            <End Role="ContentType" EntitySet="ContentTypes" />
+            <End Role="ContentLike" EntitySet="ContentLikes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentLike_UserProfile" Association="C2C.DataStore.FK_ContentLike_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="ContentLike" EntitySet="ContentLikes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentShare_ContentType" Association="C2C.DataStore.FK_ContentShare_ContentType">
+            <End Role="ContentType" EntitySet="ContentTypes" />
+            <End Role="ContentShare" EntitySet="ContentShares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentShare_UserProfile" Association="C2C.DataStore.FK_ContentShare_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="ContentShare" EntitySet="ContentShares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentSharedUsers_ContentShare" Association="C2C.DataStore.FK_ContentSharedUsers_ContentShare">
+            <End Role="ContentShare" EntitySet="ContentShares" />
+            <End Role="ContentSharedUser" EntitySet="ContentSharedUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentSharedUsers_UserProfile" Association="C2C.DataStore.FK_ContentSharedUsers_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="ContentSharedUser" EntitySet="ContentSharedUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentPermission_ContentType" Association="C2C.DataStore.FK_ContentPermission_ContentType">
+            <End Role="ContentType" EntitySet="ContentTypes" />
+            <End Role="Permission" EntitySet="Permissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollGroup_Group" Association="C2C.DataStore.FK_PollGroup_Group">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="PollGroup" EntitySet="PollGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroup_Group" Association="C2C.DataStore.FK_UserGroup_Group">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="UserGroup" EntitySet="UserGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MetaKeyValue_MetaKeyReference" Association="C2C.DataStore.FK_MetaKeyValue_MetaKeyReference">
+            <End Role="MetaMaster" EntitySet="MetaMasters" />
+            <End Role="MetaValue" EntitySet="MetaValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolePermission_Permission" Association="C2C.DataStore.FK_RolePermission_Permission">
+            <End Role="Permission" EntitySet="Permissions" />
+            <End Role="RolePermission" EntitySet="RolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollAnswer_Poll" Association="C2C.DataStore.FK_PollAnswer_Poll">
+            <End Role="Poll" EntitySet="Polls" />
+            <End Role="PollAnswer" EntitySet="PollAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollGroup_Poll" Association="C2C.DataStore.FK_PollGroup_Poll">
+            <End Role="Poll" EntitySet="Polls" />
+            <End Role="PollGroup" EntitySet="PollGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollResult_Poll" Association="C2C.DataStore.FK_PollResult_Poll">
+            <End Role="Poll" EntitySet="Polls" />
+            <End Role="PollResult" EntitySet="PollResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollResult_PollAnswer" Association="C2C.DataStore.FK_PollResult_PollAnswer">
+            <End Role="PollAnswer" EntitySet="PollAnswers" />
+            <End Role="PollResult" EntitySet="PollResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollResult_UserProfile" Association="C2C.DataStore.FK_PollResult_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="PollResult" EntitySet="PollResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolePermission_Role" Association="C2C.DataStore.FK_RolePermission_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="RolePermission" EntitySet="RolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_Role" Association="C2C.DataStore.FK_UserRole_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="UserRole" EntitySet="UserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProfile_User" Association="C2C.DataStore.FK_UserProfile_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroup_UserProfile" Association="C2C.DataStore.FK_UserGroup_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="UserGroup" EntitySet="UserGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_UserProfile" Association="C2C.DataStore.FK_UserRole_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="UserRole" EntitySet="UserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSetting_UserProfile" Association="C2C.DataStore.FK_UserSetting_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="UserSetting" EntitySet="UserSettings" />
+          </AssociationSet>
+          <EntitySet Name="Questions" EntityType="C2C.DataStore.Question" />
+          <EntitySet Name="QuestionAnswers" EntityType="C2C.DataStore.QuestionAnswer" />
+          <EntitySet Name="Quizs" EntityType="C2C.DataStore.Quiz" />
+          <EntitySet Name="QuizParticipants" EntityType="C2C.DataStore.QuizParticipant" />
+          <EntitySet Name="QuizParticipantsAnswers" EntityType="C2C.DataStore.QuizParticipantsAnswer" />
+          <EntitySet Name="QuizParticipantsSubjectiveAnswers" EntityType="C2C.DataStore.QuizParticipantsSubjectiveAnswer" />
+          <EntitySet Name="QuizQuestions" EntityType="C2C.DataStore.QuizQuestion" />
+          <EntitySet Name="QuizSchedules" EntityType="C2C.DataStore.QuizSchedule" />
+          <EntitySet Name="QuizScheduleGroups" EntityType="C2C.DataStore.QuizScheduleGroup" />
+          <AssociationSet Name="FK_QuizScheduleGroup_Group" Association="C2C.DataStore.FK_QuizScheduleGroup_Group">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="QuizScheduleGroup" EntitySet="QuizScheduleGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionAnswer_Question" Association="C2C.DataStore.FK_QuestionAnswer_Question">
+            <End Role="Question" EntitySet="Questions" />
+            <End Role="QuestionAnswer" EntitySet="QuestionAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizQuestion_Question" Association="C2C.DataStore.FK_QuizQuestion_Question">
+            <End Role="Question" EntitySet="Questions" />
+            <End Role="QuizQuestion" EntitySet="QuizQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizQuestion_Quiz" Association="C2C.DataStore.FK_QuizQuestion_Quiz">
+            <End Role="Quiz" EntitySet="Quizs" />
+            <End Role="QuizQuestion" EntitySet="QuizQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizSchedule_Quiz" Association="C2C.DataStore.FK_QuizSchedule_Quiz">
+            <End Role="Quiz" EntitySet="Quizs" />
+            <End Role="QuizSchedule" EntitySet="QuizSchedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizParticipant_QuizSchedule" Association="C2C.DataStore.FK_QuizParticipant_QuizSchedule">
+            <End Role="QuizSchedule" EntitySet="QuizSchedules" />
+            <End Role="QuizParticipant" EntitySet="QuizParticipants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizParticipant_User" Association="C2C.DataStore.FK_QuizParticipant_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="QuizParticipant" EntitySet="QuizParticipants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizParticipantsAnswer_QuizParticipant" Association="C2C.DataStore.FK_QuizParticipantsAnswer_QuizParticipant">
+            <End Role="QuizParticipant" EntitySet="QuizParticipants" />
+            <End Role="QuizParticipantsAnswer" EntitySet="QuizParticipantsAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizParticipantsAnswer_QuizParticipant1" Association="C2C.DataStore.FK_QuizParticipantsAnswer_QuizParticipant1">
+            <End Role="QuizParticipant" EntitySet="QuizParticipants" />
+            <End Role="QuizParticipantsAnswer" EntitySet="QuizParticipantsAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizParticipantsAnswer_QuizQuestion" Association="C2C.DataStore.FK_QuizParticipantsAnswer_QuizQuestion">
+            <End Role="QuizQuestion" EntitySet="QuizQuestions" />
+            <End Role="QuizParticipantsAnswer" EntitySet="QuizParticipantsAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizScheduleGroup_QuizSchedule" Association="C2C.DataStore.FK_QuizScheduleGroup_QuizSchedule">
+            <End Role="QuizSchedule" EntitySet="QuizSchedules" />
+            <End Role="QuizScheduleGroup" EntitySet="QuizScheduleGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizParticipant_UserProfile" Association="C2C.DataStore.FK_QuizParticipant_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="QuizParticipant" EntitySet="QuizParticipants" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BlogPost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PostContent" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Author" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="VisibleFrom" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="VisibleTill" Precision="3" />
+          <Property Type="Boolean" Name="IsArchived" Nullable="false" />
+          <Property Type="Int32" Name="BlogCategoryId" Nullable="false" />
+          <Property Type="Boolean" Name="Notify" Nullable="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+          <NavigationProperty Name="BlogPostGroups" Relationship="C2C.DataStore.FK_BlogPostGroup_BlogPost" FromRole="BlogPost" ToRole="BlogPostGroup" />
+        </EntityType>
+        <EntityType Name="BlogPostGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="BlogPostId" Nullable="false" />
+          <Property Type="Int32" Name="GroupId" Nullable="false" />
+          <NavigationProperty Name="BlogPost" Relationship="C2C.DataStore.FK_BlogPostGroup_BlogPost" FromRole="BlogPostGroup" ToRole="BlogPost" />
+          <NavigationProperty Name="Group" Relationship="C2C.DataStore.FK_BlogPostGroup_Group" FromRole="BlogPostGroup" ToRole="Group" />
+        </EntityType>
+        <EntityType Name="ContentComment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CommentedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CommentedOn" Nullable="false" Precision="3" />
+          <Property Type="Int16" Name="ContentTypeId" Nullable="false" />
+          <Property Type="Int32" Name="ContentId" Nullable="false" />
+          <Property Type="String" Name="Comment" Nullable="false" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+          <NavigationProperty Name="ContentType" Relationship="C2C.DataStore.FK_ContentComment_ContentType" FromRole="ContentComment" ToRole="ContentType" />
+          <NavigationProperty Name="UserProfile" Relationship="C2C.DataStore.FK_ContentComment_UserProfile" FromRole="ContentComment" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="ContentLike">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LikedBy" Nullable="false" />
+          <Property Type="DateTime" Name="LikedOn" Nullable="false" Precision="3" />
+          <Property Type="Int16" Name="ContentTypeId" Nullable="false" />
+          <Property Type="Int32" Name="ContentId" Nullable="false" />
+          <NavigationProperty Name="ContentType" Relationship="C2C.DataStore.FK_ContentLike_ContentType" FromRole="ContentLike" ToRole="ContentType" />
+          <NavigationProperty Name="UserProfile" Relationship="C2C.DataStore.FK_ContentLike_UserProfile" FromRole="ContentLike" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="ContentShare">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="SharedBy" Nullable="false" />
+          <Property Type="DateTime" Name="SharedOn" Nullable="false" Precision="3" />
+          <Property Type="Int16" Name="ContentTypeId" Nullable="false" />
+          <Property Type="Int32" Name="ContentId" Nullable="false" />
+          <Property Type="String" Name="Description" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ContentType" Relationship="C2C.DataStore.FK_ContentShare_ContentType" FromRole="ContentShare" ToRole="ContentType" />
+          <NavigationProperty Name="UserProfile" Relationship="C2C.DataStore.FK_ContentShare_UserProfile" FromRole="ContentShare" ToRole="UserProfile" />
+          <NavigationProperty Name="ContentSharedUsers" Relationship="C2C.DataStore.FK_ContentSharedUsers_ContentShare" FromRole="ContentShare" ToRole="ContentSharedUser" />
+        </EntityType>
+        <EntityType Name="ContentSharedUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ContentShareId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="ContentShare" Relationship="C2C.DataStore.FK_ContentSharedUsers_ContentShare" FromRole="ContentSharedUser" ToRole="ContentShare" />
+          <NavigationProperty Name="UserProfile" Relationship="C2C.DataStore.FK_ContentSharedUsers_UserProfile" FromRole="ContentSharedUser" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="ContentType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int16" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ContentComments" Relationship="C2C.DataStore.FK_ContentComment_ContentType" FromRole="ContentType" ToRole="ContentComment" />
+          <NavigationProperty Name="ContentLikes" Relationship="C2C.DataStore.FK_ContentLike_ContentType" FromRole="ContentType" ToRole="ContentLike" />
+          <NavigationProperty Name="ContentShares" Relationship="C2C.DataStore.FK_ContentShare_ContentType" FromRole="ContentType" ToRole="ContentShare" />
+          <NavigationProperty Name="Permissions" Relationship="C2C.DataStore.FK_ContentPermission_ContentType" FromRole="ContentType" ToRole="Permission" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsCollege" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <NavigationProperty Name="BlogPostGroups" Relationship="C2C.DataStore.FK_BlogPostGroup_Group" FromRole="Group" ToRole="BlogPostGroup" />
+          <NavigationProperty Name="PollGroups" Relationship="C2C.DataStore.FK_PollGroup_Group" FromRole="Group" ToRole="PollGroup" />
+          <NavigationProperty Name="UserGroups" Relationship="C2C.DataStore.FK_UserGroup_Group" FromRole="Group" ToRole="UserGroup" />
+          <NavigationProperty Name="QuizScheduleGroups" Relationship="C2C.DataStore.FK_QuizScheduleGroup_Group" FromRole="Group" ToRole="QuizScheduleGroup" />
+        </EntityType>
+        <EntityType Name="MetaMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int16" Name="Id" Nullable="false" />
+          <Property Type="String" Name="KeyReference" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MetaValues" Relationship="C2C.DataStore.FK_MetaKeyValue_MetaKeyReference" FromRole="MetaMaster" ToRole="MetaValue" />
+        </EntityType>
+        <EntityType Name="MetaValue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="MetaMasterId" Nullable="false" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+          <NavigationProperty Name="MetaMaster" Relationship="C2C.DataStore.FK_MetaKeyValue_MetaKeyReference" FromRole="MetaValue" ToRole="MetaMaster" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="ContentTypeId" Nullable="false" />
+          <NavigationProperty Name="ContentType" Relationship="C2C.DataStore.FK_ContentPermission_ContentType" FromRole="Permission" ToRole="ContentType" />
+          <NavigationProperty Name="RolePermissions" Relationship="C2C.DataStore.FK_RolePermission_Permission" FromRole="Permission" ToRole="RolePermission" />
+        </EntityType>
+        <EntityType Name="Poll">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Question" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="VisibleFrom" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="VisibleTill" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+          <NavigationProperty Name="PollAnswers" Relationship="C2C.DataStore.FK_PollAnswer_Poll" FromRole="Poll" ToRole="PollAnswer" />
+          <NavigationProperty Name="PollGroups" Relationship="C2C.DataStore.FK_PollGroup_Poll" FromRole="Poll" ToRole="PollGroup" />
+          <NavigationProperty Name="PollResults" Relationship="C2C.DataStore.FK_PollResult_Poll" FromRole="Poll" ToRole="PollResult" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Boolean" Name="Notify" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PollAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PollId" Nullable="false" />
+          <Property Type="String" Name="Answer" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Poll" Relationship="C2C.DataStore.FK_PollAnswer_Poll" FromRole="PollAnswer" ToRole="Poll" />
+          <NavigationProperty Name="PollResults" Relationship="C2C.DataStore.FK_PollResult_PollAnswer" FromRole="PollAnswer" ToRole="PollResult" />
+        </EntityType>
+        <EntityType Name="PollGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PollId" Nullable="false" />
+          <Property Type="Int32" Name="GroupId" Nullable="false" />
+          <NavigationProperty Name="Group" Relationship="C2C.DataStore.FK_PollGroup_Group" FromRole="PollGroup" ToRole="Group" />
+          <NavigationProperty Name="Poll" Relationship="C2C.DataStore.FK_PollGroup_Poll" FromRole="PollGroup" ToRole="Poll" />
+        </EntityType>
+        <EntityType Name="PollResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PollId" Nullable="false" />
+          <Property Type="Int32" Name="PollAnswerId" Nullable="false" />
+          <Property Type="Int32" Name="AnsweredBy" Nullable="false" />
+          <Property Type="DateTime" Name="AnsweredOn" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Poll" Relationship="C2C.DataStore.FK_PollResult_Poll" FromRole="PollResult" ToRole="Poll" />
+          <NavigationProperty Name="PollAnswer" Relationship="C2C.DataStore.FK_PollResult_PollAnswer" FromRole="PollResult" ToRole="PollAnswer" />
+          <NavigationProperty Name="UserProfile" Relationship="C2C.DataStore.FK_PollResult_UserProfile" FromRole="PollResult" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <NavigationProperty Name="RolePermissions" Relationship="C2C.DataStore.FK_RolePermission_Role" FromRole="Role" ToRole="RolePermission" />
+          <NavigationProperty Name="UserRoles" Relationship="C2C.DataStore.FK_UserRole_Role" FromRole="Role" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="RolePermission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <Property Type="Int32" Name="PermissionId" Nullable="false" />
+          <Property Type="Boolean" Name="HasPermission" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <NavigationProperty Name="Permission" Relationship="C2C.DataStore.FK_RolePermission_Permission" FromRole="RolePermission" ToRole="Permission" />
+          <NavigationProperty Name="Role" Relationship="C2C.DataStore.FK_RolePermission_Role" FromRole="RolePermission" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="SiteSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="Version" Nullable="false" />
+          <Property Type="Boolean" Name="IsFederationEnabled" Nullable="false" />
+          <Property Type="Boolean" Name="TranslateClaimsToUserProperties" Nullable="false" />
+          <Property Type="Boolean" Name="TranslateClaimsToRoles" Nullable="false" />
+          <Property Type="String" Name="StsIssuerUrl" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StsLoginUrl" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CtsLoginUrl" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Realm" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ReturnUrlBase" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AudienceUrl" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="X509CertificateThumbprint" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ModerateComment" Nullable="false" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordSalt" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="RetryAttempt" Nullable="false" />
+          <Property Type="DateTime" Name="LastLogon" Precision="3" />
+          <Property Type="DateTime" Name="LastBadLogon" Precision="3" />
+          <Property Type="DateTime" Name="AccountValidity" Precision="3" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Boolean" Name="IsLocked" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <NavigationProperty Name="UserProfile" Relationship="C2C.DataStore.FK_UserProfile_User" FromRole="User" ToRole="UserProfile" />
+          <NavigationProperty Name="QuizParticipants" Relationship="C2C.DataStore.FK_QuizParticipant_User" FromRole="User" ToRole="QuizParticipant" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="GroupId" Nullable="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <NavigationProperty Name="Group" Relationship="C2C.DataStore.FK_UserGroup_Group" FromRole="UserGroup" ToRole="Group" />
+          <NavigationProperty Name="UserProfile" Relationship="C2C.DataStore.FK_UserGroup_UserProfile" FromRole="UserGroup" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CollegeId" />
+          <Property Type="String" Name="ProfilePhoto" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" Nullable="false" />
+          <NavigationProperty Name="ContentComments" Relationship="C2C.DataStore.FK_ContentComment_UserProfile" FromRole="UserProfile" ToRole="ContentComment" />
+          <NavigationProperty Name="ContentLikes" Relationship="C2C.DataStore.FK_ContentLike_UserProfile" FromRole="UserProfile" ToRole="ContentLike" />
+          <NavigationProperty Name="ContentShares" Relationship="C2C.DataStore.FK_ContentShare_UserProfile" FromRole="UserProfile" ToRole="ContentShare" />
+          <NavigationProperty Name="ContentSharedUsers" Relationship="C2C.DataStore.FK_ContentSharedUsers_UserProfile" FromRole="UserProfile" ToRole="ContentSharedUser" />
+          <NavigationProperty Name="PollResults" Relationship="C2C.DataStore.FK_PollResult_UserProfile" FromRole="UserProfile" ToRole="PollResult" />
+          <NavigationProperty Name="User" Relationship="C2C.DataStore.FK_UserProfile_User" FromRole="UserProfile" ToRole="User" />
+          <NavigationProperty Name="UserGroups" Relationship="C2C.DataStore.FK_UserGroup_UserProfile" FromRole="UserProfile" ToRole="UserGroup" />
+          <NavigationProperty Name="UserRoles" Relationship="C2C.DataStore.FK_UserRole_UserProfile" FromRole="UserProfile" ToRole="UserRole" />
+          <NavigationProperty Name="UserSetting" Relationship="C2C.DataStore.FK_UserSetting_UserProfile" FromRole="UserProfile" ToRole="UserSetting" />
+          <NavigationProperty Name="QuizParticipants" Relationship="C2C.DataStore.FK_QuizParticipant_UserProfile" FromRole="UserProfile" ToRole="QuizParticipant" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+          <NavigationProperty Name="Role" Relationship="C2C.DataStore.FK_UserRole_Role" FromRole="UserRole" ToRole="Role" />
+          <NavigationProperty Name="UserProfile" Relationship="C2C.DataStore.FK_UserRole_UserProfile" FromRole="UserRole" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="UserSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int16" Name="NotificationSetting" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" Nullable="false" />
+          <NavigationProperty Name="UserProfile" Relationship="C2C.DataStore.FK_UserSetting_UserProfile" FromRole="UserSetting" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="WelcomeNote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Note" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="OfferExtendedStartDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="OfferExtendedEndDate" Nullable="false" Precision="0" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+        </EntityType>
+        <Association Name="FK_BlogPostGroup_BlogPost">
+          <End Type="C2C.DataStore.BlogPost" Role="BlogPost" Multiplicity="1" />
+          <End Type="C2C.DataStore.BlogPostGroup" Role="BlogPostGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogPost">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogPostGroup">
+              <PropertyRef Name="BlogPostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BlogPostGroup_Group">
+          <End Type="C2C.DataStore.Group" Role="Group" Multiplicity="1" />
+          <End Type="C2C.DataStore.BlogPostGroup" Role="BlogPostGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogPostGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentComment_ContentType">
+          <End Type="C2C.DataStore.ContentType" Role="ContentType" Multiplicity="1" />
+          <End Type="C2C.DataStore.ContentComment" Role="ContentComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentComment">
+              <PropertyRef Name="ContentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentComment_UserProfile">
+          <End Type="C2C.DataStore.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="C2C.DataStore.ContentComment" Role="ContentComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentComment">
+              <PropertyRef Name="CommentedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentLike_ContentType">
+          <End Type="C2C.DataStore.ContentType" Role="ContentType" Multiplicity="1" />
+          <End Type="C2C.DataStore.ContentLike" Role="ContentLike" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentLike">
+              <PropertyRef Name="ContentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentLike_UserProfile">
+          <End Type="C2C.DataStore.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="C2C.DataStore.ContentLike" Role="ContentLike" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentLike">
+              <PropertyRef Name="LikedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentShare_ContentType">
+          <End Type="C2C.DataStore.ContentType" Role="ContentType" Multiplicity="1" />
+          <End Type="C2C.DataStore.ContentShare" Role="ContentShare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentShare">
+              <PropertyRef Name="ContentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentShare_UserProfile">
+          <End Type="C2C.DataStore.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="C2C.DataStore.ContentShare" Role="ContentShare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentShare">
+              <PropertyRef Name="SharedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentSharedUsers_ContentShare">
+          <End Type="C2C.DataStore.ContentShare" Role="ContentShare" Multiplicity="1" />
+          <End Type="C2C.DataStore.ContentSharedUser" Role="ContentSharedUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentShare">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentSharedUser">
+              <PropertyRef Name="ContentShareId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentSharedUsers_UserProfile">
+          <End Type="C2C.DataStore.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="C2C.DataStore.ContentSharedUser" Role="ContentSharedUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentSharedUser">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentPermission_ContentType">
+          <End Type="C2C.DataStore.ContentType" Role="ContentType" Multiplicity="1" />
+          <End Type="C2C.DataStore.Permission" Role="Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Permission">
+              <PropertyRef Name="ContentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollGroup_Group">
+          <End Type="C2C.DataStore.Group" Role="Group" Multiplicity="1" />
+          <End Type="C2C.DataStore.PollGroup" Role="PollGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroup_Group">
+          <End Type="C2C.DataStore.Group" Role="Group" Multiplicity="1" />
+          <End Type="C2C.DataStore.UserGroup" Role="UserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MetaKeyValue_MetaKeyReference">
+          <End Type="C2C.DataStore.MetaMaster" Role="MetaMaster" Multiplicity="1" />
+          <End Type="C2C.DataStore.MetaValue" Role="MetaValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MetaMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MetaValue">
+              <PropertyRef Name="MetaMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolePermission_Permission">
+          <End Type="C2C.DataStore.Permission" Role="Permission" Multiplicity="1" />
+          <End Type="C2C.DataStore.RolePermission" Role="RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permission">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolePermission">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollAnswer_Poll">
+          <End Type="C2C.DataStore.Poll" Role="Poll" Multiplicity="1" />
+          <End Type="C2C.DataStore.PollAnswer" Role="PollAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poll">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollAnswer">
+              <PropertyRef Name="PollId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollGroup_Poll">
+          <End Type="C2C.DataStore.Poll" Role="Poll" Multiplicity="1" />
+          <End Type="C2C.DataStore.PollGroup" Role="PollGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poll">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollGroup">
+              <PropertyRef Name="PollId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollResult_Poll">
+          <End Type="C2C.DataStore.Poll" Role="Poll" Multiplicity="1" />
+          <End Type="C2C.DataStore.PollResult" Role="PollResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poll">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollResult">
+              <PropertyRef Name="PollId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollResult_PollAnswer">
+          <End Type="C2C.DataStore.PollAnswer" Role="PollAnswer" Multiplicity="1" />
+          <End Type="C2C.DataStore.PollResult" Role="PollResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PollAnswer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollResult">
+              <PropertyRef Name="PollAnswerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollResult_UserProfile">
+          <End Type="C2C.DataStore.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="C2C.DataStore.PollResult" Role="PollResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollResult">
+              <PropertyRef Name="AnsweredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolePermission_Role">
+          <End Type="C2C.DataStore.Role" Role="Role" Multiplicity="1" />
+          <End Type="C2C.DataStore.RolePermission" Role="RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolePermission">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_Role">
+          <End Type="C2C.DataStore.Role" Role="Role" Multiplicity="1" />
+          <End Type="C2C.DataStore.UserRole" Role="UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProfile_User">
+          <End Type="C2C.DataStore.User" Role="User" Multiplicity="1" />
+          <End Type="C2C.DataStore.UserProfile" Role="UserProfile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroup_UserProfile">
+          <End Type="C2C.DataStore.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="C2C.DataStore.UserGroup" Role="UserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserGroup">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_UserProfile">
+          <End Type="C2C.DataStore.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="C2C.DataStore.UserRole" Role="UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSetting_UserProfile">
+          <End Type="C2C.DataStore.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="C2C.DataStore.UserSetting" Role="UserSetting" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserSetting">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="QuestionType" Nullable="false" />
+          <Property Type="Byte" Name="Weightage" Nullable="false" />
+          <Property Type="Byte" Name="NegativeMarkPercentage" Nullable="false" />
+          <NavigationProperty Name="QuestionAnswers" Relationship="C2C.DataStore.FK_QuestionAnswer_Question" FromRole="Question" ToRole="QuestionAnswer" />
+          <NavigationProperty Name="QuizQuestions" Relationship="C2C.DataStore.FK_QuizQuestion_Question" FromRole="Question" ToRole="QuizQuestion" />
+        </EntityType>
+        <EntityType Name="QuestionAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="QuestionId" Nullable="false" />
+          <Property Type="String" Name="Answer" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsCorrect" Nullable="false" />
+          <NavigationProperty Name="Question" Relationship="C2C.DataStore.FK_QuestionAnswer_Question" FromRole="QuestionAnswer" ToRole="Question" />
+        </EntityType>
+        <EntityType Name="Quiz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Rules" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="QuestionCount" Nullable="false" />
+          <Property Type="Int32" Name="Duration" Nullable="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+          <NavigationProperty Name="QuizQuestions" Relationship="C2C.DataStore.FK_QuizQuestion_Quiz" FromRole="Quiz" ToRole="QuizQuestion" />
+          <NavigationProperty Name="QuizSchedules" Relationship="C2C.DataStore.FK_QuizSchedule_Quiz" FromRole="Quiz" ToRole="QuizSchedule" />
+        </EntityType>
+        <EntityType Name="QuizParticipant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="QuizScheduleId" Nullable="false" />
+          <Property Type="Int32" Name="Score" Nullable="false" />
+          <Property Type="DateTime" Name="LaunchedOn" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="SubmittedOn" Precision="3" />
+          <Property Type="Byte" Name="Attempt" Nullable="false" />
+          <NavigationProperty Name="QuizSchedule" Relationship="C2C.DataStore.FK_QuizParticipant_QuizSchedule" FromRole="QuizParticipant" ToRole="QuizSchedule" />
+          <NavigationProperty Name="User" Relationship="C2C.DataStore.FK_QuizParticipant_User" FromRole="QuizParticipant" ToRole="User" />
+          <NavigationProperty Name="QuizParticipantsAnswers" Relationship="C2C.DataStore.FK_QuizParticipantsAnswer_QuizParticipant" FromRole="QuizParticipant" ToRole="QuizParticipantsAnswer" />
+          <NavigationProperty Name="QuizParticipantsAnswers1" Relationship="C2C.DataStore.FK_QuizParticipantsAnswer_QuizParticipant1" FromRole="QuizParticipant" ToRole="QuizParticipantsAnswer" />
+          <NavigationProperty Name="UserProfile" Relationship="C2C.DataStore.FK_QuizParticipant_UserProfile" FromRole="QuizParticipant" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="QuizParticipantsAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="QuizQuestionId" Nullable="false" />
+          <Property Type="Int32" Name="QuizParticipantId" Nullable="false" />
+          <Property Type="Int32" Name="AnswerId" Nullable="false" />
+          <Property Type="Boolean" Name="IsSubjective" Nullable="false" />
+          <NavigationProperty Name="QuizParticipant" Relationship="C2C.DataStore.FK_QuizParticipantsAnswer_QuizParticipant" FromRole="QuizParticipantsAnswer" ToRole="QuizParticipant" />
+          <NavigationProperty Name="QuizParticipant1" Relationship="C2C.DataStore.FK_QuizParticipantsAnswer_QuizParticipant1" FromRole="QuizParticipantsAnswer" ToRole="QuizParticipant" />
+          <NavigationProperty Name="QuizQuestion" Relationship="C2C.DataStore.FK_QuizParticipantsAnswer_QuizQuestion" FromRole="QuizParticipantsAnswer" ToRole="QuizQuestion" />
+        </EntityType>
+        <EntityType Name="QuizParticipantsSubjectiveAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Answer" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="QuizQuestion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="QuizId" Nullable="false" />
+          <Property Type="Int32" Name="QuestionId" Nullable="false" />
+          <Property Type="Int32" Name="OrderId" Nullable="false" />
+          <NavigationProperty Name="Question" Relationship="C2C.DataStore.FK_QuizQuestion_Question" FromRole="QuizQuestion" ToRole="Question" />
+          <NavigationProperty Name="Quiz" Relationship="C2C.DataStore.FK_QuizQuestion_Quiz" FromRole="QuizQuestion" ToRole="Quiz" />
+          <NavigationProperty Name="QuizParticipantsAnswers" Relationship="C2C.DataStore.FK_QuizParticipantsAnswer_QuizQuestion" FromRole="QuizQuestion" ToRole="QuizParticipantsAnswer" />
+        </EntityType>
+        <EntityType Name="QuizSchedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="QuizId" Nullable="false" />
+          <Property Type="DateTime" Name="VisibleFrom" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="VisibleTill" Nullable="false" Precision="3" />
+          <Property Type="Boolean" Name="ShowResultOnCompletion" Nullable="false" />
+          <Property Type="Boolean" Name="IsResultPublished" Nullable="false" />
+          <Property Type="Boolean" Name="Notify" Nullable="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+          <NavigationProperty Name="Quiz" Relationship="C2C.DataStore.FK_QuizSchedule_Quiz" FromRole="QuizSchedule" ToRole="Quiz" />
+          <NavigationProperty Name="QuizParticipants" Relationship="C2C.DataStore.FK_QuizParticipant_QuizSchedule" FromRole="QuizSchedule" ToRole="QuizParticipant" />
+          <NavigationProperty Name="QuizScheduleGroups" Relationship="C2C.DataStore.FK_QuizScheduleGroup_QuizSchedule" FromRole="QuizSchedule" ToRole="QuizScheduleGroup" />
+        </EntityType>
+        <EntityType Name="QuizScheduleGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="QuizScheduleId" />
+          <Property Type="Int32" Name="GroupId" Nullable="false" />
+          <NavigationProperty Name="Group" Relationship="C2C.DataStore.FK_QuizScheduleGroup_Group" FromRole="QuizScheduleGroup" ToRole="Group" />
+          <NavigationProperty Name="QuizSchedule" Relationship="C2C.DataStore.FK_QuizScheduleGroup_QuizSchedule" FromRole="QuizScheduleGroup" ToRole="QuizSchedule" />
+        </EntityType>
+        <Association Name="FK_QuizScheduleGroup_Group">
+          <End Type="C2C.DataStore.Group" Role="Group" Multiplicity="1" />
+          <End Type="C2C.DataStore.QuizScheduleGroup" Role="QuizScheduleGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizScheduleGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionAnswer_Question">
+          <End Type="C2C.DataStore.Question" Role="Question" Multiplicity="1" />
+          <End Type="C2C.DataStore.QuestionAnswer" Role="QuestionAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuestionAnswer">
+              <PropertyRef Name="QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizQuestion_Question">
+          <End Type="C2C.DataStore.Question" Role="Question" Multiplicity="1" />
+          <End Type="C2C.DataStore.QuizQuestion" Role="QuizQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizQuestion">
+              <PropertyRef Name="QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizQuestion_Quiz">
+          <End Type="C2C.DataStore.Quiz" Role="Quiz" Multiplicity="1" />
+          <End Type="C2C.DataStore.QuizQuestion" Role="QuizQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quiz">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizQuestion">
+              <PropertyRef Name="QuizId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizSchedule_Quiz">
+          <End Type="C2C.DataStore.Quiz" Role="Quiz" Multiplicity="1" />
+          <End Type="C2C.DataStore.QuizSchedule" Role="QuizSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quiz">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizSchedule">
+              <PropertyRef Name="QuizId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizParticipant_QuizSchedule">
+          <End Type="C2C.DataStore.QuizSchedule" Role="QuizSchedule" Multiplicity="1" />
+          <End Type="C2C.DataStore.QuizParticipant" Role="QuizParticipant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuizSchedule">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizParticipant">
+              <PropertyRef Name="QuizScheduleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizParticipant_User">
+          <End Type="C2C.DataStore.User" Role="User" Multiplicity="1" />
+          <End Type="C2C.DataStore.QuizParticipant" Role="QuizParticipant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizParticipant">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizParticipantsAnswer_QuizParticipant">
+          <End Type="C2C.DataStore.QuizParticipant" Role="QuizParticipant" Multiplicity="1" />
+          <End Type="C2C.DataStore.QuizParticipantsAnswer" Role="QuizParticipantsAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuizParticipant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizParticipantsAnswer">
+              <PropertyRef Name="QuizParticipantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizParticipantsAnswer_QuizParticipant1">
+          <End Type="C2C.DataStore.QuizParticipant" Role="QuizParticipant" Multiplicity="1" />
+          <End Type="C2C.DataStore.QuizParticipantsAnswer" Role="QuizParticipantsAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuizParticipant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizParticipantsAnswer">
+              <PropertyRef Name="QuizParticipantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizParticipantsAnswer_QuizQuestion">
+          <End Type="C2C.DataStore.QuizQuestion" Role="QuizQuestion" Multiplicity="1" />
+          <End Type="C2C.DataStore.QuizParticipantsAnswer" Role="QuizParticipantsAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuizQuestion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizParticipantsAnswer">
+              <PropertyRef Name="QuizQuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizScheduleGroup_QuizSchedule">
+          <End Type="C2C.DataStore.QuizSchedule" Role="QuizSchedule" Multiplicity="0..1" />
+          <End Type="C2C.DataStore.QuizScheduleGroup" Role="QuizScheduleGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuizSchedule">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizScheduleGroup">
+              <PropertyRef Name="QuizScheduleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizParticipant_UserProfile">
+          <End Type="C2C.DataStore.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="C2C.DataStore.QuizParticipant" Role="QuizParticipant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizParticipant">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="C2CDataStoreStoreContainer" CdmEntityContainer="C2CStoreEntities">
+          <EntitySetMapping Name="BlogPosts">
+            <EntityTypeMapping TypeName="C2C.DataStore.BlogPost">
+              <MappingFragment StoreEntitySet="BlogPost">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Notify" ColumnName="Notify" />
+                <ScalarProperty Name="BlogCategoryId" ColumnName="BlogCategoryId" />
+                <ScalarProperty Name="IsArchived" ColumnName="IsArchived" />
+                <ScalarProperty Name="VisibleTill" ColumnName="VisibleTill" />
+                <ScalarProperty Name="VisibleFrom" ColumnName="VisibleFrom" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="PostContent" ColumnName="PostContent" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlogPostGroups">
+            <EntityTypeMapping TypeName="C2C.DataStore.BlogPostGroup">
+              <MappingFragment StoreEntitySet="BlogPostGroup">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="BlogPostId" ColumnName="BlogPostId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentComments">
+            <EntityTypeMapping TypeName="C2C.DataStore.ContentComment">
+              <MappingFragment StoreEntitySet="ContentComment">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+                <ScalarProperty Name="ContentTypeId" ColumnName="ContentTypeId" />
+                <ScalarProperty Name="CommentedOn" ColumnName="CommentedOn" />
+                <ScalarProperty Name="CommentedBy" ColumnName="CommentedBy" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentLikes">
+            <EntityTypeMapping TypeName="C2C.DataStore.ContentLike">
+              <MappingFragment StoreEntitySet="ContentLike">
+                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+                <ScalarProperty Name="ContentTypeId" ColumnName="ContentTypeId" />
+                <ScalarProperty Name="LikedOn" ColumnName="LikedOn" />
+                <ScalarProperty Name="LikedBy" ColumnName="LikedBy" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentShares">
+            <EntityTypeMapping TypeName="C2C.DataStore.ContentShare">
+              <MappingFragment StoreEntitySet="ContentShare">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+                <ScalarProperty Name="ContentTypeId" ColumnName="ContentTypeId" />
+                <ScalarProperty Name="SharedOn" ColumnName="SharedOn" />
+                <ScalarProperty Name="SharedBy" ColumnName="SharedBy" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentSharedUsers">
+            <EntityTypeMapping TypeName="C2C.DataStore.ContentSharedUser">
+              <MappingFragment StoreEntitySet="ContentSharedUsers">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ContentShareId" ColumnName="ContentShareId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentTypes">
+            <EntityTypeMapping TypeName="C2C.DataStore.ContentType">
+              <MappingFragment StoreEntitySet="ContentType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="C2C.DataStore.Group">
+              <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsCollege" ColumnName="IsCollege" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MetaMasters">
+            <EntityTypeMapping TypeName="C2C.DataStore.MetaMaster">
+              <MappingFragment StoreEntitySet="MetaMaster">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="KeyReference" ColumnName="KeyReference" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MetaValues">
+            <EntityTypeMapping TypeName="C2C.DataStore.MetaValue">
+              <MappingFragment StoreEntitySet="MetaValue">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="MetaMasterId" ColumnName="MetaMasterId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permissions">
+            <EntityTypeMapping TypeName="C2C.DataStore.Permission">
+              <MappingFragment StoreEntitySet="Permission">
+                <ScalarProperty Name="ContentTypeId" ColumnName="ContentTypeId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Polls">
+            <EntityTypeMapping TypeName="C2C.DataStore.Poll">
+              <MappingFragment StoreEntitySet="Poll">
+                <ScalarProperty Name="Notify" ColumnName="Notify" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="VisibleTill" ColumnName="VisibleTill" />
+                <ScalarProperty Name="VisibleFrom" ColumnName="VisibleFrom" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PollAnswers">
+            <EntityTypeMapping TypeName="C2C.DataStore.PollAnswer">
+              <MappingFragment StoreEntitySet="PollAnswer">
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="PollId" ColumnName="PollId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PollGroups">
+            <EntityTypeMapping TypeName="C2C.DataStore.PollGroup">
+              <MappingFragment StoreEntitySet="PollGroup">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="PollId" ColumnName="PollId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PollResults">
+            <EntityTypeMapping TypeName="C2C.DataStore.PollResult">
+              <MappingFragment StoreEntitySet="PollResult">
+                <ScalarProperty Name="AnsweredOn" ColumnName="AnsweredOn" />
+                <ScalarProperty Name="AnsweredBy" ColumnName="AnsweredBy" />
+                <ScalarProperty Name="PollAnswerId" ColumnName="PollAnswerId" />
+                <ScalarProperty Name="PollId" ColumnName="PollId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="C2C.DataStore.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolePermissions">
+            <EntityTypeMapping TypeName="C2C.DataStore.RolePermission">
+              <MappingFragment StoreEntitySet="RolePermission">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="HasPermission" ColumnName="HasPermission" />
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteSettings">
+            <EntityTypeMapping TypeName="C2C.DataStore.SiteSetting">
+              <MappingFragment StoreEntitySet="SiteSetting">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="ModerateComment" ColumnName="ModerateComment" />
+                <ScalarProperty Name="X509CertificateThumbprint" ColumnName="X509CertificateThumbprint" />
+                <ScalarProperty Name="AudienceUrl" ColumnName="AudienceUrl" />
+                <ScalarProperty Name="ReturnUrlBase" ColumnName="ReturnUrlBase" />
+                <ScalarProperty Name="Realm" ColumnName="Realm" />
+                <ScalarProperty Name="CtsLoginUrl" ColumnName="CtsLoginUrl" />
+                <ScalarProperty Name="StsLoginUrl" ColumnName="StsLoginUrl" />
+                <ScalarProperty Name="StsIssuerUrl" ColumnName="StsIssuerUrl" />
+                <ScalarProperty Name="TranslateClaimsToRoles" ColumnName="TranslateClaimsToRoles" />
+                <ScalarProperty Name="TranslateClaimsToUserProperties" ColumnName="TranslateClaimsToUserProperties" />
+                <ScalarProperty Name="IsFederationEnabled" ColumnName="IsFederationEnabled" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="C2C.DataStore.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AccountValidity" ColumnName="AccountValidity" />
+                <ScalarProperty Name="LastBadLogon" ColumnName="LastBadLogon" />
+                <ScalarProperty Name="LastLogon" ColumnName="LastLogon" />
+                <ScalarProperty Name="RetryAttempt" ColumnName="RetryAttempt" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserGroups">
+            <EntityTypeMapping TypeName="C2C.DataStore.UserGroup">
+              <MappingFragment StoreEntitySet="UserGroup">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="C2C.DataStore.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ProfilePhoto" ColumnName="ProfilePhoto" />
+                <ScalarProperty Name="CollegeId" ColumnName="CollegeId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="C2C.DataStore.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserSettings">
+            <EntityTypeMapping TypeName="C2C.DataStore.UserSetting">
+              <MappingFragment StoreEntitySet="UserSetting">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="NotificationSetting" ColumnName="NotificationSetting" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WelcomeNotes">
+            <EntityTypeMapping TypeName="C2C.DataStore.WelcomeNote">
+              <MappingFragment StoreEntitySet="WelcomeNote">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="OfferExtendedEndDate" ColumnName="OfferExtendedEndDate" />
+                <ScalarProperty Name="OfferExtendedStartDate" ColumnName="OfferExtendedStartDate" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="C2C.DataStore.Question">
+              <MappingFragment StoreEntitySet="Question">
+                <ScalarProperty Name="NegativeMarkPercentage" ColumnName="NegativeMarkPercentage" />
+                <ScalarProperty Name="Weightage" ColumnName="Weightage" />
+                <ScalarProperty Name="QuestionType" ColumnName="QuestionType" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuestionAnswers">
+            <EntityTypeMapping TypeName="C2C.DataStore.QuestionAnswer">
+              <MappingFragment StoreEntitySet="QuestionAnswer">
+                <ScalarProperty Name="IsCorrect" ColumnName="IsCorrect" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quizs">
+            <EntityTypeMapping TypeName="C2C.DataStore.Quiz">
+              <MappingFragment StoreEntitySet="Quiz">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="QuestionCount" ColumnName="QuestionCount" />
+                <ScalarProperty Name="Rules" ColumnName="Rules" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuizParticipants">
+            <EntityTypeMapping TypeName="C2C.DataStore.QuizParticipant">
+              <MappingFragment StoreEntitySet="QuizParticipant">
+                <ScalarProperty Name="Attempt" ColumnName="Attempt" />
+                <ScalarProperty Name="SubmittedOn" ColumnName="SubmittedOn" />
+                <ScalarProperty Name="LaunchedOn" ColumnName="LaunchedOn" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="QuizScheduleId" ColumnName="QuizScheduleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuizParticipantsAnswers">
+            <EntityTypeMapping TypeName="C2C.DataStore.QuizParticipantsAnswer">
+              <MappingFragment StoreEntitySet="QuizParticipantsAnswer">
+                <ScalarProperty Name="IsSubjective" ColumnName="IsSubjective" />
+                <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+                <ScalarProperty Name="QuizParticipantId" ColumnName="QuizParticipantId" />
+                <ScalarProperty Name="QuizQuestionId" ColumnName="QuizQuestionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuizParticipantsSubjectiveAnswers">
+            <EntityTypeMapping TypeName="C2C.DataStore.QuizParticipantsSubjectiveAnswer">
+              <MappingFragment StoreEntitySet="QuizParticipantsSubjectiveAnswer">
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuizQuestions">
+            <EntityTypeMapping TypeName="C2C.DataStore.QuizQuestion">
+              <MappingFragment StoreEntitySet="QuizQuestion">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="QuizId" ColumnName="QuizId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuizSchedules">
+            <EntityTypeMapping TypeName="C2C.DataStore.QuizSchedule">
+              <MappingFragment StoreEntitySet="QuizSchedule">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Notify" ColumnName="Notify" />
+                <ScalarProperty Name="IsResultPublished" ColumnName="IsResultPublished" />
+                <ScalarProperty Name="ShowResultOnCompletion" ColumnName="ShowResultOnCompletion" />
+                <ScalarProperty Name="VisibleTill" ColumnName="VisibleTill" />
+                <ScalarProperty Name="VisibleFrom" ColumnName="VisibleFrom" />
+                <ScalarProperty Name="QuizId" ColumnName="QuizId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuizScheduleGroups">
+            <EntityTypeMapping TypeName="C2C.DataStore.QuizScheduleGroup">
+              <MappingFragment StoreEntitySet="QuizScheduleGroup">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="QuizScheduleId" ColumnName="QuizScheduleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,54 @@
+﻿<div class="browser-detect">
+    <h2>Not so soon! </h2>
+    <p>
+        It looks like you are still using a browser from the Digital Stone Age. To experience our C2C social platform we request you to upgrade your browser to Internet Explorer 9+, Firefox 12+ or Chrome 18+.
+    </p>
+    <h2>Thank You</h2>
+    <p>
+        Please Note: If you still want to continue, you will experience deviations to the original alignment and positioning of the content.
+    </p>
+    <p>
+        <form class="upgrade" action="http://www.updatebrowser.net/">
+            <input type="submit" class="submit-btn" value="Upgrade">
+            <input type="button" class="submit-btn" value="Continue" onclick="confirmBrowserSupport();">
+        </form>
+    </p>
+</div>
+<!--<div class="browser-notice" > 
+      
+<p>      		<h2>Not so soon! It looks like you are still using a browser from the Digital Stone Age. To experience our C2C social platform we request you to upgrade your browser to either of Internet Explorer 9+, Firefox 12+ or Chrome 18+. Thank you.
+</h2>
+</p>
+<p><h2>
+Please Note: If you still want to continue, you may experience slight deviations to the original alignment and positioning of the content.
+
+Continue (Button) 
+
+ </h2>
+       </p>     
+         
+      </div>-->
+
+@section Scripts {
+<script type="text/javascript">
+    function confirmBrowserSupport() {
+        var returnUrl = "/home";
+        var content = document.cookie.indexOf("returnUrl");
+        if (content >= 0) {
+            var cookiearray = document.cookie.split(";");
+            for (var i = 0; i < cookiearray.length; i++) {
+                var name = cookiearray[i].split('=')[0]
+                var key = cookiearray[i].split('=')[1];
+                var value = cookiearray[i].split('=')[2];
+                var index = key.indexOf("returnUrl");
+                if (index >= 0) {
+                    returnUrl = value;
+                    break;
+                }
+            }
+        }
+        window.navigate(returnUrl);
+    }
+
+</script>
+    }

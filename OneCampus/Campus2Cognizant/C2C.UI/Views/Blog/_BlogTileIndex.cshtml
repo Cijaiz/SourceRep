@@ -1,0 +1,19 @@
+﻿@model C2C.UI.ViewModels.BlogViewModel
+
+<div class="blog tile double image live-tile blogs-li" id="tile2" data-mode="slide">
+    <div class="blog blogfirstdiv" >
+        <a href="@Url.Action("Index","Blog")">
+            <h2>BLOG</h2>
+        </a>
+        <img src="~/Content/themes/base/images/blog_icon.png">
+    </div>
+    <div style="background-color: #cfcfcf;" class="blogseconddiv">
+        <ul>
+            @foreach (var item in Model.CategoryList)
+            {
+                <li><a href="@Url.Action("Index", "Blog", new { blogCategoryId = Convert.ToInt32(@item.Value) })">@item.Text</a></li>
+            }
+        </ul>
+        <span class="tile-title"><a class="red-text-box" href="@Url.Action("Index","Blog")">GO TO BLOG</a></span>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<C2C.UI.ViewModels.CommentViewModel>
+@if (Model != null && Model.Count() > 0)
+{
+    foreach (var item in Model)
+    {
+        string divid = "comment-" + item.CommentId;
+    <div class="comment-notf" id = @divid >
+        <img src= @item.ProfilePhoto height="32px" width="32px">
+        <p class="time">
+            @item.CommentedBy
+        </p>
+        <p class="commentDesc">
+            @item.CommentDescription
+        </p>
+        @if (item.ManageComment)
+        {
+            <a href="#" onclick = "c2c.comment.deleteComment(@item.CommentId)">Delete</a> 
+        }
+    </div>
+    }
+}
+
+

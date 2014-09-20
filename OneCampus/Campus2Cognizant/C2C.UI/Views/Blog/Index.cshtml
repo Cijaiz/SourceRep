@@ -1,0 +1,84 @@
+﻿@model List<C2C.BusinessEntities.C2CEntities.BlogPost>
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml";
+}
+<section class="tile-group four-wide first blogs">
+    <div class="coda-slider" id="slider-id">
+        <div>
+            @if (Model != null && Model.Count() > 0)
+            {
+                foreach (var item in Model)
+                {
+                <div class="tile double live-tile BlogtilePost" id="tile1" data-mode="flip" data-direction="horizontal" onclick="article(@item.Id);">
+                    <div class="blogset1">
+                        @switch (new Random().Next(1, 4))
+                        {
+                            case 1:
+                            <div class="section1">
+                                <h2 class="top-heading left-top-heading"><a href="@Url.Action("Article", "Blog", new { id = item.Id })">@item.Title</a></h2>
+                            </div>
+                            <div class="section1">
+                                <img src="~/content/Themes/base/images/speaker.png" align="right">
+                            </div>
+                                break;
+                            case 2:
+                            <div class="section1">
+                                <img src="~/content/Themes/base/images/sound-waves.png" align="left">
+                            </div>
+                            <div class="section1">
+                                <h2 class="top-heading right-top"><a href="@Url.Action("Article", "Blog", new { id = item.Id })">@item.Title</a></h2>
+                            </div>
+                                break;
+                            case 3:
+                            <div class="section1">
+                                <h2 class="bottom-heading bottom-left"><a href="@Url.Action("Article", "Blog", new { id = item.Id })">@item.Title</a></h2>
+                            </div>
+                            <div class="section1">
+                                <img src="~/content/Themes/base/images/dialogue-box.png" align="right">
+                            </div>
+                                break;
+                            case 4:
+                            <div class="section1">
+                                <img src="~/content/Themes/base/images/mics.png" align="left">
+                            </div>
+                            <div class="section1">
+                                <h2 class="top-heading right-top"><a href="@Url.Action("Article", "Blog", new { id = item.Id })">@item.Title</a></h2>
+                            </div>
+                                break;
+
+                        }
+                    </div>
+                    <div class="blogset2">
+                        <div class="section2">
+                            <p>
+                                @item.Description
+                            </p>
+                        </div>
+                        <div class="section2">
+                            <h2><a href="@Url.Action("Article", "Blog", new { id = item.Id })">@item.Title</a></h2>
+                        </div>
+                    </div>
+                </div>
+                }
+            }
+            else
+            { 
+                <div>
+                    <h3>No data found</h3>
+                </div>
+            }
+            <h2 class="title"></h2>
+        </div>
+    </div>
+</section>
+@section subMenu{
+    @{ Html.RenderAction("SubMenuCategory", "Blog"); }
+}
+@section scripts{
+     <script type="text/javascript">
+        divalignment("blogminitile");
+    </script>
+    <script src="~/Scripts/c2c/c2c_blog_tile.js"></script>
+
+}
+

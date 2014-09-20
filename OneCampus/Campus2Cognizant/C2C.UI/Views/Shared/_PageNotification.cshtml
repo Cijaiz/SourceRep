@@ -1,0 +1,43 @@
+﻿@model C2C.UI.ViewModels.PageNotificationViewModel
+
+@if (Model.Errors.Count() > 0)
+{ 
+    <div class="pagenotification pnError">
+        <span class="Header">Error</span>
+        <span class="close" onclick="$(this).parent().remove();">X</span>
+        <ul>
+            @foreach (var item in Model.Errors)
+            {
+                <li>@item</li>
+            }
+        </ul>
+    </div>
+}
+
+@if (Model.Warning.Count() > 0)
+{ 
+    <div class="pagenotification pnWarning">
+        <span class="Header">Warning</span>
+        <span class="close" onclick="$(this).parent().remove();">X</span>
+        <ul>
+            @foreach (var item in Model.Warning)
+            {
+                <li>@item</li>
+            }
+        </ul>
+    </div>
+}
+
+@if (Model.Success.Count() > 0)
+{ 
+    <div class="pagenotification pnSuccess">
+        <span class="Header">Success</span>
+        <span class="close" onclick="$(this).parent().remove();">X</span>
+        <ul>
+            @foreach (var item in Model.Success)
+            {
+                <li>@item</li>
+            }
+        </ul>
+    </div>
+}

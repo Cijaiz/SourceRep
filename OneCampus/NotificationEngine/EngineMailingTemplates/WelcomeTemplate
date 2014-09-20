@@ -1,0 +1,14 @@
+﻿<html>
+<body>
+    <div>
+        <p>
+            Hello @Model.UserName. Welcome to Orchard One Campus site.</p>
+        <br />
+        <p>
+              Excited to know what is happening around cognizant network ?
+	Visit @Model.Url
+        </p>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationHub", "NotificationHub\NotificationHub.csproj", "{6233A496-8CBA-477C-8956-498AB95A5380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C2C.Core", "..\Campus2Cognizant\C2C.Utility\C2C.Core.csproj", "{518F501B-40BA-4A71-990F-90307C52FE0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C2C.BusinessEntities", "..\Campus2Cognizant\C2C.BE\C2C.BusinessEntities.csproj", "{FF3C6682-7AEC-43C0-BE24-9B974DB84393}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "NotificationHub.Cloud", "NotificationHub.Cloud\NotificationHub.Cloud.ccproj", "{828F397E-63BF-4C23-98A6-98537E3F7B2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManagement", "..\FileManagement\FileManagement\FileManagement.csproj", "{882EAE0D-D689-4A44-809F-E38AA1542363}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://ctsintcosetfs:8080/tfs/eas-tm
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = NotificationHub\\NotificationHub.csproj
+		SccProjectName1 = NotificationHub
+		SccLocalPath1 = NotificationHub
+		SccProjectUniqueName2 = ..\\Campus2Cognizant\\C2C.Utility\\C2C.Core.csproj
+		SccProjectName2 = ../Campus2Cognizant/C2C.Utility
+		SccLocalPath2 = ..\\Campus2Cognizant\\C2C.Utility
+		SccProjectUniqueName3 = ..\\Campus2Cognizant\\C2C.BE\\C2C.BusinessEntities.csproj
+		SccProjectName3 = ../Campus2Cognizant/C2C.BE
+		SccLocalPath3 = ..\\Campus2Cognizant\\C2C.BE
+		SccProjectUniqueName4 = NotificationHub.Cloud\\NotificationHub.Cloud.ccproj
+		SccProjectName4 = NotificationHub.Cloud
+		SccLocalPath4 = NotificationHub.Cloud
+		SccProjectUniqueName5 = ..\\FileManagement\\FileManagement\\FileManagement.csproj
+		SccProjectName5 = ../FileManagement/FileManagement
+		SccLocalPath5 = ..\\FileManagement\\FileManagement
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6233A496-8CBA-477C-8956-498AB95A5380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6233A496-8CBA-477C-8956-498AB95A5380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6233A496-8CBA-477C-8956-498AB95A5380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6233A496-8CBA-477C-8956-498AB95A5380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{518F501B-40BA-4A71-990F-90307C52FE0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{518F501B-40BA-4A71-990F-90307C52FE0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{518F501B-40BA-4A71-990F-90307C52FE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{518F501B-40BA-4A71-990F-90307C52FE0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF3C6682-7AEC-43C0-BE24-9B974DB84393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3C6682-7AEC-43C0-BE24-9B974DB84393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3C6682-7AEC-43C0-BE24-9B974DB84393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3C6682-7AEC-43C0-BE24-9B974DB84393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{828F397E-63BF-4C23-98A6-98537E3F7B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{828F397E-63BF-4C23-98A6-98537E3F7B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{828F397E-63BF-4C23-98A6-98537E3F7B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{828F397E-63BF-4C23-98A6-98537E3F7B2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{882EAE0D-D689-4A44-809F-E38AA1542363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882EAE0D-D689-4A44-809F-E38AA1542363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882EAE0D-D689-4A44-809F-E38AA1542363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882EAE0D-D689-4A44-809F-E38AA1542363}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

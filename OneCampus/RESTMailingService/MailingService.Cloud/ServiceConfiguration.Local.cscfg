@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="MailingService.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*" schemaVersion="2013-03.2.0">
+  <Role name="MailingService">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Smtp.Host" value="smtp.gmail.com" />
+      <Setting name="Smtp.Port" value="587" />
+      <Setting name="Smtp.UserName" value="testmail2raj@gmail.com" />
+      <Setting name="Smtp.Password" value="9789606280" />
+      <Setting name="Smtp.EnableSsl" value="true" />
+      <Setting name="AcsTokenKey" value="Ib5aDFkoaBEDP3Cvxi10qQgNZiFBAm5pNBxQ8DTkoXk=" />
+      <Setting name="AcsNamespace" value="onecampusacs" />
+      <Setting name="AcsRealm" value="http://127.0.0.1:8080/MailingService.svc/" />
+      <Setting name="MailAttachmentStorageAccount" value="UseDevelopmentStorage=true" />
+      <Setting name="DiagnosticLogLevel" value="Error" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="HttpsCertificate" thumbprint="5FF76FFDAEA4C61EC69F28ECB653646A501F9116" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

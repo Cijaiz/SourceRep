@@ -1,0 +1,77 @@
+﻿@model C2C.BusinessEntities.C2CEntities.User
+
+@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+
+<section id="edit-blog">
+    <h2>Create User
+    </h2>
+    @if (ViewData["Notification"] != null)
+    {
+        @Html.Partial("_PageNotification", ViewData["Notification"]) 
+    }
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Profile.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Profile.FirstName)
+            @Html.ValidationMessageFor(model => model.Profile.FirstName)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Profile.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Profile.LastName)
+            @Html.ValidationMessageFor(model => model.Profile.LastName)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Profile.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Profile.Email)
+            @Html.ValidationMessageFor(model => model.Profile.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AccountValidity)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.AccountValidity)
+            @Html.ValidationMessageFor(model => model.AccountValidity)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+            <input class="cancelbtn" type="button" value="Cancel" onclick="window.location.href = '/User'" />
+        </p>
+    }
+
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/C2C/c2c_User.js"></script>
+    @Styles.Render("~/Content/themes/base/css")
+}

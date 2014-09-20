@@ -1,0 +1,17 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    ViewBag.Title = "NotFound";
+}
+<section class="body-content">
+    <div class="cont-wrapper ">
+        <section id="edit-blog">
+            @if (Model != null)
+            {
+                <h2>@Model.Exception.Message</h2>
+            }
+            else { 
+                <h2>NotFound</h2>
+            }
+        </section>
+    </div>
+</section>

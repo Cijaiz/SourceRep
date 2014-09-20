@@ -1,0 +1,38 @@
+﻿<section id="signin-section">
+    <div class="signin-wrapper">
+        <div class="signin">
+            @if (Request.Browser.Cookies)
+            { 
+@*@Html.ActionLink("SIGN IN", "Login", "Account", new { @class = "signin-link" })*@
+                <a href="/account/login">
+                    <input type="button" name="signin" value="SIGN IN" class="signin-btn"></a>
+            }
+            else
+            { 
+                <p>Please enable cookies and try again.</p>
+            }
+        </div>
+        <div class="signin-pic">
+        </div>
+    </div>
+</section>
+@section Scripts {
+    <script src="~/Scripts/C2C/c2c_browser_support.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            setTimeout(Cache, 3000);
+        }
+
+        function Cache() {
+            $.ajax({
+                url: "/Account/CacheSiteSettings",
+                data: {},
+                cache: false,
+                success: function () {
+                },
+                error: function (data) {
+                }
+            });
+        }
+    </script>
+}

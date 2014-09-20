@@ -1,0 +1,49 @@
+﻿@if (Request.IsAuthenticated)
+{
+    string userName = string.IsNullOrEmpty((User as C2C.Core.Security.Structure.CustomPrincipal).FirstName) ? User.Identity.Name : string.Format("{0} {1}", (User as C2C.Core.Security.Structure.CustomPrincipal).FirstName, (User as C2C.Core.Security.Structure.CustomPrincipal).LastName);
+    string photoPath = string.IsNullOrEmpty((User as C2C.Core.Security.Structure.CustomPrincipal).PhotoPath) ? C2C.Core.Constants.C2CWeb.DefaultValue.PROFILE_DEFAULT_IMAGE_URL : C2C.Core.Helper.StorageHelper.GetMediaFilePath((User as C2C.Core.Security.Structure.CustomPrincipal).PhotoPath, C2C.Core.Helper.StorageHelper.PROFILESUMMARY_SIZE);
+    <div id="right-section">
+        <div class="wel_txt">
+            <p>Welcome! </p>
+            <h1>@userName</h1>
+        </div>
+        <div id="photo">
+            <img src="@photoPath" alt="Default user" width="39px" height="39px"/>
+        </div>
+        <a href="#" class="show_hide">
+            <div id="divFeedCount" class="grey-box2">...
+            </div>
+        </a>
+
+        <a href="#" class="show_settings">
+            <div class="grey-box3">
+                <img src="~/Content/Themes/base/images/arrow.png" alt="arrow" />
+            </div>
+        </a>
+
+
+    </div>
+            
+    <div class="slidingDiv scroll-pane">
+        <div class="content-notf" id="divUnReadFeedList"><p>Loading...</p>
+        </div>
+        <div>
+            <a href="@Url.Action("GetAllFeeds","NotificationCorner")">
+                <p class="view-all" align="center">View all notification</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="slidingSettings scroll-pane nav">
+        <ul class="settings-list">
+            <li><a href="/profile/index">My Profile</a></li>
+            <li><a href="/profile/getsetting">Settings</a></li>
+            <li>@Html.ActionLink("Change password", "ChangePassword", "Account")</li>
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+            {
+                @Html.AntiForgeryToken()
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Sign Out</a></li>
+            }
+        </ul>
+    </div>
+}

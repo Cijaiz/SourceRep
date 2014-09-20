@@ -1,0 +1,6 @@
+Hi.
+You have been successfully registered.
+You can start submitting your entries from @Model.EntrySubmissionStartDate.
+Submission entry would be closed by @Model.EntrySubmissionEndDate.
+
+Use this link @Model.ContestUrl to submit to the contest.

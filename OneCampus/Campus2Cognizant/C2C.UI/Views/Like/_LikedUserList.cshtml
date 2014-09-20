@@ -1,0 +1,14 @@
+﻿@model IEnumerable<C2C.BusinessEntities.C2CEntities.UserProfile>
+@if (Model != null)
+{
+    foreach (var user in Model)
+    {
+        //string fullName = user.FirstName + " " + user.LastName;
+    <div class="friend-info">      
+            <img src="@user.ProfilePhoto" class="friend-pic imagesize"  width="49" height="49"/> 
+        <p class="fname">
+            @user.FirstName
+        </p>
+    </div>                 
+    }
+}

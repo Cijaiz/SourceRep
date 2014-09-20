@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+
+
+<section id="kc-content">
+    <div class="kc-section">
+        <div class="kc-secleft">
+            <div class="kc-text">
+                <h2>RUN BETTER. RUN DIFFERENT</h2>
+                <p>
+                    Today, global businesses face a dual mandate:
+                    <br />
+                    One: To make their operations more efficient and cost-effective, and
+                    <br />
+                    Two: To embrace and invest in innovative technologies and processes to drive growth.
+                    <br />
+                    These two are tied together inseparably. In the present environment, Companies want to see savings 
+                            from operational improvements. These savings fund the investments in new opportunities.
+                </p>
+            </div>
+            <div class="kc-image">
+                <img src="~/Content/Themes/base/Images/kc-image.png">
+            </div>
+        </div>
+        <div class="kc-secright" id="sec-right">
+            <a href="@Url.Action("Article1", "KnowCognizant")">
+                <span class="readmore">READ MORE
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <div class="kc-section">
+        <div class="kc-secleft">
+            <div class="kc-text">
+                <h2>We exist to bring positive change to industries and companies around the world</h2>
+                <p>
+                    Our individual employees strive to find the best ways to help our clients adapt to the forces we know will shape their future. To come up with out-of-the-box ideas and act on them. 
+
+But when we come together as a team, we are better poised to make an impact. We tap into our collective expertise, working closely-nearby and across the globe-to turn ideas into reality.  
+
+                </p>
+            </div>
+            <div class="kc-image">
+                <img src="~/Content/Themes/base/Images/kc-image3.png">
+            </div>
+        </div>
+        <div class="kc-secright" id="sec-right">
+            <a href="@Url.Action("Article2", "KnowCognizant")">
+                <span class="readmore">READ MORE
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+@section Scripts {
+    <script type="text/javascript">
+        divalignment("knowcognizantminitile");
+    </script>
+}

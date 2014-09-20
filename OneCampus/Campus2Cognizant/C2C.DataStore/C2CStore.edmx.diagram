@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7391d94446de43be8b5621b99feaf958" Name="Diagram1" ZoomLevel="78">
+        <EntityTypeShape EntityType="C2C.DataStore.BlogPost" Width="1.5" PointX="2.25" PointY="7.625" />
+        <EntityTypeShape EntityType="C2C.DataStore.BlogPostGroup" Width="1.5" PointX="4.25" PointY="7.625" />
+        <EntityTypeShape EntityType="C2C.DataStore.ContentComment" Width="1.75" PointX="12.125" PointY="22" />
+        <EntityTypeShape EntityType="C2C.DataStore.ContentLike" Width="1.5" PointX="12.25" PointY="19.25" />
+        <EntityTypeShape EntityType="C2C.DataStore.ContentShare" Width="1.5" PointX="4.25" PointY="22.25" />
+        <EntityTypeShape EntityType="C2C.DataStore.ContentSharedUser" Width="1.75" PointX="2.125" PointY="21.375" />
+        <EntityTypeShape EntityType="C2C.DataStore.ContentType" Width="1.5" PointX="7.875" PointY="20.125" />
+        <EntityTypeShape EntityType="C2C.DataStore.Group" Width="1.5" PointX="7.25" PointY="11.25" />
+        <EntityTypeShape EntityType="C2C.DataStore.MetaMaster" Width="1.5" PointX="15.25" PointY="20.125" />
+        <EntityTypeShape EntityType="C2C.DataStore.MetaValue" Width="1.5" PointX="15.375" PointY="22.5" />
+        <EntityTypeShape EntityType="C2C.DataStore.Permission" Width="1.5" PointX="8.375" PointY="7.5" />
+        <EntityTypeShape EntityType="C2C.DataStore.Poll" Width="1.5" PointX="2.25" PointY="14.25" />
+        <EntityTypeShape EntityType="C2C.DataStore.PollAnswer" Width="1.5" PointX="4.375" PointY="13.875" />
+        <EntityTypeShape EntityType="C2C.DataStore.PollGroup" Width="1.5" PointX="2.375" PointY="18.75" />
+        <EntityTypeShape EntityType="C2C.DataStore.PollResult" Width="1.5" PointX="4.25" PointY="16.875" />
+        <EntityTypeShape EntityType="C2C.DataStore.Role" Width="1.5" PointX="12.25" PointY="7.5" />
+        <EntityTypeShape EntityType="C2C.DataStore.RolePermission" Width="1.5" PointX="10.25" PointY="7.5" />
+        <EntityTypeShape EntityType="C2C.DataStore.SiteSetting" Width="1.5" PointX="15.125" PointY="12.125" />
+        <EntityTypeShape EntityType="C2C.DataStore.User" Width="1.5" PointX="13.25" PointY="11.625" />
+        <EntityTypeShape EntityType="C2C.DataStore.UserGroup" Width="1.5" PointX="4.375" PointY="10.375" />
+        <EntityTypeShape EntityType="C2C.DataStore.UserProfile" Width="1.875" PointX="9.375" PointY="14.5" />
+        <EntityTypeShape EntityType="C2C.DataStore.UserRole" Width="1.5" PointX="14.25" PointY="7.5" />
+        <EntityTypeShape EntityType="C2C.DataStore.UserSetting" Width="1.5" PointX="12.25" PointY="16.625" />
+        <EntityTypeShape EntityType="C2C.DataStore.WelcomeNote" Width="1.5" PointX="15.25" PointY="16.875" />
+        <AssociationConnector Association="C2C.DataStore.FK_BlogPostGroup_BlogPost" />
+        <AssociationConnector Association="C2C.DataStore.FK_BlogPostGroup_Group" ManuallyRouted="true" >
+          <ConnectorPoint PointX="7.9412831314538588" PointY="11.25" />
+          <ConnectorPoint PointX="7.9412831314538588" PointY="8.6151432291666659" />
+          <ConnectorPoint PointX="5.75" PointY="8.6151432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="C2C.DataStore.FK_ContentComment_ContentType" />
+        <AssociationConnector Association="C2C.DataStore.FK_ContentComment_UserProfile" />
+        <AssociationConnector Association="C2C.DataStore.FK_ContentLike_ContentType" />
+        <AssociationConnector Association="C2C.DataStore.FK_ContentLike_UserProfile" />
+        <AssociationConnector Association="C2C.DataStore.FK_ContentShare_ContentType" />
+        <AssociationConnector Association="C2C.DataStore.FK_ContentShare_UserProfile" />
+        <AssociationConnector Association="C2C.DataStore.FK_ContentSharedUsers_ContentShare" />
+        <AssociationConnector Association="C2C.DataStore.FK_ContentSharedUsers_UserProfile" />
+        <AssociationConnector Association="C2C.DataStore.FK_ContentPermission_ContentType" />
+        <AssociationConnector Association="C2C.DataStore.FK_PollGroup_Group" />
+        <AssociationConnector Association="C2C.DataStore.FK_UserGroup_Group" />
+        <AssociationConnector Association="C2C.DataStore.FK_MetaKeyValue_MetaKeyReference" />
+        <AssociationConnector Association="C2C.DataStore.FK_RolePermission_Permission" />
+        <AssociationConnector Association="C2C.DataStore.FK_PollAnswer_Poll" />
+        <AssociationConnector Association="C2C.DataStore.FK_PollGroup_Poll" />
+        <AssociationConnector Association="C2C.DataStore.FK_PollResult_Poll" />
+        <AssociationConnector Association="C2C.DataStore.FK_PollResult_PollAnswer" />
+        <AssociationConnector Association="C2C.DataStore.FK_PollResult_UserProfile" />
+        <AssociationConnector Association="C2C.DataStore.FK_RolePermission_Role" />
+        <AssociationConnector Association="C2C.DataStore.FK_UserRole_Role" />
+        <AssociationConnector Association="C2C.DataStore.FK_UserProfile_User" />
+        <AssociationConnector Association="C2C.DataStore.FK_UserGroup_UserProfile" />
+        <AssociationConnector Association="C2C.DataStore.FK_UserRole_UserProfile" />
+        <AssociationConnector Association="C2C.DataStore.FK_UserSetting_UserProfile" />
+        <EntityTypeShape EntityType="C2C.DataStore.Question" Width="1.5" PointX="2" PointY="35.75" />
+        <EntityTypeShape EntityType="C2C.DataStore.QuestionAnswer" Width="1.875" PointX="4.5" PointY="35.75" />
+        <EntityTypeShape EntityType="C2C.DataStore.Quiz" Width="1.5" PointX="5.25" PointY="31.875" />
+        <EntityTypeShape EntityType="C2C.DataStore.QuizParticipant" Width="1.5" PointX="5.25" PointY="25.375" />
+        <EntityTypeShape EntityType="C2C.DataStore.QuizParticipantsAnswer" Width="2.125" PointX="2" PointY="25.625" />
+        <EntityTypeShape EntityType="C2C.DataStore.QuizParticipantsSubjectiveAnswer" Width="2.5" PointX="1.375" PointY="23.875" />
+        <EntityTypeShape EntityType="C2C.DataStore.QuizQuestion" Width="1.5" PointX="2" PointY="33.125" />
+        <EntityTypeShape EntityType="C2C.DataStore.QuizSchedule" Width="1.5" PointX="1.875" PointY="29" />
+        <EntityTypeShape EntityType="C2C.DataStore.QuizScheduleGroup" Width="1.75" PointX="5.25" PointY="29.5" />
+        <AssociationConnector Association="C2C.DataStore.FK_QuizScheduleGroup_Group" />
+        <AssociationConnector Association="C2C.DataStore.FK_QuestionAnswer_Question" />
+        <AssociationConnector Association="C2C.DataStore.FK_QuizQuestion_Question" />
+        <AssociationConnector Association="C2C.DataStore.FK_QuizQuestion_Quiz" />
+        <AssociationConnector Association="C2C.DataStore.FK_QuizSchedule_Quiz" />
+        <AssociationConnector Association="C2C.DataStore.FK_QuizParticipant_QuizSchedule" />
+        <AssociationConnector Association="C2C.DataStore.FK_QuizParticipant_User" />
+        <AssociationConnector Association="C2C.DataStore.FK_QuizParticipantsAnswer_QuizParticipant" />
+        <AssociationConnector Association="C2C.DataStore.FK_QuizParticipantsAnswer_QuizParticipant1" />
+        <AssociationConnector Association="C2C.DataStore.FK_QuizParticipantsAnswer_QuizQuestion" />
+        <AssociationConnector Association="C2C.DataStore.FK_QuizScheduleGroup_QuizSchedule" />
+        <AssociationConnector Association="C2C.DataStore.FK_QuizParticipant_UserProfile" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

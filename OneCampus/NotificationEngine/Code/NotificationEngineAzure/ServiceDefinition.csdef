@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="Octane.NotificationEngineAzure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-03.2.0">
+  <WorkerRole name="Octane.NotificationWorker" vmsize="ExtraSmall">
+    <Imports>
+      <Import moduleName="Diagnostics" />
+    </Imports>
+    <ConfigurationSettings>
+      <Setting name="NotificationEngineStorage" />
+      <Setting name="EmailTemplateConfigurationPath" />   
+      <Setting name="DataPublisherUrl" />
+      <Setting name="TasksThresholdLimit" />
+      <Setting name="MessagesForTaskAllocation" />
+      <Setting name="Diagnostics.Level" />
+      <Setting name="Diagnostics.Layout" />
+      <Setting name="Diagnostics.ScheduledTransferPeriod" />
+      <Setting name="Diagnostics.EventLogs" />
+      <Setting name="EmailingServiceUrl" />
+      <Setting name="FromAddressId" />
+      <Setting name="ScheduleTaskXmlUrl" />
+      <Setting name="InstanceBlobContainerName" />
+      <Setting name="InstanceBlobName" />
+      <Setting name="SftpServer" />
+      <Setting name="SftpUserName" />
+      <Setting name="SftpPassword" />
+      <Setting name="NotificationFeederUrl" />
+      <Setting name="OrchardRelyingParty" />
+      <Setting name="HubRelyingParty" />
+      <Setting name="MailingServiceRelyingParty" />
+      <Setting name="ServiceIdentityUserName" />
+      <Setting name="ServiceIdentityPassword" />
+      <Setting name="AcsNamespace" />
+      <Setting name="CHireFilePath" />
+    </ConfigurationSettings>
+    <Certificates>
+    </Certificates>
+  </WorkerRole>
+</ServiceDefinition>

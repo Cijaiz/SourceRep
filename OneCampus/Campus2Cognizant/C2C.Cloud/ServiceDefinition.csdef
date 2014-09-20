@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="C2C.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-03.2.0">
+  <WebRole name="C2C.UI" vmsize="Small">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint1" endpointName="HttpEndpoint" />
+          <Binding name="Endpoint2" endpointName="HttpsEndpoint" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="HttpEndpoint" protocol="http" port="80" />
+      <InputEndpoint name="HttpsEndpoint" protocol="https" port="443" certificate="httpsCertificate" />
+    </Endpoints>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+    </Imports>
+    <ConfigurationSettings>
+      <Setting name="DiagnosticLogLevel" />
+      <Setting name="HubRelyingParty" />
+      <Setting name="AcsRealm" />
+      <Setting name="AcsNamespace" />
+      <Setting name="AcsTokenKey" />
+      <Setting name="ServiceIdentityUserName" />
+      <Setting name="ServiceIdentityPassword" />
+      <Setting name="HubUrl" />
+      <Setting name="NotificationEngineStorage" />
+      <Setting name="C2CStoreEntities" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="httpsCertificate" storeLocation="CurrentUser" storeName="My" />
+    </Certificates>
+  </WebRole>
+</ServiceDefinition>

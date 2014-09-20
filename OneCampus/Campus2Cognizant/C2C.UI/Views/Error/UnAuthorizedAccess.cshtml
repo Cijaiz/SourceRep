@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "UnAuthorizedAccess";
+}
+<section class="body-content">
+    <div class="cont-wrapper ">
+        <section id="edit-blog">
+            @if (Model != null)
+            {
+                <h2>@Model.Exception.Message</h2>
+            }
+            else { 
+                <h2>You don't have access to perform this action.</h2>
+            }
+        </section>
+    </div>
+</section>

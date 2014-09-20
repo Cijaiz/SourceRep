@@ -1,0 +1,29 @@
+﻿@model List<C2C.BusinessEntities.NotificationEntities.BrowserStat>
+<table class="tbl" style="padding:2px; margin:2px;">
+    <thead>
+        <tr>
+            <th>Browser</th>
+            <th>Version</th>
+            <th class="right">Count</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="width: 250px">@item.Browser</td>
+            <td style="width: 100px">@item.Version</td>
+            <td style="width: 100px">
+                <label>
+                    <span class="right">&nbsp;@item.Count</span>
+                    <span class="right ui-icon ui-icon-person"></span>
+                </label>
+            </td>
+        </tr>
+
+@*<div style="padding-bottom: 3px; margin: 3px;">
+            <div class="left" style="width: 250px">@item.Browser</div>
+            <div class="left" style="width: 100px">@item.Version</div>
+            <div class="right" style="width: 100px"><span class="ui-icon ui-icon-person"></span>@item.Count</div>
+        </div>*@
+    }
+</table>

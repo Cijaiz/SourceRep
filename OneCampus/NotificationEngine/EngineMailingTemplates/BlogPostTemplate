@@ -1,0 +1,13 @@
+﻿<html>
+<head>
+    <title>Welcome to One-Campus Site.</title>
+</head>
+<body>
+    <p>@Model.Title - <i>published on @Model.PublishedOn by @Model.PublishedBy</i>
+    </p>
+    <p>
+        These blog posts can be created by any authenticated user. For more information,
+        visit @Model.BlogPostUrl
+    </p>
+</body>
+</html>

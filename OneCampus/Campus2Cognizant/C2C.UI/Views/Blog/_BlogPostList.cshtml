@@ -1,0 +1,43 @@
+﻿@model C2C.UI.ViewModels.BlogListViewModel
+@if (Model.BlogPostList != null && Model.BlogPostList.Count() > 0)
+{
+    <table>
+        @foreach (var item in Model.BlogPostList)
+        {
+            <tr>               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>Last Modified: @Html.DisplayFor(modelItem => item.UpdatedOn)
+                    (By:@Html.DisplayFor(modelItem => item.Author))
+                   
+                </td>
+                <td>
+                    @if (item.Status != C2C.Core.Constants.C2CWeb.Status.Deleted)
+                    {
+                        @Html.ActionLink("View", "Article", new { id = item.Id }) 
+                        <label>|</label>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) 
+                        <label>|</label>
+                    }
+
+                    @if (item.Status == C2C.Core.Constants.C2CWeb.Status.Pending)
+                    {
+                        @Html.ActionLink("Publish", "Activate", new { id = item.Id }) <label>|</label>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    }
+                    else if (item.Status == C2C.Core.Constants.C2CWeb.Status.Active)
+                    {
+                        @Html.ActionLink("UnPublish", "Deactivate", new { id = item.Id }) <label>|</label>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    }
+                    else if (item.Status == C2C.Core.Constants.C2CWeb.Status.InActive)
+                    {
+                        @Html.ActionLink("Publish", "Activate", new { id = item.Id }) <label>|</label>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+}

@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A18445F8-9283-43EA-B6EC-B5E5024377C9}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>C2C.UI</RootNamespace>
+    <AssemblyName>C2C.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Selectors" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\CHireImportController.cs" />
+    <Compile Include="API\DataPublisherController.cs" />
+    <Compile Include="API\OnBoardingIntegrationController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\FederatedAuthenticationController.cs" />
+    <Compile Include="Controllers\FileManagerController.cs" />
+    <Compile Include="Controllers\FutureCallingController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KnowCognizantController.cs" />
+    <Compile Include="Controllers\LikeController.cs" />
+    <Compile Include="Controllers\MetaDataController.cs" />
+    <Compile Include="Controllers\NotificationCornerController.cs" />
+    <Compile Include="Controllers\PollController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\QuizController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\ShareController.cs" />
+    <Compile Include="Controllers\SiteSettingController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserGroupController.cs" />
+    <Compile Include="Controllers\WelcomeNoteController.cs" />
+    <Compile Include="Filters\CheckPermissionFilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\CustomHandleErrorAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publisher\NotifyPublisher.cs" />
+    <Content Include="Content\themes\base\images\appbar.refresh.png" />
+    <Content Include="Content\themes\base\images\mCSB_buttons.png" />
+    <Content Include="Scripts\C2C\c2c_blogpost.js" />
+    <Content Include="Scripts\C2C\c2c_blog_admin.js" />
+    <Content Include="Scripts\C2C\c2c_dashboard.js" />
+    <Content Include="Scripts\C2C\c2c_group.js" />
+    <Content Include="Scripts\C2C\c2c_WelcomeNote.js" />
+    <Compile Include="ViewModels\AddUserToRoleViewModel.cs" />
+    <Compile Include="ViewModels\AllFeedListViewModel.cs" />
+    <Compile Include="ViewModels\BlogArticleViewModel.cs" />
+    <Compile Include="ViewModels\BlogListViewModel.cs" />
+    <Compile Include="ViewModels\BlogViewModel.cs" />
+    <Compile Include="ViewModels\CommentViewModel.cs" />
+    <Compile Include="ViewModels\FeedCountViewModel.cs" />
+    <Compile Include="ViewModels\GroupListViewModel.cs" />
+    <Compile Include="ViewModels\GroupMemberListViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\LikeViewModel.cs" />
+    <Compile Include="ViewModels\MetaMasterViewModel.cs" />
+    <Compile Include="ViewModels\MetaValueViewModel.cs" />
+    <Compile Include="ViewModels\PollListFilter.cs" />
+    <Compile Include="ViewModels\RoleResponseViewModel.cs" />
+    <Compile Include="ViewModels\RoleViewModel.cs" />
+    <Compile Include="ViewModels\PageNotificationViewModel.cs" />
+    <Compile Include="ViewModels\ShareViewModel.cs" />
+    <Compile Include="ViewModels\UnreadFeedsViewModel.cs" />
+    <Compile Include="ViewModels\UploadImageViewModel.cs" />
+    <Compile Include="ViewModels\UserListViewModel.cs" />
+    <Compile Include="ViewModels\WelcomeNoteViewModel.cs" />
+    <Compile Include="WebRole.cs" />
+    <Compile Include="ViewModels\UserProfileViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\base\images\11.jpg" />
+    <Content Include="Content\themes\base\images\ajax-loader.gif" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\arrow.png" />
+    <Content Include="Content\themes\base\images\arrowleft.png" />
+    <Content Include="Content\themes\base\images\arrowright.png" />
+    <Content Include="Content\themes\base\images\back.png" />
+    <Content Include="Content\themes\base\images\blog-partition.png" />
+    <Content Include="Content\themes\base\images\blog-section1.png" />
+    <Content Include="Content\themes\base\images\blog-section2.png" />
+    <Content Include="Content\themes\base\images\blog-section3.png" />
+    <Content Include="Content\themes\base\images\blog-section4.png" />
+    <Content Include="Content\themes\base\images\blog.jpg" />
+    <Content Include="Content\themes\base\images\blog.png" />
+    <Content Include="Content\themes\base\images\blog1.png" />
+    <Content Include="Content\themes\base\images\blog2.png" />
+    <Content Include="Content\themes\base\images\blog3.png" />
+    <Content Include="Content\themes\base\images\blog4.png" />
+    <Content Include="Content\themes\base\images\blog5.png" />
+    <Content Include="Content\themes\base\images\blog6.png" />
+    <Content Include="Content\themes\base\images\blogger.jpg" />
+    <Content Include="Content\themes\base\images\blogsecond.png" />
+    <Content Include="Content\themes\base\images\blog_icon.png" />
+    <Content Include="Content\themes\base\images\blog_T.png" />
+    <Content Include="Content\themes\base\images\blog_y.png" />
+    <Content Include="Content\themes\base\images\blue_arrow.png" />
+    <Content Include="Content\themes\base\images\border-image.png" />
+    <Content Include="Content\themes\base\images\border-seperator.png" />
+    <Content Include="Content\themes\base\images\bulb_icon.png" />
+    <Content Include="Content\themes\base\images\check_radio_sheet.png" />
+    <Content Include="Content\themes\base\images\close-comment.png" />
+    <Content Include="Content\themes\base\images\close.ico" />
+    <Content Include="Content\themes\base\images\close.png" />
+    <Content Include="Content\themes\base\images\cognizant.png" />
+    <Content Include="Content\themes\base\images\comment-hide.png" />
+    <Content Include="Content\themes\base\images\comment-pic.png" />
+    <Content Include="Content\themes\base\images\comment-toggle.png" />
+    <Content Include="Content\themes\base\images\comment.png" />
+    <Content Include="Content\themes\base\images\contact-last.png" />
+    <Content Include="Content\themes\base\images\contact1.png" />
+    <Content Include="Content\themes\base\images\contact2.png" />
+    <Content Include="Content\themes\base\images\create-new.png" />
+    <Content Include="Content\themes\base\images\crud-list-border.png" />
+    <Content Include="Content\themes\base\images\ctpic1.png" />
+    <Content Include="Content\themes\base\images\ctpic2.png" />
+    <Content Include="Content\themes\base\images\ctpic3.png" />
+    <Content Include="Content\themes\base\images\ctpic4.png" />
+    <Content Include="Content\themes\base\images\default.png" />
+    <Content Include="Content\themes\base\images\defaultuser.gif" />
+    <Content Include="Content\themes\base\images\dialogue-box.png" />
+    <Content Include="Content\themes\base\images\down.png" />
+    <Content Include="Content\themes\base\images\edit-blog-partition.png" />
+    <Content Include="Content\themes\base\images\error.jpg" />
+    <Content Include="Content\themes\base\images\events_icon.png" />
+    <Content Include="Content\themes\base\images\events_T.png" />
+    <Content Include="Content\themes\base\images\events_y.png" />
+    <Content Include="Content\themes\base\images\facebook.png" />
+    <Content Include="Content\themes\base\images\faq-bg.jpg" />
+    <Content Include="Content\themes\base\images\faq.png" />
+    <Content Include="Content\themes\base\images\faqs_T.png" />
+    <Content Include="Content\themes\base\images\faqs_y.png" />
+    <Content Include="Content\themes\base\images\faq_icon.png" />
+    <Content Include="Content\themes\base\images\Final-C2C-logo-1.png" />
+    <Content Include="Content\themes\base\images\forum.png" />
+    <Content Include="Content\themes\base\images\forums_T.png" />
+    <Content Include="Content\themes\base\images\forums_y.png" />
+    <Content Include="Content\themes\base\images\home.png" />
+    <Content Include="Content\themes\base\images\home_T.png" />
+    <Content Include="Content\themes\base\images\image-1.png" />
+    <Content Include="Content\themes\base\images\kc-image.png" />
+    <Content Include="Content\themes\base\images\kc-image2.png" />
+    <Content Include="Content\themes\base\images\kc-image3.png" />
+    <Content Include="Content\themes\base\images\kc-inter-image.png" />
+    <Content Include="Content\themes\base\images\kc-inter-image2.png" />
+    <Content Include="Content\themes\base\images\kc-inter-image2.png.jpg" />
+    <Content Include="Content\themes\base\images\know-cogni_icon.png" />
+    <Content Include="Content\themes\base\images\know-cogni_T.png" />
+    <Content Include="Content\themes\base\images\know-cogni_y.png" />
+    <Content Include="Content\themes\base\images\learning.jpg" />
+    <Content Include="Content\themes\base\images\learning.png" />
+    <Content Include="Content\themes\base\images\learning_icon.png" />
+    <Content Include="Content\themes\base\images\learning_T.png" />
+    <Content Include="Content\themes\base\images\learning_y.png" />
+    <Content Include="Content\themes\base\images\left-arrow.png" />
+    <Content Include="Content\themes\base\images\like.png" />
+    <Content Include="Content\themes\base\images\linkedin.png" />
+    <Content Include="Content\themes\base\images\loadingAnimation.gif" />
+    <Content Include="Content\themes\base\images\loadingAnimation3.gif" />
+    <Content Include="Content\themes\base\images\location.png" />
+    <Content Include="Content\themes\base\images\locations_T.png" />
+    <Content Include="Content\themes\base\images\locations_y.png" />
+    <Content Include="Content\themes\base\images\logo-c2c.png" />
+    <Content Include="Content\themes\base\images\logo.png" />
+    <Content Include="Content\themes\base\images\main-photo.png" />
+    <Content Include="Content\themes\base\images\mics.png" />
+    <Content Include="Content\themes\base\images\next-btn.png" />
+    <Content Include="Content\themes\base\images\no profile.jpg" />
+    <Content Include="Content\themes\base\images\no-profile-pic-icon.png" />
+    <Content Include="Content\themes\base\images\note.png" />
+    <Content Include="Content\themes\base\images\onecampus.png" />
+    <Content Include="Content\themes\base\images\Operating System Concepts_Chart.jpg" />
+    <Content Include="Content\themes\base\images\pen.png" />
+    <Content Include="Content\themes\base\images\pic.jpg" />
+    <Content Include="Content\themes\base\images\pic2.jpg" />
+    <Content Include="Content\themes\base\images\pie-chart.png" />
+    <Content Include="Content\themes\base\images\poll-hand.png" />
+    <Content Include="Content\themes\base\images\poll.png" />
+    <Content Include="Content\themes\base\images\preload.gif" />
+    <Content Include="Content\themes\base\images\prev-btn.png" />
+    <Content Include="Content\themes\base\images\profilepic.png" />
+    <Content Include="Content\themes\base\images\progress.png" />
+    <Content Include="Content\themes\base\images\quiz-section1.png" />
+    <Content Include="Content\themes\base\images\quiz-section2.png" />
+    <Content Include="Content\themes\base\images\quiz-section3.png" />
+    <Content Include="Content\themes\base\images\radio-btn-enabled.png" />
+    <Content Include="Content\themes\base\images\radio-btn.png" />
+    <Content Include="Content\themes\base\images\right-arrow.png" />
+    <Content Include="Content\themes\base\images\rss.png" />
+    <Content Include="Content\themes\base\images\shadow-1.png" />
+    <Content Include="Content\themes\base\images\shadow-2.png" />
+    <Content Include="Content\themes\base\images\share.png" />
+    <Content Include="Content\themes\base\images\signin-pic.png" />
+    <Content Include="Content\themes\base\images\skippedImage.png" />
+    <Content Include="Content\themes\base\images\sound-waves.png" />
+    <Content Include="Content\themes\base\images\speaker.png" />
+    <Content Include="Content\themes\base\images\success.jpg" />
+    <Content Include="Content\themes\base\images\timer-bg.png" />
+    <Content Include="Content\themes\base\images\twitter.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\unlike.png" />
+    <Content Include="Content\themes\base\images\Untitled-1.jpg" />
+    <Content Include="Content\themes\base\images\video.png" />
+    <Content Include="Content\themes\base\images\video2.png" />
+    <Content Include="Content\themes\base\images\warning.jpg" />
+    <Content Include="Content\themes\base\images\welcome-note.png" />
+    <Content Include="Content\themes\base\images\whats-new.png" />
+    <Content Include="Content\themes\base\images\whats-new_icon.png" />
+    <Content Include="Content\themes\base\images\x.png" />
+    <Content Include="Content\themes\base\images\youtube.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\styles\basic.css" />
+    <Content Include="Content\themes\base\styles\basic_ie.css" />
+    <Content Include="Content\themes\base\styles\c2c.css" />
+    <Content Include="Content\themes\base\styles\coda-slider.css" />
+    <Content Include="Content\themes\base\styles\demo.css" />
+    <Content Include="Content\themes\base\styles\jquery.custom-scrollbar.css" />
+    <Content Include="Content\themes\base\styles\jquery.jqplot.css" />
+    <Content Include="Content\themes\base\styles\jquery.mCustomScrollbar.css" />
+    <Content Include="Content\themes\base\styles\menu.css" />
+    <Content Include="Content\themes\base\styles\metrojs.css" />
+    <Content Include="Content\themes\base\styles\metrojs.min.css" />
+    <Content Include="Content\themes\base\styles\modern-responsive.css" />
+    <Content Include="Content\themes\base\styles\modern.css" />
+    <Content Include="Content\themes\base\styles\sample.css" />
+    <Content Include="Content\themes\base\styles\site.css" />
+    <Content Include="Content\themes\base\styles\stepwise.css" />
+    <Content Include="Content\themes\base\styles\style.css" />
+    <Content Include="Content\themes\base\styles\style9.css" />
+    <Content Include="Content\themes\base\styles\style_common.css" />
+    <Content Include="Content\themes\base\styles\thickbox.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\themes\base\fonts\roboto-condensed-webfont.eot" />
+    <Content Include="Content\themes\base\fonts\roboto-condensed-webfont.ttf" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\C2C\basic.js" />
+    <Content Include="Scripts\C2C\c2c_blog_article.js" />
+    <Content Include="Scripts\C2C\c2c_blog_tile.js" />
+    <Content Include="Scripts\C2C\c2c_browser_detection.js" />
+    <Content Include="Scripts\C2C\c2c_home.js" />
+    <Content Include="Scripts\C2C\c2c_browser_support.js" />
+    <Content Include="Scripts\C2C\c2c_notificationcorner.js" />
+    <Content Include="Scripts\C2C\c2c_poll.js" />
+    <Content Include="Scripts\C2C\c2c_poll_tile.js" />
+    <Content Include="Scripts\C2C\c2c_properties.js" />
+    <Content Include="Scripts\C2C\c2c_scrollpagination.js" />
+    <Content Include="Scripts\C2C\c2c_share.js" />
+    <Content Include="Scripts\C2C\c2c_user.js" />
+    <Content Include="Scripts\C2C\confirm.js" />
+    <Content Include="Scripts\C2C\c2c_comment.js" />
+    <Content Include="Scripts\C2C\global.js" />
+    <Content Include="Scripts\C2C\jqplot.pieRenderer.min.js" />
+    <Content Include="Scripts\C2C\jquery.jqplot.min.js" />
+    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\C2C\jquery-1.1.3.1.pack.js" />
+    <Content Include="Scripts\C2C\jquery.coda-slider-3.0.min.js" />
+    <Content Include="Scripts\C2C\jquery.confirm.js" />
+    <Content Include="Scripts\C2C\jquery.inputfocus-0.9.min.js" />
+    <Content Include="Scripts\C2C\jquery.main.js" />
+    <Content Include="Scripts\C2C\jquery.mCustomScrollbar.js" />
+    <Content Include="Scripts\C2C\jquery.mousewheel.js" />
+    <Content Include="Scripts\C2C\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\C2C\jquery.simplemodal.js" />
+    <Content Include="Scripts\C2C\c2c_like.js" />
+    <Content Include="Scripts\C2C\metrojs.js" />
+    <Content Include="Scripts\C2C\metrojs.min.js" />
+    <Content Include="Scripts\C2C\thickbox-compressed.js" />
+    <Content Include="Scripts\C2C\thickbox.js" />
+    <Content Include="Scripts\C2C\timer.js" />
+    <Content Include="Scripts\C2C\transit.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\tinymce\license.txt" />
+    <Content Include="Scripts\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\editable_selects.js" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\form_utils.js" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\mctabs.js" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\tiny_mce_popup.js" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\validate.js" />
+    <Content Include="Scripts\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="Scripts\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Scripts\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\icomoon-small.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\icomoon.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\wline.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
+    <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\_ActivityTracker.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_NavLayout.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\Article.cshtml" />
+    <Content Include="Views\KnowCognizant\Index.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Blog\Create.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\User\_UserFilter.cshtml" />
+    <Content Include="Views\User\_UserSubMenu.cshtml" />
+    <Content Include="Views\WelcomeNote\Create.cshtml" />
+    <Content Include="Views\WelcomeNote\Index.cshtml" />
+    <Content Include="Views\WelcomeNote\Edit.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\AddUsersToRole.cshtml" />
+    <Content Include="Views\Role\GetUsersForRole.cshtml" />
+    <Content Include="Views\Group\Create.cshtml" />
+    <Content Include="Views\Group\Edit.cshtml" />
+    <Content Include="Views\Group\Index.cshtml" />
+    <Content Include="Views\Group\View.cshtml" />
+    <Content Include="Views\Like\LikedUsers.cshtml" />
+    <Content Include="Views\MetaData\Create.cshtml" />
+    <Content Include="Views\MetaData\Edit.cshtml" />
+    <Content Include="Views\MetaData\Index.cshtml" />
+    <Content Include="Views\MetaData\List.cshtml" />
+    <Content Include="Views\Profile\Edit.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\UserGroup\AddMembers.cshtml" />
+    <Content Include="Views\UserGroup\ManageMembers.cshtml" />
+    <Content Include="Views\Shared\_UserCorner.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Shared\_PageNotification.cshtml" />
+    <Content Include="Views\Blog\Edit.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Share\ShareContent.cshtml" />
+    <Content Include="Views\Share\SharedUsers.cshtml" />
+    <Content Include="Views\FutureCalling\Article.cshtml" />
+    <Content Include="Views\Blog\List.cshtml" />
+    <Content Include="Views\Blog\_BlogSubMenu.cshtml" />
+    <Content Include="Views\Blog\_BlogFilter.cshtml" />
+    <Content Include="Views\Profile\GetSetting.cshtml" />
+    <Content Include="Views\Poll\Create.cshtml" />
+    <Content Include="Views\Poll\Tile.cshtml" />
+    <Content Include="Views\Blog\_BlogTileIndex.cshtml" />
+    <Content Include="Views\Comment\ListComments.cshtml" />
+    <Content Include="Views\Sitesetting\Edit.cshtml" />
+    <Content Include="Views\NotificationCorner\FeedCount.cshtml" />
+    <Content Include="Views\NotificationCorner\UnReadFeeds.cshtml" />
+    <Content Include="Views\NotificationCorner\AllFeeds.cshtml" />
+    <Content Include="Views\Blog\_BlogCategorySubMenu.cshtml" />
+    <Content Include="Scripts\tinymce\langs\readme.md" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\icomoon-small.eot" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\icomoon-small.ttf" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\icomoon-small.woff" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\icomoon.eot" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\icomoon.ttf" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\icomoon.woff" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\readme.md" />
+    <Content Include="Views\FileManager\UploadImage.cshtml" />
+    <Content Include="Views\KnowCognizant\Article1.cshtml" />
+    <Content Include="Views\KnowCognizant\Article2.cshtml" />
+    <Content Include="Views\Share\_UserList.cshtml" />
+    <Content Include="Views\User\List.cshtml" />
+    <Content Include="Views\User\FileUpload.cshtml" />
+    <Content Include="Views\Poll\Edit.cshtml" />
+    <Content Include="Views\Poll\Index.cshtml" />
+    <Content Include="Views\Share\_SharedUsersList.cshtml" />
+    <Content Include="Views\Like\_LikedUserList.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\UnAuthorizedAccess.cshtml" />
+    <Content Include="Views\Comment\Comments.cshtml" />
+    <Content Include="Views\UserGroup\_NonGroupMembers.cshtml" />
+    <Content Include="Views\WelcomeNote\Tile.cshtml" />
+    <Content Include="Views\Home\BrowserSupport.cshtml" />
+    <Content Include="Views\UserGroup\_UserGroupMembers.cshtml" />
+    <Content Include="Views\Blog\_BlogPostList.cshtml" />
+    <Content Include="Views\Group\_GroupList.cshtml" />
+    <Content Include="Views\Sitesetting\Index.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\_ActiveUserStat.cshtml" />
+    <Content Include="Views\Dashboard\_UserBrowserStat.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\C2C.BE\C2C.BusinessEntities.csproj">
+      <Project>{ff3c6682-7aec-43c0-be24-9b974db84393}</Project>
+      <Name>C2C.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\C2C.BL\C2C.BusinessLogic.csproj">
+      <Project>{9af18a6d-cf7f-4f4a-b34a-90d069393c91}</Project>
+      <Name>C2C.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\C2C.Utility\C2C.Core.csproj">
+      <Project>{518f501b-40ba-4a71-990f-90307c52fe0c}</Project>
+      <Name>C2C.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50407/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

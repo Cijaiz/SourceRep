@@ -1,0 +1,120 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C2C.UI", "C2C.UI\C2C.UI.csproj", "{A18445F8-9283-43EA-B6EC-B5E5024377C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C2C.BusinessLogic", "C2C.BL\C2C.BusinessLogic.csproj", "{9AF18A6D-CF7F-4F4A-B34A-90D069393C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C2C.BusinessEntities", "C2C.BE\C2C.BusinessEntities.csproj", "{FF3C6682-7AEC-43C0-BE24-9B974DB84393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C2C.DataAccessLogic", "C2C.DAL\C2C.DataAccessLogic.csproj", "{51F2EBD8-A2F1-44AA-91EE-37CC26BB1522}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C2C.Core", "C2C.Utility\C2C.Core.csproj", "{518F501B-40BA-4A71-990F-90307C52FE0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Layer", "Business Layer", "{C32C1200-CF54-482C-8387-86BD78F1E085}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer", "Data Access Layer", "{6D7EBD37-130D-4EEF-8C03-7E387F00CA5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{91D9C9CE-684C-40EC-AF99-F03ECADDD7B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation Layer", "Presentation Layer", "{C375D569-7239-4DD3-A24B-F594731C8CDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Azure Layer", "Azure Layer", "{1CDB361D-5678-4C13-9103-AEAA9B65D5EF}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "C2C.Cloud", "C2C.Cloud\C2C.Cloud.ccproj", "{44EF6A7F-6643-4C7C-BF10-0C9CF59BCEE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C2C.DataStore", "C2C.DataStore\C2C.DataStore.csproj", "{9EACFF31-C92C-4E76-AC03-A61BB82A783E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManagement", "..\FileManagement\FileManagement\FileManagement.csproj", "{882EAE0D-D689-4A44-809F-E38AA1542363}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://ctsintcosetfs:8080/tfs/eas-tm
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = C2C.UI\\C2C.UI.csproj
+		SccProjectTopLevelParentUniqueName1 = Campus2Cognizant.sln
+		SccProjectName1 = C2C.UI
+		SccLocalPath1 = C2C.UI
+		SccProjectUniqueName2 = C2C.BL\\C2C.BusinessLogic.csproj
+		SccProjectTopLevelParentUniqueName2 = Campus2Cognizant.sln
+		SccProjectName2 = C2C.BL
+		SccLocalPath2 = C2C.BL
+		SccProjectUniqueName3 = C2C.BE\\C2C.BusinessEntities.csproj
+		SccProjectTopLevelParentUniqueName3 = Campus2Cognizant.sln
+		SccProjectName3 = C2C.BE
+		SccLocalPath3 = C2C.BE
+		SccProjectUniqueName4 = C2C.DAL\\C2C.DataAccessLogic.csproj
+		SccProjectTopLevelParentUniqueName4 = Campus2Cognizant.sln
+		SccProjectName4 = C2C.DAL
+		SccLocalPath4 = C2C.DAL
+		SccProjectUniqueName5 = C2C.Utility\\C2C.Core.csproj
+		SccProjectTopLevelParentUniqueName5 = Campus2Cognizant.sln
+		SccProjectName5 = C2C.Utility
+		SccLocalPath5 = C2C.Utility
+		SccProjectUniqueName6 = C2C.Cloud\\C2C.Cloud.ccproj
+		SccProjectTopLevelParentUniqueName6 = Campus2Cognizant.sln
+		SccProjectName6 = C2C.Cloud
+		SccLocalPath6 = C2C.Cloud
+		SccProjectUniqueName7 = C2C.DataStore\\C2C.DataStore.csproj
+		SccProjectTopLevelParentUniqueName7 = Campus2Cognizant.sln
+		SccProjectName7 = C2C.DataStore
+		SccLocalPath7 = C2C.DataStore
+		SccProjectUniqueName8 = ..\\FileManagement\\FileManagement\\FileManagement.csproj
+		SccProjectTopLevelParentUniqueName8 = Campus2Cognizant.sln
+		SccProjectName8 = ../FileManagement/FileManagement
+		SccLocalPath8 = ..\\FileManagement\\FileManagement
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A18445F8-9283-43EA-B6EC-B5E5024377C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A18445F8-9283-43EA-B6EC-B5E5024377C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A18445F8-9283-43EA-B6EC-B5E5024377C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A18445F8-9283-43EA-B6EC-B5E5024377C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AF18A6D-CF7F-4F4A-B34A-90D069393C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF18A6D-CF7F-4F4A-B34A-90D069393C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF18A6D-CF7F-4F4A-B34A-90D069393C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF18A6D-CF7F-4F4A-B34A-90D069393C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF3C6682-7AEC-43C0-BE24-9B974DB84393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3C6682-7AEC-43C0-BE24-9B974DB84393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3C6682-7AEC-43C0-BE24-9B974DB84393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3C6682-7AEC-43C0-BE24-9B974DB84393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F2EBD8-A2F1-44AA-91EE-37CC26BB1522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F2EBD8-A2F1-44AA-91EE-37CC26BB1522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F2EBD8-A2F1-44AA-91EE-37CC26BB1522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F2EBD8-A2F1-44AA-91EE-37CC26BB1522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{518F501B-40BA-4A71-990F-90307C52FE0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{518F501B-40BA-4A71-990F-90307C52FE0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{518F501B-40BA-4A71-990F-90307C52FE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{518F501B-40BA-4A71-990F-90307C52FE0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44EF6A7F-6643-4C7C-BF10-0C9CF59BCEE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44EF6A7F-6643-4C7C-BF10-0C9CF59BCEE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44EF6A7F-6643-4C7C-BF10-0C9CF59BCEE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44EF6A7F-6643-4C7C-BF10-0C9CF59BCEE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EACFF31-C92C-4E76-AC03-A61BB82A783E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EACFF31-C92C-4E76-AC03-A61BB82A783E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EACFF31-C92C-4E76-AC03-A61BB82A783E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EACFF31-C92C-4E76-AC03-A61BB82A783E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{882EAE0D-D689-4A44-809F-E38AA1542363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882EAE0D-D689-4A44-809F-E38AA1542363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882EAE0D-D689-4A44-809F-E38AA1542363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882EAE0D-D689-4A44-809F-E38AA1542363}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A18445F8-9283-43EA-B6EC-B5E5024377C9} = {C375D569-7239-4DD3-A24B-F594731C8CDD}
+		{FF3C6682-7AEC-43C0-BE24-9B974DB84393} = {C32C1200-CF54-482C-8387-86BD78F1E085}
+		{9AF18A6D-CF7F-4F4A-B34A-90D069393C91} = {C32C1200-CF54-482C-8387-86BD78F1E085}
+		{51F2EBD8-A2F1-44AA-91EE-37CC26BB1522} = {6D7EBD37-130D-4EEF-8C03-7E387F00CA5B}
+		{9EACFF31-C92C-4E76-AC03-A61BB82A783E} = {6D7EBD37-130D-4EEF-8C03-7E387F00CA5B}
+		{518F501B-40BA-4A71-990F-90307C52FE0C} = {91D9C9CE-684C-40EC-AF99-F03ECADDD7B7}
+		{882EAE0D-D689-4A44-809F-E38AA1542363} = {91D9C9CE-684C-40EC-AF99-F03ECADDD7B7}
+		{44EF6A7F-6643-4C7C-BF10-0C9CF59BCEE7} = {1CDB361D-5678-4C13-9103-AEAA9B65D5EF}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,122 @@
+﻿@model C2C.UI.ViewModels.BlogViewModel
+<script type="text/javascript" src="~/Scripts/tinymce/tinymce.min.js"></script>
+
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml";
+}
+
+<section id="edit-blog">
+    <h2>Edit</h2>
+    @if (Model.ResponseMessage != null)
+    {
+        @Html.Partial("_PageNotification", Model.ResponseMessage)
+    }
+    @using (Html.BeginForm("Edit", "Blog"))
+    {       
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>BlogPost</legend>
+            @Html.HiddenFor(model => model.BlogPost.Id)
+            @Html.HiddenFor(model => model.BlogPost.Status)
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BlogPost.Title)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.BlogPost.Title)
+                @Html.ValidationMessageFor(model => model.BlogPost.Title)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BlogPost.Description)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.BlogPost.Description)
+                @Html.ValidationMessageFor(model => model.BlogPost.Description)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BlogPost.PostContent)
+            </div>
+            <div class="editor-field">
+                @Html.TextAreaFor(model => model.BlogPost.PostContent)
+                @Html.ValidationMessageFor(model => model.BlogPost.PostContent)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BlogPost.Author)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.BlogPost.Author)
+                @Html.ValidationMessageFor(model => model.BlogPost.Author)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BlogPost.VisibleFrom)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.BlogPost.VisibleFrom, new { @Value = Model.BlogPost.VisibleFrom.ToShortDateString() })
+                @Html.ValidationMessageFor(model => model.BlogPost.VisibleFrom)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BlogPost.VisibleTill)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.BlogPost.VisibleTill, new { @Value = Model.BlogPost.VisibleTill != null ? Model.BlogPost.VisibleTill.Value.ToShortDateString() : " " })
+                @Html.ValidationMessageFor(model => model.BlogPost.VisibleTill)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BlogPost.Notify)
+            </div>
+            <div class="editor-field">
+                @Html.CheckBoxFor(model => model.BlogPost.Notify, new { @style = "display:block" })
+                @Html.ValidationMessageFor(model => model.BlogPost.Notify)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BlogPost.BlogCategory)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.Category, Model.CategoryList)
+                @Html.ValidationMessageFor(model => model.BlogPost.BlogCategory)
+            </div>
+            <div class="editor-field group-container">
+                @if (Model.GroupList != null && Model.GroupList.Count() > 0)
+                {
+                    foreach (var item in Model.GroupList)
+                    {        
+                    <input id="group@(item.Id)" type="checkbox" class="edit-blog" name="SelectedGroupIds" value="@item.Id" style="display:block" 
+                            @(Model.SelectedGroupIds.Contains(item.Id) ? "checked" : "")/>              
+                  
+                    @Html.DisplayFor(modelitem => item.Title)
+                    }
+                }
+                else
+                {
+                    <a href="/group/create">Create Group</a>
+                }
+            </div>
+            <p>
+                <input type="submit" value="Save" />
+                <input class="cancelbtn" type="button" value="Cancel" onclick="window.location.href = '/Blog/List'" />
+            </p>
+        </fieldset>
+    }
+
+</section>
+
+
+@section Scripts {
+    <script type="text/javascript">
+        divalignment("blogminitile");
+    </script>
+
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/C2C/c2c_blog_admin.js"></script>
+    @Styles.Render("~/Content/themes/base/css")
+}
+@section subMenu{
+    @Html.Partial("_BlogSubMenu")
+}

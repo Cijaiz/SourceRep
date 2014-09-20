@@ -1,0 +1,14 @@
+﻿<html>
+<body>
+    <div>
+        <p>
+            Hello @Model.UserName. </p>
+        <br />
+        <p>
+              The queue message canot be processed with EventID : @Model.EventID and EventCode : @Model.EventCode
+              For details please look into the error table.
+	        </p>
+        
+    </div>
+</body>
+</html>

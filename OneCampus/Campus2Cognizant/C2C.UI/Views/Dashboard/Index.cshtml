@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+<section id="edit-blog">
+    <h2>Dashboard</h2>
+
+    <div class="dashboard-container">
+        <div class="widget left" id="divUserBrowserStat">
+            <h2 class="title">User's Browser Info</h2>
+            <div class="widget-content">
+                Loading...
+            </div>
+        </div>
+
+        <div class="widget right" id="divOnlineUserStat">
+            <h2 class="title">Online User Info</h2>
+            <div class="widget-content">
+                Loading...
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts {
+    <script src="~/Scripts/C2C/c2c_dashboard.js"></script>
+    @Styles.Render("~/Content/themes/base/css")
+}

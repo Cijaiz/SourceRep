@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="MailingService.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-03.2.0">
+  <WebRole name="MailingService" vmsize="ExtraSmall">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint2" endpointName="httpsEndpoint" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="httpsEndpoint" protocol="https" port="443" certificate="HttpsCertificate" />
+    </Endpoints>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+    </Imports>
+    <ConfigurationSettings>
+      <Setting name="Smtp.Host" />
+      <Setting name="Smtp.Port" />
+      <Setting name="Smtp.UserName" />
+      <Setting name="Smtp.Password" />
+      <Setting name="Smtp.EnableSsl" />
+      <Setting name="AcsTokenKey" />
+      <Setting name="AcsNamespace" />
+      <Setting name="AcsRealm" />
+      <Setting name="MailAttachmentStorageAccount" />
+      <Setting name="DiagnosticLogLevel" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="HttpsCertificate" storeLocation="LocalMachine" storeName="My" />
+    </Certificates>
+  </WebRole>
+</ServiceDefinition>

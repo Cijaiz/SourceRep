@@ -1,0 +1,61 @@
+﻿@model C2C.UI.ViewModels.RoleViewModel
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml";
+}
+<section id="edit-blog">
+    <h2>Create Role</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+
+        @Html.ValidationMessage("RoleExsists")
+        <fieldset>
+            <legend>Role</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            @if (Model.Rights.Count > 0)
+            {
+                var lastContentType = 0;
+                foreach (var permission in Model.Rights)
+                {
+                    var uniqueItemsList = Model.Rights.Distinct().ToList();
+                    if (lastContentType != (int)permission.ContentTypeId)
+                    { 
+                @Html.Label(permission.ContentTypeId.ToString()) 
+                        lastContentType = (int)permission.ContentTypeId;
+                    }
+                 
+                <input 
+				id="permission@(permission.Id)"
+				type="checkbox" 
+				name="SelectedPermissionIds"
+				value="@permission.Id"
+                style="display:block"
+				@(Model.SelectedPermissionIds.Contains(permission.Id) ? "checked" : "")
+				/>
+
+                <li>
+                    <label for="permission@(permission.Id)">@permission.Name</label></li>
+                }
+            }
+
+            <p>
+                <input type="submit" value="Create" />
+                <input class="cancelbtn" type="button" value="Cancel" onclick="window.location.href = '/Role/Index'" />
+            </p>
+        </fieldset>
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

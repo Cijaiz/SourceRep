@@ -1,0 +1,184 @@
+﻿@model C2C.BusinessEntities.C2CEntities.SiteSetting
+@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+<section id="edit-blog">
+    <h2>Edit</h2>
+
+    @using (Html.BeginForm("Edit", "SiteSetting"))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model=>model.Id)
+        <table>
+            <tr>
+                <td>
+                    <div class="display-label">@Html.DisplayNameFor(model => model.Name)</div>
+                </td>
+                <td class="table-column-separator">:</td>
+                <td>
+                    <div class="display-field">@Html.TextBoxFor(model => model.Name)</div>
+                      @Html.ValidationMessageFor(model=>model.Name)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">@Html.DisplayNameFor(model => model.Version)</div>
+                </td>
+                <td class="table-column-separator">:</td>
+                <td>
+                    <div class="display-field">@Html.TextBoxFor(model => model.Version)</div>
+                    @Html.ValidationMessageFor(model=>model.Version)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">@Html.DisplayNameFor(model => model.IsFederationEnabled)</div>
+                </td>
+                <td class="table-column-separator">:</td>
+                <td class="table-rowcheckbox">
+                    <div class="display-field">@Html.CheckBoxFor(model => model.IsFederationEnabled, new { style = "display:block" })</div>
+                    @Html.ValidationMessageFor(model=>model.IsFederationEnabled)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">@Html.DisplayNameFor(model => model.TranslateClaimsToUserProperties)</div>
+                </td>
+                <td class="table-column-separator">:</td>
+                <td>
+                    <div class="display-field">@Html.CheckBoxFor(model => model.TranslateClaimsToUserProperties, new { style = "display:block" })</div>
+                    @Html.ValidationMessageFor(model=>model.TranslateClaimsToUserProperties)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">@Html.DisplayNameFor(model => model.TranslateClaimsToRoles)</div>
+                </td>
+                <td class="table-column-separator">:</td>
+                <td>
+                    <div class="display-field">@Html.CheckBoxFor(model => model.TranslateClaimsToRoles, new { style = "display:block" })</div>
+                    @Html.ValidationMessageFor(model=>model.TranslateClaimsToRoles)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">@Html.DisplayNameFor(model => model.StsIssuerUrl)</div>
+                </td>
+                <td class="table-column-separator">:</td>
+                <td>
+                    <div class="display-field">@Html.TextAreaFor(model => model.StsIssuerUrl)</div>
+                    @Html.ValidationMessageFor(model=>model.StsIssuerUrl)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">@Html.DisplayNameFor(model => model.StsLoginUrl)</div>
+                </td>
+                <td class="table-column-separator">:</td>
+                <td>
+                    <div class="display-field">@Html.TextAreaFor(model => model.StsLoginUrl, new { style = "height:80px" })</div>
+                    @Html.ValidationMessageFor(model=>model.StsLoginUrl)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">@Html.DisplayNameFor(model => model.CtsLoginUrl)</div>
+                </td>
+                <td class="table-column-separator">:</td>
+                <td>
+                    <div class="display-field">@Html.TextAreaFor(model => model.CtsLoginUrl, new { style = "height:100px" })</div>
+                    @Html.ValidationMessageFor(model=>model.CtsLoginUrl)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">@Html.DisplayNameFor(model => model.Realm)</div>
+                </td>
+                <td class="table-column-separator">:</td>
+                <td>
+                    <div class="display-field">@Html.TextAreaFor(model => model.Realm)</div>
+                    @Html.ValidationMessageFor(model=>model.Realm)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">@Html.DisplayNameFor(model => model.ReturnUrlBase)</div>
+                </td>
+                <td class="table-column-separator">:</td>
+                <td>
+                    <div class="display-field">@Html.TextAreaFor(model => model.ReturnUrlBase)</div>
+                    @Html.ValidationMessageFor(model=>model.ReturnUrlBase)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">@Html.DisplayNameFor(model => model.AudienceUrl)</div>
+                </td>
+                <td class="table-column-separator">:</td>
+                <td>
+                    <div class="display-field">@Html.TextAreaFor(model => model.AudienceUrl)</div>
+                    @Html.ValidationMessageFor(model=>model.AudienceUrl)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">@Html.DisplayNameFor(model => model.X509CertificateThumbprint)</div>
+                </td>
+                <td class="table-column-separator">:</td>
+                <td>
+                    <div class="display-field">@Html.TextAreaFor(model => model.X509CertificateThumbprint)</div>
+                    @Html.ValidationMessageFor(model=>model.X509CertificateThumbprint)
+                </td>
+
+            </tr>
+            @*<tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.ModerateComment)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.CheckBoxFor(model => model.ModerateComment, new { style="display:block" })</div>
+            @Html.ValidationMessageFor(model=>model.ModerateComment)
+            </td>
+
+        </tr>  *@
+           
+        </table>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    
+    }
+    <p>
+        @Html.ActionLink("Back", "Index")
+    </p>
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<style type="text/css">
+    .display-label {
+        width: 250px;
+        text-align: left;
+    }
+
+    .table-column-separator {
+        width: 20px;
+        text-align: center;
+    }
+
+    .display-field > textarea {
+        width: 680px;
+        text-align: left; 
+    }
+</style>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="C2C.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*" schemaVersion="2013-03.2.0">
+  <Role name="C2C.UI">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=campus2cognizant;AccountKey=27RsA246dtQrSy35tbblPp9Fvv91AKJU82SaZqeTXwYmH8vWZzle8K271Z/yVP5cNusD+IyLvK70Tfy6I8iugA==" />
+      <Setting name="DiagnosticLogLevel" value="Error" />
+      <Setting name="HubRelyingParty" value="http://127.0.0.1:8080/MailingService.svc/" />
+      <Setting name="AcsRealm" value="http://127.0.0.1:8080/MailingService.svc/" />
+      <Setting name="AcsNamespace" value="onecampusacs" />
+      <Setting name="AcsTokenKey" value="Ib5aDFkoaBEDP3Cvxi10qQgNZiFBAm5pNBxQ8DTkoXk=" />
+      <Setting name="ServiceIdentityUserName" value="onecampususer" />
+      <Setting name="ServiceIdentityPassword" value="password-1" />
+      <Setting name="HubUrl" value="https://c2chub.cloudapp.net/api" />
+      <Setting name="NotificationEngineStorage" value="DefaultEndpointsProtocol=https;AccountName=campus2cognizant;AccountKey=27RsA246dtQrSy35tbblPp9Fvv91AKJU82SaZqeTXwYmH8vWZzle8K271Z/yVP5cNusD+IyLvK70Tfy6I8iugA==" />
+      <Setting name="C2CStoreEntities" value="metadata=res://*/C2CStore.csdl|res://*/C2CStore.ssdl|res://*/C2CStore.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=tcp:ksit1n6ulm.database.windows.net,1433;Initial Catalog=mvcC2CDb;Integrated Security=False;User ID=user@ksit1n6ulm;Password=password-1&quot;" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="httpsCertificate" thumbprint="433921833EA9DB9492C63A1B70B1E5D52A000E47" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

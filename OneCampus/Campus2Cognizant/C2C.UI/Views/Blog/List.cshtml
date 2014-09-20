@@ -1,0 +1,41 @@
+﻿@model C2C.UI.ViewModels.BlogListViewModel
+@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";   
+}
+
+<section id="edit-blog">
+    <h2>@ViewBag.Title</h2>
+
+    @Html.Partial("_BlogFilter", Model.Filter)
+
+    <table>
+        <tr>           
+            <th>Title             
+            </th>
+            <th>Last Modified    
+            </th>
+            <th>Action
+            </th>
+        </tr>
+    </table>
+    <div class="groups" id="div_blogpost">
+        @Html.Partial("_BlogPostList", Model)
+    </div>
+</section>
+@section subMenu{
+    @Html.Partial("_BlogSubMenu")
+}
+
+@section Scripts{
+    <script type="text/javascript">
+        divalignment("blogminitile");
+    </script>
+
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/c2c/c2c_scrollpagination.js"></script>
+    <script src="~/Scripts/c2c/c2c_blogpost.js"></script>
+
+    <script type="text/javascript">
+        c2c.blogpost.postscrollpage("@Model.Filter.Category","@Model.Filter.SearchTitle","@Model.Filter.Status",@Model.PageCount);
+    </script>
+}

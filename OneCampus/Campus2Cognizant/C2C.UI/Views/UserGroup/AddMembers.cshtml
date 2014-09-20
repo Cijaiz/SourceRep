@@ -1,0 +1,72 @@
+﻿@model C2C.UI.ViewModels.GroupMemberListViewModel
+
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml";
+}
+
+<section id="edit-blog">
+    <h2>Add Members</h2>
+    <p>
+        @Html.ActionLink("Groups", "Index", "Group", null, null)
+    </p>
+    @if (Model.ResponseMessage != null)
+    {
+        @Html.Partial("_PageNotification", Model.ResponseMessage)
+    }
+    @if (Model.UserPageCount > 0)
+    {
+        using (Html.BeginForm("Search", "UserGroup"))
+        {          
+        <div>
+            <fieldset>
+                @Html.TextBoxFor(model => model.SearchText)
+                @Html.HiddenFor(model => model.GroupId)
+            </fieldset>
+            <input type="submit" class="submitForm" value="Search User" />
+        </div>
+        }
+        using (Html.BeginForm("AddMembers", "UserGroup", FormMethod.Post))
+        {
+        @Html.HiddenFor(model => model.GroupId)
+        <fieldset>
+            <table>
+                <tr>
+                    <th><input type="checkbox" id="selectall" style="display:block"/>@Html.DisplayName("Select All")</th>
+                    <th>
+                        @Html.DisplayName("Photo")
+                    </th>
+                    <th>
+                        @Html.DisplayName("First Name")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Last Name")
+                    </th>
+                    <th></th>
+                </tr>
+            </table>
+            <div class="groups" id="div_membersList">
+                @Html.Partial("_NonGroupMembers", Model)
+            </div>
+            <input type="submit" class="submitForm" value="Add members" />
+        </fieldset>
+        }
+        <p>
+            @Html.ActionLink("Back", "AddMembers", "UserGroup", new { groupId = Model.GroupId }, null)
+        </p>
+    }
+    else
+    {
+        <p>There are no members to add in this group.</p>
+    }
+</section>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/c2c/c2c_scrollpagination.js"></script>
+    <script src="~/Scripts/c2c/c2c_group.js"></script>
+
+    <script type="text/javascript">
+        c2c.group.scrollpage(@Model.UserPageCount,@Model.GroupId,"@Model.SearchText");
+    </script>
+}
+

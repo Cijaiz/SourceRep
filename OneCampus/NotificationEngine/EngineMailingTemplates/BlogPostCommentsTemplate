@@ -1,0 +1,12 @@
+﻿<html>
+<head>
+    <title>Welcome to One-Campus Site.</title>
+</head>
+<body>
+    <p>
+	Hi. The user @Model.CommentedBy has commented on a blog post on @Model.CommentDate . 
+	he/she commented as @Model.Text
+	To visit the post, click on - @Model.CommentedOnItemUrl.
+    </p>
+</body>
+</html>

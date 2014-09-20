@@ -1,0 +1,11 @@
+﻿@model C2C.UI.ViewModels.FeedCountViewModel
+@if (Model.Error == null && Model.FeedCount > 0)
+{
+    @Model.FeedCount
+}
+else
+{
+    <text> 0 </text>
+}
+
+

@@ -1,0 +1,54 @@
+﻿@model C2C.UI.ViewModels.UserListViewModel
+@{
+    ViewBag.UserList = "Users List";
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+<section id="edit-blog">
+    <h2>@ViewBag.UserList</h2>
+    @if (Model.ResponseMessage != null)
+    {
+        @Html.Partial("_PageNotification", Model.ResponseMessage) 
+    }
+
+    @Html.Partial("_UserFilter", Model.Filter)
+
+    <table>
+        <tr>
+            <th>UserImage
+            </th>
+            <th>UserName             
+            </th>
+            <th>FirstName
+            </th>
+            <th>LastName
+            </th>
+            <th>Status
+            </th>
+            <th>IsLocked
+            </th>
+            <th>AccountValidity
+            </th>
+            <th>Action</th>
+        </tr>
+    </table>
+
+    <div class="groups" id="div_userlist">
+        @Html.Partial("List", Model.User)
+    </div>
+
+</section>
+@section subMenu{
+    @Html.Partial("_UserSubMenu")
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/c2c/c2c_scrollpagination.js"></script>
+    <script src="~/Scripts/c2c/c2c_user.js"></script>
+
+    <script type="text/javascript">
+        c2c.user.scrollpage(@Model.PageCount, "@Model.Filter.Name", "@Model.Filter.Status");
+    </script>
+}
+
+

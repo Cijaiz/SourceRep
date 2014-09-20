@@ -1,0 +1,50 @@
+﻿@model C2C.UI.ViewModels.AddUserToRoleViewModel
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml"; 
+    int roleId = ViewBag.RoleId;
+}
+
+<h2>AddUsersToRole</h2>
+
+
+<section id="edit-blog">
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+
+        @Html.Hidden("roleId", roleId);
+        <fieldset>
+            @if (Model.UserProfiles.Count > 0)
+            {
+                <ul>
+                    @foreach (var userProfile in Model.UserProfiles)
+                    {
+                    <li>
+                        <input 
+				id="user@(userProfile.Id)"
+				type="checkbox" 
+				name="SelectedUserIds"
+				value="@userProfile.Id"
+                style="display:block"
+				@(Model.SelectedUserIds.Contains(userProfile.Id) ? "checked" : "")
+				/>
+                        @Html.ValidationMessageFor(model => model.SelectedUserIds)
+                        <label for="user@(userProfile.Id)">@string.Format("{0}{1}", userProfile.FirstName, userProfile.LastName)</label>
+                    </li>
+                    }
+                </ul>
+                <p>
+                    <input type="submit" value="Add" />
+                </p>
+            }
+            else
+            {
+                <p>All the users have been mapped to this role  or no user exsists!</p>
+            }
+        </fieldset>
+    }
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

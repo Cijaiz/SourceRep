@@ -1,0 +1,19 @@
+﻿<html>
+<head>
+    <title>Welcome to One-Campus Site.</title>
+</head>
+<body>
+    <p>
+Below are the polls which are live and unanswered by you.
+ @foreach (var p in @Model.Polls)
+	{
+		<p>
+			p.Url - Created on p.CreatedOn.
+		</p>
+	}
+    </p>
+    <p>
+        Follow the below link to see the pending polls.
+    </p>
+</body>
+</html>

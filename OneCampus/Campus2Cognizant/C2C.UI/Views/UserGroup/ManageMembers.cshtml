@@ -1,0 +1,79 @@
+﻿@using System.Web.Mvc;
+@model C2C.UI.ViewModels.GroupMemberListViewModel
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml";
+}
+
+<section id="edit-blog">
+
+    <h2>Manage Members</h2>
+    <p>
+        @Html.ActionLink("Groups", "Index", "Group", null, null)
+    </p>
+    @if (Model.ResponseMessage != null)
+    {
+        @Html.Partial("_PageNotification", Model.ResponseMessage)
+    }
+    @using (Html.BeginForm("ManageMembers", "UserGroup", FormMethod.Get))
+    {          
+        <div>
+            <fieldset>
+                @Html.DropDownList("Status", Model.StatusList.AsEnumerable().Reverse())
+                @Html.HiddenFor(model => model.GroupId)
+            </fieldset>
+            <input type="submit" value="Filter" />
+        </div>
+    }
+
+    @using (Html.BeginForm("ManageMembers", "UserGroup", FormMethod.Post))
+    {
+        <div>
+            <fieldset>
+                @if (Model.UserPageCount > 0)
+                {
+                    @Html.HiddenFor(model => model.GroupId)
+                    <label for="publishActions">Actions:</label>
+                    @Html.DropDownListFor(model => model.Status, Model.StatusList.AsEnumerable().Reverse())
+                    <button type="submit" value="Manage">Apply</button>
+                    <table>
+                        <tr>
+                            <th><input type="checkbox" id="selectall" style="display:block"/>@Html.DisplayName("Select All")</th>
+                            <th>
+                                @Html.DisplayName("Photo")
+                            </th>
+                            <th>
+                                @Html.DisplayName("First Name")
+                            </th>
+                            <th>
+                                @Html.DisplayName("Last Name")
+                            </th>
+                            <th>
+                                @Html.DisplayName("Status")
+                            </th>
+                            <th>
+                                @Html.DisplayName("Action")
+                            </th>
+                        </tr>
+                    </table>
+                    <div class="groups" id="div_userGroupMembers">
+                        @Html.Partial("_UserGroupMembers", Model)
+                    </div>
+                }
+                else
+                {
+                    <p>There are no members to manage.</p>
+                }
+            </fieldset>
+        </div>
+    }
+</section>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/c2c/c2c_scrollpagination.js"></script>
+    <script src="~/Scripts/c2c/c2c_group.js"></script>
+
+    <script type="text/javascript">
+        c2c.group.groupmemberlistScroll(@Model.UserPageCount,@Model.GroupId,"@Model.memberStatus");
+    </script>
+}

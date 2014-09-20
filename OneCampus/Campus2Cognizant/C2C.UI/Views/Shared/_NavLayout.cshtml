@@ -1,0 +1,86 @@
+﻿@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<section id="navigation">
+    <div id="menu">
+        <div class="menu-items menu-navigation" id="mitems">
+            <img src="~/Content/Themes/base/images/home_T.png">
+            <span class="menu-head home-menu"><a href="@Url.Action("Index", "Home")" class="home-menu">Home</a></span>
+        </div>
+
+        <div class="menu-item">
+            <a href="http://campus2cognizant.blob.core.windows.net/learning-and-development/index.html" target="_blank">
+                <div id="learningminitile">
+                    <img src="~/Content/Themes/base/images/learning_T.png">
+                    <span class="menu-head">Learning</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="menu-items menu-navigation" id="blogminitile">
+            <img src="~/Content/Themes/base/images/blog_T.png">
+            <span class="menu-head"><a href="@Url.Action("Index", "Blog")">Blog</a></span>
+        </div>
+
+        <div class="menu-items menu-navigation" id="knowcognizantminitile">
+            <img src="~/Content/Themes/base/images/know-cogni_T.png">
+            <span class="menu-head big-word"><a href="@Url.Action("Index", "KnowCognizant")" class="two-words-menu">Know Cognizant</a></span>
+        </div>
+
+        <div class="menu-items">
+            <a target="_blank" href="http://campus2cognizant.blob.core.windows.net/onecampusstore/faq.pdf" download="faq.pdf">
+                <div id="faqminitile">
+                    <img src="~/Content/Themes/base/images/faqs_T.png">
+                    <span class="menu-head">FAQ's</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="menu-items">
+            <a target="_blank" href="http://campus2cognizant.blob.core.windows.net/onecampusstore/locationguide.pdf" download="locationguide.pdf">
+                <div id="locationminitile">
+                    <img src="~/Content/Themes/base/images/locations_T.png">
+                    <span class="menu-head big-word">Location Guide</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="menu-items inactive">
+            <img src="~/Content/Themes/base/images/forums_T.png">
+            <span class="menu-head"><a href="#">Forum</a></span>
+        </div>
+
+        <div class="menu-items inactive">
+            <img src="~/Content/Themes/base/images/events_T.png">
+            <span class="menu-head"><a href="#">Events</a></span>
+        </div>
+    </div>
+    @RenderSection("subMenu", required: false)
+    @*<div id="sub-menu-items">
+        <ul class="child">
+            <li class="first"><a href="alumni-testimonial.html">Alumni Testimonials</a></li>
+            <li><a href="leadership-speak.html">Leadership Speak</a></li>
+        </ul>
+    </div>*@
+</section>
+
+<section class="body-content">
+    <div class="cont-wrapper ">
+        @RenderBody()
+    </div>
+</section>
+
+@section scripts{
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/C2C/c2c_home.js"></script>
+    <script type="text/javascript">
+        $(".menu-navigation").click(function () {
+            var ref = $(this).children('span').children('a').attr('href');
+            window.location = ref;
+        });
+    </script>
+}
+
+@section ActivityTracker{
+    @Html.Partial("_ActivityTracker")
+}

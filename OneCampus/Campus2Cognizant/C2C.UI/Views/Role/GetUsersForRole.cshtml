@@ -1,0 +1,39 @@
+﻿@model C2C.UI.ViewModels.RoleResponseViewModel
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml"; 
+}
+
+<h2>GetUsersForRole</h2>
+
+<section id="edit-blog">
+    @if (Model.ResponseMessage != null)
+    {
+        @Html.Partial("_PageNotification", Model.ResponseMessage)
+    }
+    @if (Model.UserProfile.Count > 0)
+    {
+        <table>
+            <tr>
+                <th>UserName</th>
+
+            </tr>
+            @foreach (var userProfile in Model.UserProfile)
+            {
+        
+                <tr>
+                    <td>@Html.Label(string.Format("{0}{1}", userProfile.FirstName, userProfile.LastName)) </td>
+                    <td>@Html.ActionLink("Delete", "DeleteUserFromRole", new { userId = userProfile.Id, roleId = ViewBag.RoleId })</td>
+                </tr>
+            }
+
+        </table>
+        
+    }
+    else
+    {
+        <p>No users belongs to the specifed role</p>
+    }
+</section>
+
+@Html.ActionLink("AddUser", "AddUsersToRole", new { id = ViewBag.RoleId });
+@Html.ActionLink("Back", "Index")

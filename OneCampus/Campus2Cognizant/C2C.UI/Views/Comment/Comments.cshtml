@@ -1,0 +1,21 @@
+﻿@model C2C.UI.ViewModels.CommentListViewModel
+<div class="comment-toggle">
+    <span class="comment-close">
+        <img src="~/Content/Themes/base/images/close-comment.png"></span>
+    <div class="comments" id="com">
+        <p class="para-com">
+            <span id="commCount">@Model.CommentCount</span> Comments
+        </p>
+        <div class="cment" id="commentList">
+        </div>
+        <textarea name="comment-area" class="txtarea-comment" id="commentText" rows="2" cols="20"
+            onkeypress="if (this.value.length > 250) { return false; }"></textarea>
+        <input type="submit" name="submit-comment" value="Submit Comment" onclick = "c2c.comment.save(@Model.ContentTypeId,@Model.ContentId)" class="com-submit">
+    </div>
+</div>
+<script type="text/javascript">
+
+    var commentPageCount = @Model.PageCount;
+        
+
+</script>

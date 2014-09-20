@@ -1,0 +1,54 @@
+﻿@model List<C2C.BusinessEntities.C2CEntities.User>
+
+@if (Model != null && Model.Count() > 0)
+{
+    <table>
+        @foreach (var item in Model)
+        {           
+            <tr>
+                <td>
+                    <img src="@item.Profile.ProfilePhoto"  width="32" height="32" />
+                </td>
+                <td>
+                    <div id="userGrupList-@item.Id" class="hover" title="" data-html="true" onmouseover="c2c.user.grouplist(@item.Id);">
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </div>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Profile.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Profile.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsLocked)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccountValidity)
+                </td>
+                <td>
+
+                    @if (item.Status != C2C.Core.Constants.C2CWeb.Status.Deleted)
+                    {
+                        @Html.ActionLink("Edit", "Edit", "Profile", new { id = item.Id }, null) 
+                        <label>|</label>
+                        if (item.Status == C2C.Core.Constants.C2CWeb.Status.Active)
+                        {
+                        @Html.ActionLink("InActive", "Deactivate", new { id = item.Id })
+                        <label>|</label>
+                        }
+                        else
+                        {
+                        @Html.ActionLink("Active", "Activate", new { id = item.Id }) <label>|</label>
+                        }
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+}
+

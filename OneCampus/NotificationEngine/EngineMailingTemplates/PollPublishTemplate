@@ -1,0 +1,11 @@
+﻿<html>
+<head>
+    <title>Welcome to One-Campus Site.</title>
+</head>
+<body>
+    <p>
+        A new poll has been published...
+        Click below link to vote you answer @Model.Url
+    </p>
+</body>
+</html>

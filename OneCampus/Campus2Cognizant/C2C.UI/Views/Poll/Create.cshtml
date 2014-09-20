@@ -1,0 +1,99 @@
+﻿@model C2C.BusinessEntities.C2CEntities.Poll
+
+@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+    var pollCounter = Model.PollAnswers != null ? Model.PollAnswers.Count : 0;
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <section id="edit-blog">
+        <h2>Create Poll</h2>
+        <fieldset>
+            <legend>Poll</legend>
+
+            @Html.ValidationMessageFor(model => model.Id)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Question)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Question)
+                @Html.ValidationMessageFor(model => model.Question)
+            </div>
+            <div id="PollAnswers">
+                <label>Answers</label>
+                @for (int i = 0; i < Model.PollAnswers.Count(); i++)
+                {
+                    <div id='@string.Format("{0}{1}", "PollAnswer-", @i)'>
+                        @Html.HiddenFor(model => model.PollAnswers.ToArray()[i].Id)
+                        @Html.TextBoxFor(model => model.PollAnswers.ToArray()[i].Answer)
+                        @Html.HiddenFor(model => model.PollAnswers.ToArray()[i].IsDeleted)
+                        <input type='button' value='X' id='@string.Format("{0}{1}", "remove", @i)' onclick='return c2c.poll.removetextbox(@i);' />
+                    </div>
+                }
+            </div>
+            <div>
+                @Html.ValidationMessageFor(model => model.PollAnswers)
+            </div>
+            <a href="#" class="addItem">Add Answer</a>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.VisibleFrom)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.VisibleFrom)
+                @Html.ValidationMessageFor(model => model.VisibleFrom)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.VisibleTill)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.VisibleTill)
+                @Html.ValidationMessageFor(model => model.VisibleTill)
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Notify)
+            </div>
+              <div class="editor-field">
+                @Html.CheckBoxFor(model => model.Notify, new { @style = "display:block" })
+                @Html.ValidationMessageFor(model => model.Notify)
+            </div>
+
+            @if (Model.GroupList != null && Model.GroupList.Count() > 0)
+            {
+                foreach (var item in Model.GroupList)
+                {           
+                    @Html.DisplayFor(modelitem => item.Title)
+                <input id="group@(item.Id)" type="checkbox" class="edit-blog" name="SelectedGroupIds" value="@item.Id" style="display:block" 
+                   @(Model.SelectedGroupIds.Contains(item.Id) ? "checked" : "")/>              
+                }
+            }
+            else
+            {
+                <a href="/group/create">Create Group</a>
+            }
+            @Html.ValidationMessageFor(model => model.GroupList)
+            <p>
+                <input type="submit" value="Save" />
+                <input class="cancelbtn" type="button" value="Cancel" onclick="window.location.href = '/Poll'" />
+            </p>
+
+        </fieldset>
+
+    </section>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/c2c/c2c_poll.js"></script>
+    <script type="text/javascript">
+        var counter = @pollCounter;
+    </script>
+}
+
+@Styles.Render("~/Content/themes/base/css")

@@ -1,0 +1,66 @@
+﻿@model C2C.UI.ViewModels.MetaMasterViewModel
+
+@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+        //var title = string.Format("List of Value - {0}", Model.KeyReference );
+}
+<section id="edit-blog">
+
+    @if (Model.ResponseMessage != null)
+    {
+        @Html.Partial("_PageNotification", Model.ResponseMessage)
+    }
+
+    @if (Model != null && Model.Id > 0)
+    {  
+        <h2>List of Value - @Model.KeyReference</h2>
+
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MetaValueList)
+                </th>
+                <th></th>
+            </tr>
+            @if (Model.MetaValueList != null && Model.MetaValueList.Count() > 0)
+            {
+                foreach (var item in Model.MetaValueList)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Value)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td>No MetaValue data found</td>
+                </tr>
+            }
+
+        </table>
+        <p>
+            @Html.ActionLink("Add Item", "Create", new { id = Model.Id })
+        </p>
+        <div>
+            @Html.ActionLink("Back to MetaMaster List", "Index")
+        </div>
+
+    }
+    else
+    {
+        <p>No Data Found</p>
+    }
+</section>

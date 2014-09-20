@@ -1,0 +1,77 @@
+﻿@model C2C.UI.ViewModels.WelcomeNoteListViewModel
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml";
+    int SNo = 0;
+}
+<section id="edit-blog">
+<h2>Index</h2>
+    @if (Model.ResponseMessage != null)
+    {
+        @Html.Partial("_PageNotification", Model.ResponseMessage)
+    }
+    
+     <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+   
+    @if (Model.WelcomeNotes.Count() > 0)
+    {
+    <table>
+        <tr>
+            <th>
+            S.No
+            </th>
+            <th>
+            WelcomeNote          
+            </th>
+            <th>OfferStartDate
+            </th>
+            <th>OfferEndDate
+            </th>
+            <th>Status
+            </th>
+        </tr>
+
+        @foreach (var item in Model.WelcomeNotes)
+        {           
+            <tr>
+                <td>
+                @(++SNo)
+                </td>
+                <td>
+                   @item.Note
+                </td>
+                <td>
+                   @item.OfferExtendedStartDate.Month/@item.OfferExtendedStartDate.Day/@item.OfferExtendedStartDate.Year
+                </td>
+                <td>
+                   @item.OfferExtendedEndDate.Month/@item.OfferExtendedEndDate.Day/@item.OfferExtendedEndDate.Year
+                </td>
+                <td>
+                   @item.Status 
+                </td>
+                <td>
+                    @if (item.Status != C2C.Core.Constants.C2CWeb.Status.Deleted)
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) 
+                    }
+                </td>
+                                <td>
+                    @if (item.Status != C2C.Core.Constants.C2CWeb.Status.Deleted)
+                    {
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }) 
+                    }
+                </td>
+          </tr>
+        }
+
+    </table>
+    }
+    else
+    {
+        <div class="comment-notf">
+            <h3>
+                No data found</h3>
+        </div>
+    }
+</section>

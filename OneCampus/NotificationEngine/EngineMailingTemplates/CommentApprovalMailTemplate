@@ -1,0 +1,15 @@
+﻿<html>
+<head>
+    <title>Welcome to One-Campus Site.</title>
+</head>
+<body>
+    <p>
+Hi Admin. The following user @Model.CommentedBy has posted a comment "@Model.Text" on the blog post.
+The Blog post Url is @Model.CommentedOnItemUrl.
+    </p>
+    <p>
+        Would you like to approve or disapprove the comment ?</p>
+    <button>
+        Approve</button>
+    <button>
+        Cancel</button>

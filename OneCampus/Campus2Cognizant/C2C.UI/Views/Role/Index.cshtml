@@ -1,0 +1,36 @@
+﻿@model C2C.UI.ViewModels.RoleResponseViewModel
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml";
+}
+<section id="edit-blog">
+    @if (Model.ResponseMessage != null)
+    {
+        @Html.Partial("_PageNotification", Model.ResponseMessage)
+    }
+    @if (Model.Roles.Count > 0)
+    {
+        <h2>Roles</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+
+            </tr>
+            @foreach (var role in Model.Roles)
+            {
+                <tr>
+                    <td>@Html.ActionLink(@role.Name, "GetUsersForRole", new { id = role.Id }) </td>
+                    <td>@Html.ActionLink("Edit", "Edit", new { id = role.Id })</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { id = role.Id })</td>
+                </tr>
+            }
+
+        </table>
+    }
+    else
+    {
+        <p>No Role Exists</p>
+         
+    }
+    @Html.ActionLink("AddRole", "Create")
+</section>
+

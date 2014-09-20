@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<configuration>
+  <appSettings>
+    <add key="B01" value=""/>
+    <add key="B02" value=""/>
+    <add key="UPS" value=""/>
+    <add key="C01" value="http://campus2cognizant.blob.core.windows.net/emailtemplates/CommentApprovalMailTemplate"/>
+    <add key="F01" value="http://campus2cognizant.blob.core.windows.net/emailtemplates/ForgotPasswordTemplate"/>
+    <add key="P01" value="http://campus2cognizant.blob.core.windows.net/emailtemplates/PollPublishTemplate"/>
+    <add key="P02" value="http://campus2cognizant.blob.core.windows.net/emailtemplates/PollRemainderTemplate"/>
+    <add key="W02" value="http://campus2cognizant.blob.core.windows.net/emailtemplates/WelcomeTemplate"/>
+    <add key="W01" value="http://campus2cognizant.blob.core.windows.net/emailtemplates/WeeklyEmailTemplate"/>
+    <add key="E01" value="http://campus2cognizant.blob.core.windows.net/emailtemplates/ErrorMessageTemplate"/>
+    <add key="Q01" value="http://campus2cognizant.blob.core.windows.net/emailtemplates/QuizPublishTemplate"/>
+    <add key="CR" value="https://campus2cognizant.blob.core.windows.net/emailtemplates/ContestRegisterTemplate"/>
+    <add key="CP" value="https://campus2cognizant.blob.core.windows.net/emailtemplates/ContestPublishTemplate"/>
+   <add key="CH01" value="https://campus2cognizant.blob.core.windows.net/emailtemplates/CHireImportFailed"/>
+  </appSettings>
+</configuration>

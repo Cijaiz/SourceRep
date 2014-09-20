@@ -1,0 +1,108 @@
+﻿@model C2C.UI.ViewModels.BlogArticleViewModel
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml";
+    int contentTypeId = (int)@C2C.Core.Constants.C2CWeb.Module.Blog;
+    string postViewId = "Like-" + contentTypeId + "-" + Model.Post.Id;
+    int contentId = Model.Post.Id;
+}
+<section class="article-content">
+    <div class="heading">
+        <div class="left-heading">@Model.Post.Title </div>
+        <div class="connect-box" id="networking">
+            <!--<span>
+                    	<a href="#">Previous Blog</a> | <a href="">Next Blog</a>
+                    </span>-->
+            <div class="connect-content">
+                <span id="@postViewId" class="like-bx pointer">
+
+                    @if (Model.IsLiked)
+                    {
+                        <img src="~/Content/Themes/base/images/like.png" title="UnLike" onclick="c2c.like.save('unlike',@contentTypeId,@Model.Post.Id);">                       
+                    }
+                    else
+                    {
+                        <img src="~/Content/Themes/base/images/like.png" title="Like" onclick="c2c.like.save('like',@contentTypeId,@Model.Post.Id);">                        
+                    }
+                    <span class="count " id="clike-all" title="Number of people who like this">@Model.LikeCount</span>
+                </span>
+                <span id='basic-modal'>
+                    <a href="#share">
+                        <img src="~/Content/Themes/base/images/share.png" class='basic' title="Share" onclick="c2c.shareContent.showpopup(@contentTypeId,@Model.Post.Id);">
+                        <span class="count" id="share-all" title="Number of people who shared this">@Model.shareCount</span>
+                    </a>
+                </span>
+                <span>
+                    <img src="~/Content/Themes/base/images/comment.png" class="comment-box pointer" onclick ="c2c.comment.getList(@contentTypeId,@Model.Post.Id)" title="Comment">
+                    <span class="count comment-count" title="Number of people who commented" id="commentsCount">@Model.commentCount</span>
+                </span>
+            </div>
+
+        </div>
+
+
+ 
+                <div id="commentsList"></div>
+               
+
+        <!-- share content -->
+        <div id="basic-modal-content">
+        </div>
+
+        <div id="show-all-content">
+            <!-- Like user list will come here at run time -->
+        </div>
+
+        <!-- share people list -->
+        <div id="share-people">
+            <!-- Shared user list will come here at run time -->
+        </div>
+
+
+    </div>
+
+    <div class="content-part" id="divArticleContent">
+        @Html.Raw(Model.Post.PostContent)
+    </div>
+
+</section>
+@section subMenu{
+    @{ Html.RenderAction("SubMenuCategory", "Blog"); }
+}
+@section scripts{
+    <script src="~/Scripts/c2c/c2c_blog_article.js"></script>
+    <script src="~/Scripts/C2C/c2c_scrollpagination.js"></script>
+    <script src="~/Scripts/c2c/c2c_like.js"></script>
+    <script src="~/Scripts/c2c/c2c_share.js"></script>
+    <script src="~/Scripts/C2C/c2c_comment.js"></script>
+    <script src="../../Scripts/C2C/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript">
+        divalignment("blogminitile");
+
+        $(document).ready(function () {
+            if(@Model.LikeCount > 0)
+            {
+                c2c.like.showLikedUsers('@contentTypeId','@Model.Post.Id');
+
+            }
+            if(@Model.shareCount>0)
+            {
+                c2c.shareContent.showSharedUsers('@contentTypeId','@Model.Post.Id');
+            }
+
+            if ('@Model.IsLiked'.toLowerCase() == 'true')
+            {
+                $(".like-bx img").addClass('like-background');
+            }
+            else {
+                $(".like-bx img").removeClass('like-background');
+            }
+        } );
+
+        c2c.shareContent.PopUpTitle = "@Html.Raw(Model.Post.Title)";
+        var commentCount = @Model.commentCount;
+    </script>
+}
+<link href="~/Content/themes/base/styles/menu.css" rel="stylesheet" />
+<link href="../../Content/themes/base/styles/jquery.mCustomScrollbar.css" rel="stylesheet"
+    type="text/css" />
+<link href="~/Content/themes/base/styles/c2c.css" rel="stylesheet" />

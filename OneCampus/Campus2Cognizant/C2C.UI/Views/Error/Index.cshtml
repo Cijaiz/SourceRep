@@ -1,0 +1,19 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<section class="body-content">
+    <div class="cont-wrapper ">
+        <section id="edit-blog">
+            @if (Model != null)
+            {
+                <h2>@Model.Exception.Message</h2>
+            }
+            else
+            { 
+                <h2>Sorry, an error occurred while processing your request.
+                </h2>
+            }
+        </section>
+    </div>
+</section>

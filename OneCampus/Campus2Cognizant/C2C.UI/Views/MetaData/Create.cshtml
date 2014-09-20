@@ -1,0 +1,52 @@
+﻿@model C2C.UI.ViewModels.MetaValueViewModel
+
+@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+
+@if (Model != null && Model.MetaMasterId > 0)
+{  
+    <section id="edit-blog">
+
+        <h2>Create Meta Value for - @Model.MetaMasterKeyReference </h2>
+
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+
+                <div class="editor-label">
+                    @Html.HiddenFor(model => model.MetaMasterId)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.MetaMasterKeyReference)
+                </div>
+                <div class="editor-field">
+                    @Html.Label(Model.MetaMasterKeyReference)
+                    @Html.ValidationMessageFor(model => model.MetaMasterKeyReference)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Value)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Value)
+                    @Html.ValidationMessageFor(model => model.Value)
+                </div>
+
+                <p>
+                    <input type="submit" value="Create" />
+                </p>
+        }
+
+        <div>
+            @Html.ActionLink("Back to MetaValue List", "List", new { id = Model.MetaMasterId })
+        </div>
+    </section>
+}
+else
+{
+    <p>No data found</p>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

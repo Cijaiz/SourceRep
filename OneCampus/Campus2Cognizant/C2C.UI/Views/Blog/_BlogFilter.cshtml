@@ -1,0 +1,11 @@
+﻿@model C2C.UI.ViewModels.BlogListFilter
+
+@using (Html.BeginForm("List","Blog"))
+{
+    @Html.LabelFor(x => x.Status)
+    @Html.DropDownListFor(x => x.Status, Model.StatusList)    
+    @Html.LabelFor(x => x.Category)
+    @Html.DropDownListFor(x => x.Category, Model.CategoryList)
+    @Html.TextBoxFor(model => model.SearchTitle)
+    <input type="Submit" value="Go" />
+}

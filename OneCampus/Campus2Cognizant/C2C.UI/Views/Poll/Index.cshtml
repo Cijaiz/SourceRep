@@ -1,0 +1,82 @@
+﻿@model IEnumerable<C2C.BusinessEntities.C2CEntities.Poll>
+@using C2C.Core.Constants.C2CWeb;
+
+@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+
+
+<section id="edit-blog">
+    <h2>Index</h2>
+     @if (ViewData["PollResponse"] != null)
+        {
+            @Html.Partial("_PageNotification", ViewData["PollResponse"])
+        }
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Question)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VisibleFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VisibleTill)
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.UpdatedBy)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedOn)
+            </th>
+            <th></th>
+        </tr>
+        @if (Model != null && Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Question)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VisibleFrom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VisibleTill)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.UpdatedBy)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedOn)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @if (item.Status == Status.Active)
+                {
+                    @Html.ActionLink("Unpublish", "Unpublish", new { id = item.Id })
+                }
+                else
+                {
+                    @Html.ActionLink("Publish", "Publish", new { id = item.Id })
+                }
+                    | @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+            }
+        }
+        else
+        { 
+            <tr>
+                <td>
+                    <h3>No data found</h3>
+                </td>
+            </tr>
+        }
+
+    </table>
+</section>

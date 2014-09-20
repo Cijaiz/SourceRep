@@ -1,0 +1,48 @@
+﻿@model IEnumerable<C2C.BusinessEntities.C2CEntities.MetaMaster>
+
+@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+<section id="edit-blog">
+
+    <h2>MetaMaster List</h2>
+
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KeyReference)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+
+        @if (Model != null && Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KeyReference)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "List", new { id = item.Id })
+                </td>
+            </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td>
+                    No Meta Master Data Found
+                </td>
+            </tr>
+        }
+
+    </table>
+</section>

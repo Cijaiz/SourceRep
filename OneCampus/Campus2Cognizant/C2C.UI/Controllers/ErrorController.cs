@@ -1,0 +1,25 @@
+﻿using System.Web.Mvc;
+
+namespace C2C.UI.Controllers
+{
+    public class ErrorController : Controller
+    {
+        //
+        // GET: /Error/
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult NotFound()
+        {
+            return View();
+        }
+
+        public ActionResult UnAuthorizedAccess()
+        {
+            return View();
+        }
+    }
+}

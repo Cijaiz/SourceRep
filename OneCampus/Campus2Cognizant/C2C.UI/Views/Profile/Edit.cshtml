@@ -1,0 +1,106 @@
+﻿@model C2C.UI.ViewModels.UserProfileViewModel
+
+@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+    string displayName = (string.IsNullOrEmpty(Model.FirstName) && string.IsNullOrEmpty(Model.LastName)) ? User.Identity.Name : string.Format("{0} {1}", Model.FirstName, Model.LastName);
+}
+
+@if (Model != null && Model.Id > 0)
+{
+    <section class="article-content edit-blog">
+        @if (Model.ResponseMessage != null)
+        {
+            @Html.Partial("_PageNotification", Model.ResponseMessage)
+        }
+        <div class="profile-heading">
+            <h3 class="u-name">@displayName</h3>
+            <a class="textTransform" href="/profile/index">View Profile</a>
+        </div>
+
+        @Html.BeginForm("Edit", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" })
+        {
+            @Html.ValidationSummary(true)
+        <div class="profile-wrapper">
+
+            <div class="profile-picture">
+                <div class="profile-pictureWrapper">
+                    <img src="@Model.ProfilePhoto" width="205px" height="190px">
+                </div>
+
+                <div class="upload">
+                    <input type="file" name="File" value="CHANGE PICTURE">
+                </div>
+            </div>
+
+            <div class="profile-info">
+
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="formWrapper">
+                    <label for="name">First Name :</label>
+                    <div class="collName">
+                        @Html.TextBoxFor(model => model.FirstName)
+                        @Html.ValidationMessageFor(model => model.FirstName)
+                    </div>
+
+                    <!--<input class="required" id="ID" type="text" name="ID" >-->
+
+                    <label for="fname">Last Name :</label>
+                    <div class="collName">
+                        @Html.TextBoxFor(model => model.LastName)
+                        @Html.ValidationMessageFor(model => model.LastName)
+                    </div>
+                    <label for="fname" class="fix profilecollege">College :</label>
+                    @if (Model.HasPermission)
+                    {                        
+                        <div class="collName">
+                            @Html.DropDownListFor(m => m.CollegeId, Model.CollegeList, "Select College")
+                        </div>
+                    }
+                    else
+                    {                   
+                        <div class="collName">@Model.College</div>
+                    }
+                </div>
+
+                <div class="infoMsg">
+                    (Please write to us at 
+                        <a href="mailto:campus2cognizant@cognizant.com">campus2cognizant@cognizant.com</a> if any modifications are required on the profile details.)
+                </div>
+
+                <div class="saveButton">
+                    <input type="submit" class="submit-btn confirm " value="SAVE CHANGES">
+                </div>
+
+            </div>
+
+        </div>
+        }
+
+    </section>
+}
+else
+{
+    <p>No Data Found</p>
+}
+@section subMenu{
+    <div id="sub-menu-items" class="back-btn">
+
+        <a href="javascript: history.go(-1)" class="bck-btn">
+            <img src="/content/themes/base/images/back.png" height="22" width="24">
+        </a>
+
+        <ul class="child">
+            <li class="first"><a href="#">My Profile</a></li>
+
+            <!--<li><a href="archive.html">Archive</a></li> -->
+        </ul>
+
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<link href="~/Content/themes/base/styles/menu.css" rel="stylesheet" />

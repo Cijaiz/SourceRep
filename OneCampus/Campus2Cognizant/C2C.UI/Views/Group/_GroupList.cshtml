@@ -1,0 +1,23 @@
+﻿@model C2C.UI.ViewModels.GroupListViewModel
+
+@if (Model.GroupList != null && Model.GroupList.Count() > 0)
+{
+    <table>
+        @foreach (var item in Model.GroupList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayTextFor(modelItem => item.IsCollege)
+                </td>
+                <td>
+                @Html.ActionLink("Add Members", "AddMembers", "UserGroup", new { groupId = item.Id }, null) |
+                @Html.ActionLink("Manage Members", "ManageMembers", "UserGroup", new { groupId = item.Id }, null) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+}

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="NotificationHub.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-03.2.0">
+  <WebRole name="NotificationHub" vmsize="ExtraSmall">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint1" endpointName="HttpsIn" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="HttpsIn" protocol="https" port="443" certificate="HTTPS.Cert" />
+    </Endpoints>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+    </Imports>
+    <ConfigurationSettings>
+      <Setting name="NotificationHubEntities" />
+      <Setting name="C2CDataEntities" />
+      <Setting name="AcsNamespace" />
+      <Setting name="AcsRealm" />
+      <Setting name="AcsTokenKey" />
+      <Setting name="DiagnosticLogLevel" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="HTTPS.Cert" storeLocation="LocalMachine" storeName="My" />
+    </Certificates>
+  </WebRole>
+</ServiceDefinition>

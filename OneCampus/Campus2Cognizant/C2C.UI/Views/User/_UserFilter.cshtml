@@ -1,0 +1,9 @@
+﻿@model C2C.UI.ViewModels.UserListFilter
+
+@using (Html.BeginForm("Index","User"))
+{
+    @Html.LabelFor(x => x.Status)
+    @Html.DropDownListFor(x => x.Status, Model.StatusList)
+    @Html.TextBoxFor(model => model.Name)
+    <input type="Submit" value="Go" />
+}

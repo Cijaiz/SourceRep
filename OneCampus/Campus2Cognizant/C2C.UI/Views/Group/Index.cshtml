@@ -1,0 +1,56 @@
+﻿@model C2C.UI.ViewModels.GroupListViewModel
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml";
+}
+<section id="edit-blog">
+
+    <h2>Groups</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    @if (Model.ResponseMessage != null)
+    {
+        @Html.Partial("_PageNotification", Model.ResponseMessage)
+    }
+    @if (Model.PageCount > 0)
+    {
+        using (Html.BeginForm("Search", "Group"))
+        {          
+        <div>
+            <fieldset>
+                @Html.TextBoxFor(model => model.SearchText)
+            </fieldset>
+            <input type="submit" class="submitForm" value="Search Group" />
+        </div>
+        }
+   
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayName("Title")
+                </th>
+                <th>
+                    @Html.DisplayName("Is College")
+                </th>
+                <th></th>
+            </tr>
+        </table> 
+        <div class="groups" id="div_groupList">
+            @Html.Partial("_GroupList", Model)
+        </div>
+    }
+    else
+    {
+        <p>There is no group to display.</p>
+    }
+
+</section>
+@section Scripts{   
+    <script src="~/Scripts/c2c/c2c_scrollpagination.js"></script>
+    <script src="~/Scripts/c2c/c2c_group.js"></script>
+
+    <script type="text/javascript">
+        c2c.group.grouplistScroll(@Model.PageCount,"@Model.SearchText");
+    </script>
+}
+

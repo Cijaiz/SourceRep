@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SchedulerConfiguration Name="">
+  <MonthlySchedule>
+    <February>
+      <Task Description="yjh" EventCode="W01" AtMin="20" AtHour="2" DayOfMonth="13" Id="TMOO"/>
+      
+    </February>
+  </MonthlySchedule>
+  <WeeklySchedule>
+<Wednesday>
+<Task Description="to1" EventCode="W01" AtMin="35" AtHour="3" Id="TT00"/>
+<Task Description="to1" EventCode="W01" AtMin="36" AtHour="3" Id="TT01"/>
+<Task Description="to1" EventCode="W01" AtMin="37" AtHour="3" Id="TT02"/>
+<Task Description="to1" EventCode="W01" AtMin="38" AtHour="3" Id="TT03"/>
+<Task Description="to1" EventCode="W01" AtMin="39" AtHour="3" Id="TT04"/>
+<Task Description="to1" EventCode="W01" AtMin="40" AtHour="3" Id="TT05"/>
+<Task Description="to1" EventCode="W01" AtMin="41" AtHour="3" Id="TT06"/>
+<Task Description="to1" EventCode="W01" AtMin="42" AtHour="3" Id="TT07"/>
+<Task Description="to1" EventCode="W01" AtMin="43" AtHour="3" Id="TT08"/>
+<Task Description="to1" EventCode="W01" AtMin="44" AtHour="3" Id="TT09"/>
+<Task Description="to1" EventCode="W01" AtMin="45" AtHour="3" Id="TT10"/>
+<Task Description="fdf" EventCode="W01" AtMin="46" AtHour="3" Id="TT11"/>
+<Task Description="dfd" EventCode="W01" AtMin="47" AtHour="3" Id="TT12"/>
+<Task Description="dfd" EventCode="W01" AtMin="48" AtHour="3" Id="TT13"/>
+<Task Description="dfd" EventCode="W01" AtMin="49"  AtHour="3" Id="TT14"/>
+<Task Description="dfd" EventCode="W01" AtMin="50"  AtHour="3" Id="TT15"/>
+</Wednesday>
+  </WeeklySchedule>
+  <HourlySchedule>
+<Task Description="HO1" EventCode="W01" Recurrence="50" Id="THO1"/>
+  </HourlySchedule>
+</SchedulerConfiguration>

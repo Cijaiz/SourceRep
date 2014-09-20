@@ -1,0 +1,77 @@
+﻿@model  C2C.UI.ViewModels.UploadImageViewModel
+@{
+    Layout = null;
+}
+<h2>UploadImage</h2>
+
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Upload Image</a></li>
+        <li><a href="#tabs-2">Browse Media</a></li>
+    </ul>
+    <div id="tabs-1">
+        @using (Html.BeginForm("UploadImage", "FileManager", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        { 
+            @Html.TextBoxFor(x => x.ImageFile, new { type = "file", accept = "image/jpg,image/gif" })
+            @Html.ValidationMessageFor(x=>x.ImageFile)
+            <input type="submit" value="upload" />
+            @Html.HiddenFor(m => m.ModuleName)
+
+            if (Model.Url != null)
+            {
+            <p>Image Preview</p>
+            <img src='@Model.Url' style="height:200px; width:400px;"/>  
+            @Html.TextBoxFor(m => m.Url, new { id = "SourceUrl", style = "display: none;" })
+            }
+        }
+
+        @if(Model.IsuploadSuccess)
+        {
+            <input type="submit" onclick="window.opener.SetImageSource(document.getElementById('SourceUrl').value); window.close();" value="ok" id="OkayUpload" />
+        }
+
+    </div>
+
+    <div id="tabs-2">
+        <p>Choose the image from the Media</p>
+        <div id="divImageGallery" style="height: 350px; width: 700px; overflow: scroll; border: solid 1px;">
+            <br />
+            @if (Model.ImageUrls != null)
+            {
+                foreach (var img in Model.ImageUrls)
+                {
+                <img src ="@img"  onclick ="SetMediaUrlValue(this);" style="height:70px; width:60px; padding:5px;" />
+                }
+            }
+        </div>
+        <input type="text" style="display: none" id="MediaUrl" />
+        <input type="submit" onclick="window.opener.SetImageSource(document.getElementById('MediaUrl').value); window.close();" value="ok" />
+    </div>
+
+</div>
+
+@Styles.Render("~/Content/themes/base/css")
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryui")
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#tabs").tabs();
+    });
+
+    //Sets the value of the "MediaUrl" textbox to the image source selected
+    function SetMediaUrlValue(element) {
+        $('#MediaUrl').val($(element).attr('src'));
+        $("#divImageGallery img").removeClass("highlighted");
+        $(element).addClass('highlighted');
+    }
+</script>
+
+
+
+
+
+
+

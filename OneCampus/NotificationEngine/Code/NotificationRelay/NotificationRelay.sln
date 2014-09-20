@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationRelay", "NotificationRelay\NotificationRelay.csproj", "{0D0B18C8-DE29-4DCF-A1AB-08DB495F86CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicLoadRelay", "..\DynamicLoadRelay\DynamicLoadRelay.csproj", "{BF2AC157-419D-4531-9C0B-4840FA159946}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://ctsintcosetfs:8080/tfs/eas-tm
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = NotificationRelay\\NotificationRelay.csproj
+		SccProjectName1 = NotificationRelay
+		SccLocalPath1 = NotificationRelay
+		SccProjectUniqueName2 = ..\\DynamicLoadRelay\\DynamicLoadRelay.csproj
+		SccProjectName2 = ../DynamicLoadRelay
+		SccLocalPath2 = ..\\DynamicLoadRelay
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D0B18C8-DE29-4DCF-A1AB-08DB495F86CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D0B18C8-DE29-4DCF-A1AB-08DB495F86CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D0B18C8-DE29-4DCF-A1AB-08DB495F86CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D0B18C8-DE29-4DCF-A1AB-08DB495F86CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF2AC157-419D-4531-9C0B-4840FA159946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF2AC157-419D-4531-9C0B-4840FA159946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF2AC157-419D-4531-9C0B-4840FA159946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF2AC157-419D-4531-9C0B-4840FA159946}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

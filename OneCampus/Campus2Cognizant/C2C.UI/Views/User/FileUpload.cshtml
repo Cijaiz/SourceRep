@@ -1,0 +1,111 @@
+﻿@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+<section id="edit-blog">
+    <h2>CHire Import FileUpload</h2>
+    @if (ViewData["fileUploadResponse"] != null)
+    {
+        @Html.Partial("_PageNotification", ViewData["fileUploadResponse"])
+    }
+
+    <form action="FileUpload" method="post" enctype="multipart/form-data">
+
+        <label for="file">FileToUpload:</label>
+        <input type="file" name="file" id="file" />
+        <input type="submit" value="Submit" />
+
+    </form>
+    <br />
+    <br />
+    <div>
+        <p>
+            <b>Set of Instructions to Upload a File:</b><br />
+
+            1. File should be uploaded only in .CSV Format.<br />
+            2. Refer the Table below for the column's Format while uploading the file. Any mismatch on the columns will reject the file from being uploaded.<br />
+            3. FIRSTNAME, LASTNAME, COLLEGE are not null columns. Incase if the rows contain null values, then such rows will be discarded from import.<br />
+
+        </p>
+        <br />
+
+    </div>
+
+    <table class="items">
+        <thead>
+            <tr></tr>
+            <tr>
+                <th scope="col"><b>CandidateId *                 -  </b>Employee Id of the User</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>FirstName *                   -  </b>FirstName of the User</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>MiddleInitial                 -  </b>MiddleName of the User</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>LastName *                    -  </b>LastName of the User</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>EmailAddress                  -  </b>User's Company EMail Id as Per Record</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>DateOfBirth                   -  </b>Date Of Birth as per Record</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>TenthMeaksheetNo              -  </b>User's Tenth MarkSheet No</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>TenthYearOfPassing            -  </b>Tenth Standard Completion Year of User</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>TenthPercentage               -  </b>User's Tenth standard Percentage</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>Twelveth_Yearofcompletion     -  </b>Twelveth Standard Completion Year of User</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>Twelveth_Percentage           -  </b>User's Twelveth standard Percentage</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>EducationLevel                -  </b>Educational Wualification Of the User</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>College *                     -  </b>College In which User Finished his Educational Qualification</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>Degree                        -  </b>Degree Completed by User</th>
+            </tr>
+            <tr>
+            </tr>
+
+            <tr>
+                <th scope="col"><b>Program                       -  </b>Department in Degree</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>Gpa                           -  </b>Percentage in Degree</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>GpaRange                      -  </b>Maximum Percentage Range in Degree</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>GraduationDate                -  </b>Graduation Date of College</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>OtherInstitution              -  </b>Other Institution In which User has completed his degree</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>OtherProgram                  -  </b>Other Courses Finished by user</th>
+            </tr>
+            <tr>
+                <th scope="col"><b>PrivacySettings               -  </b>Notification Settings which he would like to receive (eg. WithinCollege, OutsideCollege, DoNotDisturb)</th>
+            </tr>
+            <tr>
+            </tr>
+        </thead>
+        <tr></tr>
+        <tr>
+            <td>(*) - Mandatory Fields
+            </td>
+        </tr>
+    </table>
+</section>

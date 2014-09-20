@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="NotificationHub.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-03.2.0">
+  <Role name="NotificationHub">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=campus2cognizant;AccountKey=27RsA246dtQrSy35tbblPp9Fvv91AKJU82SaZqeTXwYmH8vWZzle8K271Z/yVP5cNusD+IyLvK70Tfy6I8iugA==" />
+      <Setting name="NotificationHubEntities" value="metadata=res://*/DataModel.NotificationHubDataModel.csdl|res://*/DataModel.NotificationHubDataModel.ssdl|res://*/DataModel.NotificationHubDataModel.msl;provider=System.Data.SqlClient;provider connection string='Server=tcp:ksit1n6ulm.database.windows.net,1433;Database=mvcNotificationHub;User ID=user@ksit1n6ulm;Password=password-1;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;'" />
+      <Setting name="C2CDataEntities" value="metadata=res://*/DataModel.C2CDataModel.csdl|res://*/DataModel.C2CDataModel.ssdl|res://*/DataModel.C2CDataModel.msl;provider=System.Data.SqlClient;provider connection string='Server=tcp:ksit1n6ulm.database.windows.net,1433;Database=mvcC2CDb;User ID=user@ksit1n6ulm;Password=password-1;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;'" />
+      <Setting name="AcsNamespace" value="onecampusacs" />
+      <Setting name="AcsRealm" value="http://127.0.0.1:8080/MailingService.svc/" />
+      <Setting name="AcsTokenKey" value="Ib5aDFkoaBEDP3Cvxi10qQgNZiFBAm5pNBxQ8DTkoXk=" />
+      <Setting name="DiagnosticLogLevel" value="Error" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="HTTPS.Cert" thumbprint="5FF76FFDAEA4C61EC69F28ECB653646A501F9116" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9;IE=10" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=728,initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/styles/c2c.css")
+    @*@Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body class="desktop home dark">
+    <div class="overlayTooltip">
+    </div>
+    @Html.Partial("_Header")
+    @RenderBody()
+    @RenderSection("ActivityTracker", required: false)
+    @Html.Partial("_Footer")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/scripts/C2C")
+    @if (User.Identity.IsAuthenticated)
+    { 
+        <script src="~/Scripts/C2C/c2c_notificationcorner.js"></script>
+    }
+    <script type="text/javascript">
+        function divalignment(minitile) {
+            $(".menu-items").removeClass("active-m");
+            $("#" + minitile).addClass("active-m");
+        }
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

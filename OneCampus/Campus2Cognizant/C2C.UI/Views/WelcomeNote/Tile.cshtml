@@ -1,0 +1,53 @@
+﻿@if (Request.IsAuthenticated)
+{
+    string userName = string.IsNullOrEmpty((User as C2C.Core.Security.Structure.CustomPrincipal).FirstName) ? User.Identity.Name : string.Format("{0} {1}", (User as C2C.Core.Security.Structure.CustomPrincipal).FirstName, (User as C2C.Core.Security.Structure.CustomPrincipal).LastName);
+    <div class="  tile icon live-tile" id="tileWelcomeNote" data-mode="flip">
+        <div class="re-assurance">
+            <a href="@Url.Action("Article", "FutureCalling")">
+                <h2>
+                    The Future is Calling</h2>
+            </a>
+        </div>
+        <div class="welcome-note" style="background-color: #cfcfcf;">
+            <span>
+                <ul>
+                    <li><a href="@Url.Action("Article", "FutureCalling")">The Future is Calling</a></li>
+                    <li id="btn-WelcomeNotePopup"><a href="#">Welcome Note</a></li>
+                </ul>
+            </span><a href="@Url.Action("Article", "FutureCalling")">
+                <h2>
+                    The Future is Calling</h2>
+            </a>
+        </div>
+    </div>
+    <div class="overlayBg">
+    </div>
+    <div id="popup_box">
+        <a id="popupBoxClose">
+            <img src="~/Content/themes/base/images/close.png" height="30px"></a>
+        <div id="ovrly">
+            <div class="welcome-heading">
+                <h3>
+                    Welcome @userName 
+                </h3>
+                <img src="~/Content/themes/base/images/welcome-note.png" height="90px">
+            </div>
+            <div class="note-content">
+            </div>
+        </div>
+    </div>
+    <div id="get-started">
+        <a id="getstarted-btn">
+            <input type="submit" value="Get Started" class="submit-btn"></a>
+        <div id="ovrly">
+            <div class="welcome-heading">
+                <h3>
+                    Welcome @userName
+                </h3>
+                <img src="~/Content/themes/base/images/welcome-note.png" height="90px">
+            </div>
+            <div class="note-content">
+            </div>
+        </div>
+    </div>
+}

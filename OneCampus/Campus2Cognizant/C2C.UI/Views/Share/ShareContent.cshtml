@@ -1,0 +1,25 @@
+﻿@model C2C.UI.ViewModels.ShareViewModel
+
+<div class="share-heading">
+    <h3>@Model.ContentTitle
+    </h3>
+</div>
+<div class="share-tabs">
+    <div class="lshare-tab">
+        SHARE THIS BLOG WITH
+    </div>
+</div>
+<div class="groups" id="div_userlist">  
+    @Html.Partial("_UserList", @Model.UsersList)
+    @Html.HiddenFor(model => model.SharedTo, new { id = "hid_sharedto" })
+</div>
+<div class="submit-comment">
+    <textarea name="comment-area" id="sharecomment" class="txtshare-comment" rows="3" cols="37"></textarea>
+    <input type="submit" name="submit" value="SUBMIT" class="sharecom-submit" onclick="c2c.shareContent.save(@Model.ContentTypeId,@Model.ContentId);">
+    <input type="reset" id="cancel" name="cancel" value="CANCEL" class="sharecom-submit bottom-button">
+</div>
+
+
+<script type="text/javascript">
+    var shareUserCount = @Model.UserCount
+</script>

@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4094dd0a-8e5e-4929-9493-6a96a9d6c96c" name="EmailNotifier" linkedPackageId="941a4704-fd5d-4b2f-99ef-00547bd5c07b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1ab2fd2f-5bc2-4f24-ab91-0e397d678d35" name="EventMessage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fa10a77b-9db6-4440-9feb-19ef6ffab3a7" />
+        <ownedAttributesInternal>
+          <property Id="6e4beb41-1ab9-4565-8a38-88c3332e03a6" name="EventId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1c5f56dc-5178-4db7-a41f-bbc5eacd2c45" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9d57e3d0-1c20-48e2-9755-8e0910c811e9" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="d3fa4efd-37b3-4b9a-9804-a3d7ab02e198" name="EventCode" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="42cf685c-21cc-463a-9f48-e95ced0b8a64" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="66f1eaf3-7488-48e6-8a10-b68681e771f9" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="66f1eaf3-7488-48e6-8a10-b68681e771f9" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9d57e3d0-1c20-48e2-9755-8e0910c811e9" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="36e23d6f-c203-49be-a76c-95ce8f6d9e09" name="NotificationEngine" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <description>NotificationBase</description>
+        <elementDefinition Id="c9416971-f771-46f9-9f60-3033ea81d9bb" />
+        <targetEnds>
+          <association Id="0cfb3cc7-6b10-4fd1-b8e2-25903f204fce" isDerived="false" sourceEndRoleName="NotificationEngine" targetEndRoleName="EmailTemplateLoader" isLeaf="false" isAbstract="false">
+            <classMoniker Id="31df1ed4-2016-42b5-8fef-f13b3974301c" LastKnownName="EmailTemplateLoader" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e8365fa6-d844-492e-8df2-5b41684aec06" name="NotificationEngine" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7f10cf8f-4a4d-4bff-938d-06789a2c2755" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="99c6671c-b3d9-440a-8e6f-672bc4082bb4" name="EmailTemplateLoader" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="43e48300-2161-47ac-8cea-8fde236a21fd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7ff75e09-c424-49f1-b592-d1037498ccd5" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="7631df69-96c4-43a6-95a6-a189d224ada8" name="Subjet" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d2090746-45d6-4eb7-a0c0-8f52e024b3f9" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="bb52e5e0-eb22-4ad1-91b9-ec736a9c6264" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="ea9d19a8-a62b-4858-9fc8-7b248feca0c4" name="ToAddresses" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3024d4e5-be9f-4a0b-9d30-6fe6545e5451" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="c6a47ced-95f6-4bc2-8840-c5697686385c" LastKnownName="List&lt;string&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="bbf17ae5-8bd5-4149-ba5e-6ac1c6027f57" name="Templates" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9f723d0e-255c-4dce-b7c7-4516a9703401" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="04770675-87b2-42e2-8233-7d97f571941a" LastKnownName="Dictionary&lt;string, ITemplate&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="32c6b223-e2d4-45f1-988e-0961db23f776" name="LoadTemplates" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a1e75ffa-4786-483a-9e35-d3e39084075f" />
+          </operation>
+          <operation Id="840a0100-54b5-4ffc-9f47-b24117806c48" name="SendNotification" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c26212f6-6ef9-420d-907d-e4241b055e49" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="def76bda-39a5-4727-9d5b-884047692d01" name="MailMessage" direction="In" isUnique="false">
+                  <elementDefinition Id="2255c62f-2ad7-46a3-bde3-3b938aee1ed3" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="c6a47ced-95f6-4bc2-8840-c5697686385c" name="List&lt;string&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;string&gt;">
+        <elementDefinition Id="4c0d12cd-e6f0-4e28-a9a2-b5ae4153d701" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="c4d6b042-d4d3-4c09-a5b7-e4ad57f91232" name="ITemplateLoader" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0afec807-6213-4fc6-9d64-db6f475f53fe" />
+        <ownedAttributes>
+          <property Id="03effb10-f133-4576-b80b-3a9117689deb" name="ConfigurationFilePath" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="871da513-6624-4278-b0d3-49c654327be3" />
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation Id="832a04c0-3c6f-4887-b42d-fb0121902a68" name="LoadAllTemplates" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b4b38f10-1b18-480a-9ca7-c2a132f1d82c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="35af057d-d5bb-47a2-aefb-0b9e81ce1112" name="Dictionary&lt;String" direction="In" isUnique="false">
+                  <elementDefinition Id="f87592f8-17b8-4dd9-bf0d-dcbd972cb91d" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8146856d-b86b-49d5-811f-bedb08e8ed8f" name="ITemplate&gt;" direction="In" isUnique="false">
+                  <elementDefinition Id="962b17cb-815d-468d-bf3c-e06c50ae446b" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="31df1ed4-2016-42b5-8fef-f13b3974301c" name="EmailTemplateLoader" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="17ef4372-b99d-46e0-aad2-b7f502b36914" />
+        <suppliersInternal>
+          <interfaceRealization Id="52ec0338-808d-404a-b1ef-cbd8fadffc9a">
+            <interfaceMoniker Id="c4d6b042-d4d3-4c09-a5b7-e4ad57f91232" LastKnownName="ITemplateLoader" />
+            <elementDefinition Id="127a7545-df95-4329-b261-064932cde940" />
+          </interfaceRealization>
+          <dependency Id="19767fe9-bf47-45f6-a5e2-752670fa47d9">
+            <interfaceMoniker Id="d19027e2-2727-4a58-b0cd-07f20052fea2" LastKnownName="ITemplate" />
+            <elementDefinition Id="704d590c-2a86-46df-9ba8-5c3ca18dec2b" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="b49876f0-8674-42f5-8abf-6b44d6a943c5" name="ConfigurationFilePath" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8a7d18c9-f070-41aa-9827-7eb3e7144ec3" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a92d1954-7387-4f26-b91b-424801eeb30b" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="1c816ed1-4c32-4a4e-a514-aba830790246" name="LoadAllTemplates" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f16e71c7-d0b0-4f16-811a-419850b5a1aa" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fd6f351f-52d4-4099-ae36-f86d32939650" direction="Return">
+                  <elementDefinition Id="dcffc27b-f30e-468b-b9fe-a0aaad58aa23" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b607b6ca-4ec7-4e84-a365-1cab12e81ca7" LastKnownName="Dictionary&lt;string, ITemplate&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e00fdf42-5eb0-417f-8ed6-a1d8610231e0" name="EmailNotificationEngine" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f0536b31-dce5-48de-b3a9-7f0876f8b529" />
+        <suppliersInternal>
+          <interfaceRealization Id="02f55a0d-1392-43bc-a747-b3419ed99d7d">
+            <interfaceMoniker Id="788dfff7-9ce5-4f61-9c69-b99cdde0678d" LastKnownName="INotificationEngine" />
+            <elementDefinition Id="80eff821-f084-420e-8c8a-f240bbec1626" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="d9b77b69-252d-4aff-9e00-2ef69c097954" isSubstitutable="false">
+            <classMoniker Id="36e23d6f-c203-49be-a76c-95ce8f6d9e09" LastKnownName="NotificationEngine" />
+            <elementDefinition Id="7f8aa638-e545-4b5f-9d6d-6c970a245461" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="298b099d-f7a8-4674-a519-bfe65abc4f69" name="PrepareNotifications" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0a96d091-91d7-485d-bd1a-053d909e1534" />
+          </operation>
+          <operation Id="ff606f19-920c-462a-bf77-0ffaacd99fcb" name="FetchToAddressesFromDB" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1f1f40a0-4b30-433f-a4e9-c67a6bab9981" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="44789907-f249-4fbb-bfa7-2a2448ae0a0b" name="EventId" direction="In" isUnique="false">
+                  <elementDefinition Id="ddb38a41-f59c-4523-9c0e-aab2c86e19d2" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="01add09b-b42e-4e1c-869c-835f3d2ffa6c" name="EmailNotificationEngine(ItemplateLoader)" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="201e3cc1-d89d-4392-8796-b4bf149a6f8f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="788dfff7-9ce5-4f61-9c69-b99cdde0678d" name="INotificationEngine" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="022c11a9-69a2-48da-983a-ea7eb5c7ad59" />
+        <ownedOperations>
+          <operation Id="92651708-0d7d-4a1e-b3c7-0f1aaac2af4e" name="PrepareNotifications" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0ba43bee-3c93-4842-9997-716fe25db880" />
+          </operation>
+          <operation Id="7b6b18bb-bda3-4f11-ad9c-23f0ab2e7d4c" name="FetchToAddressesFromDB" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1cb22213-2c57-4001-bc39-31c9f3a5a88f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6b397980-cba2-4a36-a505-9f388cc1a8df" name="EventId" direction="In" isUnique="false">
+                  <elementDefinition Id="0d7d3242-c8f3-4861-895d-30a256ebdf75" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="04770675-87b2-42e2-8233-7d97f571941a" name="Dictionary&lt;string, ITemplate&gt;" isAbstract="false" isLeaf="false" cachedFullName="Dictionary&lt;string, ITemplate&gt;">
+        <elementDefinition Id="7d7f5438-1918-4e11-bba9-54ec0f89a47a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f732da8b-991a-4800-b0fa-c82bc0624c96" name="SMSNotificationEngine" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="22f7575e-72ce-45e0-84ed-aef396853326" />
+        <suppliersInternal>
+          <interfaceRealization Id="c9806135-c29e-494d-8643-d3157e5a30e5">
+            <interfaceMoniker Id="788dfff7-9ce5-4f61-9c69-b99cdde0678d" LastKnownName="INotificationEngine" />
+            <elementDefinition Id="90e81868-a6ba-4562-9468-034f745227bd" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="125a67f2-4ad5-4a02-8ae3-38c775c185a9" isSubstitutable="false">
+            <classMoniker Id="36e23d6f-c203-49be-a76c-95ce8f6d9e09" LastKnownName="NotificationEngine" />
+            <elementDefinition Id="64d4ec4d-1439-4a46-b1ec-506390367bd2" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="50d54d4f-eeee-48a6-a6eb-6becf3a6363e" name="PrepareNotifications" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="43a16bab-70ae-4b6b-a632-f44d2f77d97c" />
+          </operation>
+          <operation Id="043a27d7-3a94-44aa-ba13-7350e2677601" name="FetchToAddressesFromDB" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3977af8c-c0dd-4b41-8bcf-8b1f5cc1d482" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4ef2d209-90ac-4237-8e18-cb74142499cb" name="EventId" direction="In" isUnique="false">
+                  <elementDefinition Id="4da5786f-2559-48a2-83ee-e0a5592364f2" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a9bb1e8b-efe1-46b4-ae94-fc820abbe447" name="SMSNotificationEngine" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="effcb7bf-12f3-452c-96ea-6fc87684dd1c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="905339e5-0ede-42b3-a3e5-97284657adc5" name="ItemplateLoader" direction="In" isUnique="false">
+                  <elementDefinition Id="b5a26464-4c96-4f2c-9ffe-0dfdb7dc86f4" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1f2b8d9f-c0d1-4be9-9b87-3686ae545348" name="SMSTemplateLoader" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="69c56eae-bb2a-4e5d-b02c-19647594f6f3" />
+        <suppliersInternal>
+          <interfaceRealization Id="b6c2509c-127b-4dcf-b5c2-4edb993f924a">
+            <interfaceMoniker Id="c4d6b042-d4d3-4c09-a5b7-e4ad57f91232" LastKnownName="ITemplateLoader" />
+            <elementDefinition Id="0ab67eb3-d46f-4784-b35c-a896c5bacc83" />
+          </interfaceRealization>
+          <dependency Id="d1f77a88-f850-46c1-85eb-c00fedb93ef0">
+            <interfaceMoniker Id="d19027e2-2727-4a58-b0cd-07f20052fea2" LastKnownName="ITemplate" />
+            <elementDefinition Id="515cf046-d338-4147-ba97-41aade481123" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="50285512-5ee4-4f10-8f5b-1257679b893e" name="ConfigurationFilePath" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="296bf01f-0ccc-49aa-8880-96ae46a5027e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0c530985-af84-48a3-950c-cd73b410cdfa" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="71752961-7095-4e3d-9a40-aa6e1f07ed22" name="LoadAllTemplates" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b74ebca2-4b19-459b-aedc-e4904860bcdf" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ad1589fe-3548-4af2-af3e-5831f1a1938a" direction="Return">
+                  <elementDefinition Id="e4f96b8c-f853-468c-8475-b4623c105c9d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ab7a82b1-3151-44f0-8783-352b7bddf89b" LastKnownName="Dictionary&lt;String, ITemplate&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="bb52e5e0-eb22-4ad1-91b9-ec736a9c6264" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="45457f34-e8e2-4d5b-ab8c-6a815d7445d6" name="Template" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="80cfbb7b-b1ff-4197-8055-643f2f1d42e1" />
+        <suppliersInternal>
+          <interfaceRealization Id="b1e93034-752e-461e-990f-b0dabc9e79f0">
+            <interfaceMoniker Id="d19027e2-2727-4a58-b0cd-07f20052fea2" LastKnownName="ITemplate" />
+            <elementDefinition Id="017ef1dc-8b55-419f-a871-8b644606a478" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="e542b803-703d-42fe-8784-aa165200ac05" name="BodyContent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8c0074b6-2a0e-4be3-a818-009af531579a" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="d19027e2-2727-4a58-b0cd-07f20052fea2" name="ITemplate" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3fd5b33a-4603-4978-a72b-edeb60dd1c20" />
+        <ownedAttributes>
+          <property Id="84626ea4-34ed-4ef9-9f51-14ebccf97225" name="BodyContent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f67ed284-1b2e-4967-b97b-a595006302e2" />
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="b607b6ca-4ec7-4e84-a365-1cab12e81ca7" name="Dictionary&lt;string, ITemplate&gt;" isAbstract="false" isLeaf="false" cachedFullName="Dictionary&lt;string, ITemplate&gt;">
+        <elementDefinition Id="7d7f5438-1918-4e11-bba9-54ec0f89a47a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ab7a82b1-3151-44f0-8783-352b7bddf89b" name="Dictionary&lt;String, ITemplate&gt;" isAbstract="false" isLeaf="false" cachedFullName="Dictionary&lt;String, ITemplate&gt;">
+        <elementDefinition Id="aa49f689-327f-4982-8868-553286db5ed9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="aa02e61f-1d04-49e1-87a9-74c6273bd721" name="Worker Entry Point" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="97e11868-8f26-4744-aeef-13547ddf4987" />
+        <suppliersInternal>
+          <dependency Id="950b5c9a-412c-4992-a752-36375bf2424b">
+            <classMoniker Id="e00fdf42-5eb0-417f-8ed6-a1d8610231e0" LastKnownName="EmailNotificationEngine" />
+            <elementDefinition Id="e9609055-8330-4b7a-98b7-9c3279189693" />
+          </dependency>
+          <dependency Id="4f78c9a6-56d8-4886-a136-9d91d375c2e5">
+            <classMoniker Id="f732da8b-991a-4800-b0fa-c82bc0624c96" LastKnownName="SMSNotificationEngine" />
+            <elementDefinition Id="17776811-c61f-4b8c-af75-678e84350c36" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="a8758afa-67e6-4a07-91eb-5f34aa38391a" name="ProcessMessage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="659ca0c1-5fab-430f-adbe-8aafee462841" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="a92d1954-7387-4f26-b91b-424801eeb30b" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0c530985-af84-48a3-950c-cd73b410cdfa" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="cd1d2ab7-40d2-4c6b-a023-9a113170ef0c" name="MailMessage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7dc633fc-0b10-4b8a-84a7-0b1656c9ebaa" />
+        <ownedAttributesInternal>
+          <property Id="691e5775-4e64-45f8-9add-c683c6fd810d" name="To" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1f2479ab-c919-4661-b3bd-d718434decb7" />
+          </property>
+          <property Id="664eea58-1a7c-40eb-8cbd-01df8f5bbbc0" name="CC" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e279895a-357e-4aac-8fa6-58eac713cb8e" />
+          </property>
+          <property Id="747a274a-985d-4140-a3cd-071ed4d352cb" name="Subjet" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7a216ae4-c60f-4d83-ae98-25cb37a910c7" />
+          </property>
+          <property Id="fa9bf650-fb5d-498c-a22c-e9d2c942f777" name="HtmlBody" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="612d4ab9-5efa-4b22-ac90-f58e0acacaa4" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="941a4704-fd5d-4b2f-99ef-00547bd5c07b" name="OneCampusmOdel">
+    <elementDefinition Id="08b46807-8d61-4eaf-900a-75a6b3fc8d89" />
+    <profileInstances>
+      <packageHasProfileInstances Id="587d17d8-8862-4201-8f62-3d29a4b5db74">
+        <profileInstance Id="ccdbb729-4b30-4222-8da0-9bbf52002ba9" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="8818bdf3-5878-4a9e-853b-4f17a59d2592">
+        <profileInstance Id="b82f67fc-5a4a-46b6-b0c2-fe90bda41fae" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

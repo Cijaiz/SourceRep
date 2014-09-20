@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+
+<div id="kcint-content">
+    <div class="kc-heading back-btn">
+        <a href="javascript: history.go(-1)" class="bck-btn">
+            <img src="~/Content/Themes/base/Images/back.png" height="22" width="24">
+        </a>
+        <h2>RUN BETTER. RUN DIFFERENT.
+        </h2>
+    </div>
+    <div class="cont-kc">
+        <div class="kcint-content" id="divContent-kc">
+            <p class="kcint-image">
+                <img src="~/Content/Themes/base/Images/kc-inter-image.png">
+            </p>
+            <p>
+                Today, global businesses face a dual mandate:
+                <br />
+                One: To make their operations more efficient and cost-effective, and
+                <br />
+                Two: To embrace and invest in innovative technologies and processes to drive growth.
+                <br />
+                These two are tied together inseparably. In the present environment, Companies want to see savings from operational improvements. These savings fund the investments in new opportunities.
+            </p>
+            <h5>Helping Clients Run Better and Run Different</h5>
+            <br />
+            <p>
+                At Cognizant, we focus on helping our customers address a volatile economy and business ecosystem. We help them scale through the rapid changes and “run better” by enabling their vital business functions to work faster, cheaper, and in a more productive manner.
+                <br />
+                We help them “run different”. Through our ability to conceptualize, architect and implement new and expanded capabilities. To scale their businesses to the next level.  <br />
+            </p>
+            <p>
+                Know more about us <a href="http://www.cognizant.com/company" target="_blank">http://www.cognizant.com/company</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="../../Scripts/C2C/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript">
+        $("#divContent-kc").mCustomScrollbar({
+            scrollButtons: {
+                enable: true
+            },
+            theme: "dark-thick"
+        });
+
+        divalignment("knowcognizantminitile");
+    </script>
+}
+
+<link href="~/Content/themes/base/styles/menu.css" rel="stylesheet" />
+<link href="../../Content/themes/base/styles/jquery.mCustomScrollbar.css" rel="stylesheet"
+    type="text/css" />

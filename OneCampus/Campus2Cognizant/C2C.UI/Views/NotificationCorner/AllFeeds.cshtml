@@ -1,0 +1,34 @@
+﻿@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml";
+}
+@model C2C.UI.ViewModels.AllFeedListViewModel
+<section id="edit-blog">
+
+<div class="profile-view">
+    <h1>Notification Feeds</h1>
+    <ul>
+        @if (Model.Error != null)
+        {
+            <li>Some Error Occurred !!Unable to Retrive Data
+                <br />
+        @Html.ActionLink("Refresh", "GetAllFeeds", "NotificationCorner")
+            </li>
+        }
+
+        @if (Model.NotificationContents != null)
+        {
+            foreach (var item in Model.NotificationContents)
+            {
+            <li background: rgb(223, 220, 220);>@item.ContentTitle
+                <a href ="@item.URL">@item.Description</a>
+            </li>   
+            }
+        }
+    </ul>
+</div>
+    </section>
+
+
+
+
+

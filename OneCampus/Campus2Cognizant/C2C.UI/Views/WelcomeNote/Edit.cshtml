@@ -1,0 +1,55 @@
+﻿@model C2C.BusinessEntities.C2CEntities.WelcomeNote
+<script type="text/javascript" src="~/Scripts/tinymce/tinymce.min.js"></script>
+
+@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+
+<section id="edit-blog">
+    <h2>Edit WelcomeNote
+    </h2>
+    @using (Html.BeginForm("Edit","WelcomeNote"))
+        {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            @Html.HiddenFor(model => model.Id)
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Note)
+            </div>
+            <div class="editor-field">
+                @Html.TextAreaFor(model => model.Note)
+                @Html.ValidationMessageFor(model => model.Note)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.OfferExtendedStartDate)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.OfferExtendedStartDate)
+                @Html.ValidationMessageFor(model => model.OfferExtendedStartDate)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.OfferExtendedEndDate)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.OfferExtendedEndDate)
+                @Html.ValidationMessageFor(model => model.OfferExtendedEndDate)
+            </div>
+
+            <p>
+                <input type="submit" value="Save" />
+                <input class="cancelbtn" type="button" value="Cancel" onclick="window.location.href = '/WelcomeNote/'" />
+            </p>
+        </fieldset>
+        }
+</section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/C2C/c2c_WelcomeNote.js"></script>
+    @Styles.Render("~/Content/themes/base/css")
+}

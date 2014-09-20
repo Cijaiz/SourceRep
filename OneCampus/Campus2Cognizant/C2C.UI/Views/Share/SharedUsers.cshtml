@@ -1,0 +1,13 @@
+﻿@model C2C.UI.ViewModels.ShareViewModel
+<div class="share-heading">
+    <h3>People who share this
+    </h3>
+</div>
+
+<div class="groups-show-all" id="div_SharedUsers">
+     @Html.Partial("_SharedUsersList", @Model.UsersList); 
+</div>
+
+<script type="text/javascript">
+    var shareUserCount = @Model.UserCount
+</script>

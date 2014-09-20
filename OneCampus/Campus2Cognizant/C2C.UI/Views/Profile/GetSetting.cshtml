@@ -1,0 +1,42 @@
+﻿@using C2C.BusinessEntities.C2CEntities;
+@model C2C.BusinessEntities.C2CEntities.UserSetting
+
+@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+<section id="edit-blog">
+    <h2>User Setting</h2>
+    @if (ViewData["profilesettingResponse"] != null)
+    {
+        @Html.Partial("_PageNotification", ViewData["profilesettingResponse"])
+    }
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.NotificationSettingId)
+
+
+            <div class="editor-field">
+                @Html.RadioButtonFor(m => m.NotificationSetting, NotificationSetting.WithinCollege)
+                <label>WITHIN COLLEGE</label><br />
+                @Html.RadioButtonFor(m => m.NotificationSetting, NotificationSetting.OutsideCollege)
+                <label>OUTSIDE COLLEGE</label><br />
+                @Html.RadioButtonFor(m => m.NotificationSetting, NotificationSetting.DoNotDisturb)
+                <label>DO NOT DISTURB</label><br />
+                @Html.ValidationMessageFor(model => model.NotificationSetting)
+            </div>
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+</section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,118 @@
+﻿@model C2C.BusinessEntities.C2CEntities.SiteSetting
+
+@{
+    Layout = "~/Views/Shared/_NavLayout.cshtml";
+}
+<section id="edit-blog">
+    <h2>Site Settings</h2>
+    <div id="edit-option"><a href="/sitesetting/edit">Edit SiteSettings</a></div>
+     @if (ViewData["sitesettingResponse"] != null)
+        {
+            @Html.Partial("_PageNotification", ViewData["sitesettingResponse"])
+        }
+    <table style="border-collapse:separate; border-spacing:5px;">
+        <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.Name)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.TextBoxFor(model => model.Name, new { @disabled = true })</div></td>
+
+        </tr>   
+         <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.Version)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.TextBoxFor(model => model.Version, new { @disabled = true })</div></td>
+
+        </tr>  
+         <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.IsFederationEnabled)</div></td>
+            <td class="table-column-separator">:</td>
+            <td class="table-rowcheckbox"><div class="display-field">@Html.CheckBoxFor(model => model.IsFederationEnabled, new { @disabled = true, style="display:block" })</div></td>
+
+        </tr>  
+         <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.TranslateClaimsToUserProperties)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.CheckBoxFor(model => model.TranslateClaimsToUserProperties, new { @disabled = true, style="display:block"  })</div></td>
+
+        </tr>  
+         <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.TranslateClaimsToRoles)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.CheckBoxFor(model => model.TranslateClaimsToRoles, new { @disabled = true, style="display:block"  })</div></td>
+
+        </tr>  
+         <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.StsIssuerUrl)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.TextAreaFor(model => model.StsIssuerUrl, new { @disabled = true })</div></td>
+
+        </tr>  
+        <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.StsLoginUrl)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.TextAreaFor(model => model.StsLoginUrl, new { @disabled = true , style="height:80px" })</div></td>
+
+        </tr>  
+        <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.CtsLoginUrl)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.TextAreaFor(model => model.CtsLoginUrl, new { @disabled = true, style="height:100px"  })</div></td>
+
+        </tr>  
+        <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.Realm)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.TextAreaFor(model => model.Realm, new { @disabled = true })</div></td>
+
+        </tr>  
+        <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.ReturnUrlBase)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.TextAreaFor(model => model.ReturnUrlBase, new { @disabled = true })</div></td>
+
+        </tr>  
+        <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.AudienceUrl)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.TextAreaFor(model => model.AudienceUrl, new { @disabled = true })</div></td>
+
+        </tr>  
+        <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.X509CertificateThumbprint)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.TextAreaFor(model => model.X509CertificateThumbprint, new { @disabled = true })</div></td>
+
+        </tr>  
+        @*<tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.ModerateComment)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.CheckBoxFor(model => model.ModerateComment, new { @disabled = true, style="display:block" })</div></td>
+
+        </tr>  *@
+        <tr>
+            <td><div class="display-label">@Html.DisplayNameFor(model => model.UpdatedOn)</div></td>
+            <td class="table-column-separator">:</td>
+            <td><div class="display-field">@Html.TextBoxFor(model => model.UpdatedOn, new { @disabled = true })</div></td>
+
+        </tr>          
+        </table>   
+</section>
+
+<style type="text/css">
+    .display-label {
+        width:250px;
+        text-align:left;
+    }
+    .table-column-separator {
+        width:20px;
+        text-align:center;
+    }
+    .display-field > textarea {
+        width:680px;
+        text-align:left;
+        
+    }
+    #edit-option {
+        text-align:right;
+    }
+</style>

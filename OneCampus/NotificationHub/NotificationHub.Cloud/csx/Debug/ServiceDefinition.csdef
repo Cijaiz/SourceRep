@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NotificationHub.Cloud" schemaVersion="2013-03.2.0" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+  <WebRole name="NotificationHub" vmsize="ExtraSmall">
+    <LocalResources>
+      <LocalStorage name="DiagnosticStore" sizeInMB="4096" cleanOnRoleRecycle="false" />
+    </LocalResources>
+    <ConfigurationSettings>
+      <Setting name="AcsNamespace" />
+      <Setting name="AcsRealm" />
+      <Setting name="AcsTokenKey" />
+      <Setting name="C2CDataEntities" />
+      <Setting name="DiagnosticLogLevel" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
+      <Setting name="NotificationHubEntities" />
+    </ConfigurationSettings>
+    <Endpoints>
+      <InputEndpoint name="HttpsIn" protocol="https" port="443" certificate="HTTPS.Cert" localPort="443" />
+    </Endpoints>
+    <Certificates>
+      <Certificate name="HTTPS.Cert" storeLocation="LocalMachine" storeName="My" />
+    </Certificates>
+  </WebRole>
+</ServiceDefinition>

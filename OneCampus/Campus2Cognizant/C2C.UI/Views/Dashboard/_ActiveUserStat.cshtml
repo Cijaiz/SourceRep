@@ -1,0 +1,27 @@
+﻿@model C2C.BusinessEntities.NotificationEntities.OnlineUserStat
+
+<div style="border-left: solid 5px green; padding-bottom: 3px; margin: 3px;">
+    @Html.LabelFor(m => m.OnlineUserCount, new { style="width:70%" })
+    <label>
+        <span class="right">&nbsp;@Model.OnlineUserCount</span>
+        <span class="right ui-icon ui-icon-person"></span>
+    </label>
+</div>
+
+<div style="border-left: solid 5px grey; padding-bottom: 3px; margin: 3px;">
+    @Html.LabelFor(m => m.OfflineUserCount)
+    <label>
+        <span class="right">&nbsp;@Model.OfflineUserCount</span>
+        <span class="right ui-icon ui-icon-person"></span>
+    </label>
+</div>
+
+<div style="border-left: solid 5px black; padding-bottom: 3px; margin: 3px;">
+    @Html.LabelFor(m => m.TotalUserCount)
+    <label>
+        <span class="right">&nbsp;@Model.TotalUserCount</span>
+        <span class="right ui-icon ui-icon-person"></span>
+    </label>
+</div>
+
+

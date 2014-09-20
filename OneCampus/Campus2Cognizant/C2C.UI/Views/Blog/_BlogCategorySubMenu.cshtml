@@ -1,0 +1,13 @@
+﻿@model C2C.UI.ViewModels.BlogViewModel
+<div id="sub-menu-items" class="back-btn">
+    <a href="javascript: history.go(-1)" class="bck-btn">
+        <img src="~/Content/Themes/base/Images/back.png" height="22" width="24">
+    </a>
+    <ul class="child">
+        @foreach (var item in Model.CategoryList)
+        {
+            <li class="first"><a href="@Url.Action("Index", "Blog", new { blogCategoryId = Convert.ToInt32(@item.Value) })">@item.Text</a></li>
+        }
+    </ul>
+</div>
+<link href="~/Content/themes/base/styles/menu.css" rel="stylesheet" />

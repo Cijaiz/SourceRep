@@ -1,0 +1,38 @@
+﻿@*@model C2C.BusinessEntities.C2CEntities.Poll
+
+@if (Model != null)
+{
+
+    if (!Model.IsVoted)
+    {
+        <div class="left-poll">
+            <h2>POLL</h2>
+            <img src="~/content/themes/base/images/poll-hand.png" class="poll-hand">
+            <p>
+                @Model.Question
+            </p>
+        </div>
+        <div class="right-poll">
+            @Html.HiddenFor(model => model.HasPermission)
+            <input type="hidden" id="pollId" value="@Model.Id" />
+            <form action="#" class="poll-radio">
+                <ul>
+                    @foreach (var item in Model.PollAnswers)
+                    {
+                        <li>
+                            <input type="radio" name="poll-vote" value="@item.Id"><label> @item.Answer</label>
+                        </li>
+                    }
+
+                    <li>
+                        <a href="#" id="poll-submit" class="submit-poll" onclick="c2c.poll.vote();">Vote Now</a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    }
+}
+else
+{
+    <h2>NO ACTIVE POLL</h2>
+}*@

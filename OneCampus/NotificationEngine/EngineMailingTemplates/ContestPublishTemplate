@@ -1,0 +1,8 @@
+A new contest has been published on @Model.StartDate.
+The contest is about @Model.Description.
+Click this link @Model.ContestUrl to register.
+
+
+Rewards for @Model.WinnersCount associates.
+Registration starts on @Model.RegistrationStartDate and closes by @Model.RegistrationEndDate
+You may be one among that. So get ready.

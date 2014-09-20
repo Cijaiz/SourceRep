@@ -1,0 +1,138 @@
+﻿@model C2C.UI.ViewModels.HomeViewModel
+
+<section class="main-content panorama clear-fix" style="overflow-x: hidden;">
+    <div class="content-wrapper tiles blue" style="width: 2148px;">
+        <a href="#" class="left-arrow" style="display: none"></a>
+        <a href="#" class="right-arrow">&nbsp;</a>
+
+        <section class="tile-group four-wide first">
+
+            <!-- METRO UI TILES -->
+            <div class="live-tile tile double-vertical big-li" id="tile1" data-mode="flip" data-direction="horizontal">
+                <div class="learn_box">
+                    <h2>Learning</h2>
+                    <img src="~/Content/themes/base/images/pen.png" />
+                </div>
+                <div class="learn_box">
+                    <h2>Learning</h2>
+                    <ul>
+                        <li><a href="http://campus2cognizant.blob.core.windows.net/learning-and-development/index.html" target="_blank" onclick="window.open(this.href,this.target,'resizable=yes,scrollbars=yes,menubar=no,toolbar=no,directories=no,status=no,titlebar=no,location=no'); return false;">Software Career Bootcamp
+                        </a></li>
+                        <li><a href="http://campus2cognizant.blob.core.windows.net/learning-and-development/introduction.html" target="_blank" onclick="window.open(this.href,this.target,'resizable=yes,scrollbars=yes,menubar=no,toolbar=no,directories=no,status=no,titlebar=no,location=no'); return false;">Introduction
+                        </a></li>
+
+                        <li><a href="http://campus2cognizant.blob.core.windows.net/learning-and-development/learning_goal_page1.html" target="_blank" onclick="window.open(this.href,this.target,'resizable=yes,scrollbars=yes,menubar=no,toolbar=no,directories=no,status=no,titlebar=no,location=no'); return false;">Your Learning Goals
+                        </a></li>
+                        <li><a href="http://campus2cognizant.blob.core.windows.net/learning-and-development/scope_of_learning_page1.html" target="_blank" onclick="window.open(this.href,this.target,'resizable=yes,scrollbars=yes,menubar=no,toolbar=no,directories=no,status=no,titlebar=no,location=no'); return false;">Scope Of Learning
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            @Html.Action("Tile", "WelcomeNote")
+            <div class="what-new tile icon live-tile square-li" id="tile1" data-mode="flip">
+                <div class="whats-new">
+                    <h2>QUIZ!</h2>
+                    <img src="~/Content/themes/base/images/whats-new_icon.png">
+                </div>
+                <div style="background-color: #cfcfcf;">
+                    <span class="coming-soon">COMING SOON Watch this space for more!</span>
+                </div>
+            </div>
+            <div class="tile double image live-tile knowcogni-li" id="tile1" data-mode="flip" data-direction="horizontal">
+                <div class="video">
+                    <a href="@Url.Action("Index", "KnowCognizant")">
+                        <h2>KNOW COGNIZANT</h2>
+                    </a>
+                    <img src="~/Content/themes/base/images/know-cogni_icon.png">
+                </div>
+                <div class="video">
+                    <a href="@Url.Action("Index", "KnowCognizant")">
+                        <h2>KNOW COGNIZANT</h2>
+                    </a>
+                    <ul>
+                        <li><a href="~/KnowCognizant/Article1">Run better Run Different</a></li>
+                        <li><a href="~/KnowCognizant/Article2">We exist to bring positive change</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class=" live-tile poll tile double image" id="tile4" data-direction="vertical" data-mode="flip">
+                @{Html.RenderAction("Tile", "Poll");}
+            </div>
+            <div class="linkedin tile icon newwindow" id ="@Model.Linkedin">
+            </div>
+
+            <div class="live-tile tile icon square-li forums" id="tile3" data-mode="slide" data-stack="true" data-direction="horizontal">
+                <div>
+                    <img src="~/Content/themes/base/images/bulb_icon.png">
+                    <h2>FORUM</h2>
+                </div>
+                <div style="background-color: #cfcfcf;">
+                    <span class="coming-soon">COMING SOON Watch this space for more!</span>
+                </div>
+            </div>
+
+            @{Html.RenderAction("Tile", "Blog");}
+            <a target="_blank" href="http://campus2cognizant.blob.core.windows.net/onecampusstore/faq.pdf" download="FAQ.pdf">
+                <div class="faq tile icon square-li " id="tile2">
+                    <img src="~/Content/themes/base/images/faq_icon.png">
+                    <h2>FAQs</h2>
+                </div>
+            </a>
+            <a target="_blank" href="http://campus2cognizant.blob.core.windows.net/onecampusstore/locationguide.pdf" download="locationguide.pdf">
+                <div class="live-tile tile icon square-li guide " id="tile3" data-stack="false">
+                    <h2>Location Guide</h2>
+                </div>
+            </a>
+
+            <div class="youtube tile icon newwindow" id ="@Model.Youtube">
+            </div>
+            <div class="twitter tile icon newwindow" id ="@Model.Twitter">
+            </div>
+            <div class="facebook tile icon newwindow" id ="@Model.Facebook">
+            </div>
+
+            <div class="events tile icon live-tile square-li" id="tile3" data-mode="slide" data-stack="true">
+                <div class="events">
+                    <h2>EVENTS</h2>
+                    <img src="~/Content/themes/base/images/events_icon.png">
+                </div>
+                <div style="background-color: #cfcfcf;">
+                    <span class="coming-soon">COMING SOON Watch this space for more!</span>
+                </div>
+            </div>
+
+
+
+            <!-- end METRO UI tiles -->
+        </section>
+    </div>
+</section>
+
+
+
+@section ActivityTracker{
+    @Html.Partial("_ActivityTracker")
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/C2C/c2c_home.js"></script>
+    <script src="~/Scripts/C2C/c2c_browser_support.js"></script>
+    <script src="~/Scripts/c2c/jquery.jqplot.min.js"></script>
+    <script src="~/Scripts/c2c/jqplot.pieRenderer.min.js"></script>
+    <script src="~/Scripts/c2c/c2c_poll_tile.js"></script>
+    <script type="text/javascript">
+        $(".big-li").click(function (ev) {
+            if ($(ev.target).is('a')) {
+                //this will stop event bubbling and will open the href of the anchor
+                ev.stopPropagation();
+            }
+            else {
+                window.open("http://campus2cognizant.blob.core.windows.net/learning-and-development/index.html", "_blank", 'resizable=yes,scrollbars=yes'); return false;
+            }
+        });
+    </script>
+}
+<link href="~/Content/themes/base/styles/jquery.jqplot.css" rel="stylesheet" />
+

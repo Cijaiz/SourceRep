@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Octane.NotificationEngineAzure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*" schemaVersion="2013-03.2.0">
+  <Role name="Octane.NotificationWorker">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="NotificationEngineStorage" value="DefaultEndpointsProtocol=https;AccountName=campus2cognizant;AccountKey=27RsA246dtQrSy35tbblPp9Fvv91AKJU82SaZqeTXwYmH8vWZzle8K271Z/yVP5cNusD+IyLvK70Tfy6I8iugA==" />
+      <Setting name="EmailTemplateConfigurationPath" value="http://campus2cognizant.blob.core.windows.net/emailtemplates/NotificationUrlSettings" />
+      <Setting name="DataPublisherUrl" value="https://campus2cognizant.cloudapp.net/API" />
+      <Setting name="TasksThresholdLimit" value="1" />
+      <Setting name="MessagesForTaskAllocation" value="10" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=campus2cognizant;AccountKey=27RsA246dtQrSy35tbblPp9Fvv91AKJU82SaZqeTXwYmH8vWZzle8K271Z/yVP5cNusD+IyLvK70Tfy6I8iugA==" />
+      <Setting name="Diagnostics.Level" value="Debug" />
+      <Setting name="Diagnostics.Layout" value="%d [%t] %-5p %c [%x] &lt;%X{auth}&gt; - %m%n" />
+      <Setting name="Diagnostics.ScheduledTransferPeriod" value="40" />
+      <Setting name="Diagnostics.EventLogs" value="Application!*;System!*" />
+      <Setting name="EmailingServiceUrl" value="https://uatmailingservice.cloudapp.net/MailingService.svc/SendingEmail" />
+      <Setting name="FromAddressId" value="Ramya.Rangarajan@cognizant.com" />
+      <Setting name="ScheduleTaskXmlUrl" value="http://campus2cognizant.blob.core.windows.net/scheduletaskconfiguration/Taskconfiguration" />
+      <Setting name="InstanceBlobContainerName" value="instancecontainer" />
+      <Setting name="InstanceBlobName" value="instanceblob" />
+      <Setting name="SftpServer" value="Secureftp.cognizant.com" />
+      <Setting name="SftpUserName" value="sftp_campus" />
+      <Setting name="SftpPassword" value="password-1" />
+      <Setting name="NotificationFeederUrl" value="https://c2chub.cloudapp.net/api/" />
+      <Setting name="OrchardRelyingParty" value="http://127.0.0.1:8080/MailingService.svc/" />
+      <Setting name="HubRelyingParty" value="http://127.0.0.1:8080/MailingService.svc/" />
+      <Setting name="MailingServiceRelyingParty" value="http://127.0.0.1:8080/MailingService.svc/" />
+      <Setting name="ServiceIdentityUserName" value="onecampususer" />
+      <Setting name="ServiceIdentityPassword" value="password-1" />
+      <Setting name="AcsNamespace" value="onecampusacs" />
+      <Setting name="CHireFilePath" value="/sftp/home/sftp_campus/" />
+    </ConfigurationSettings>
+    <Certificates>
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

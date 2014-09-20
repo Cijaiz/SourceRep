@@ -1,0 +1,45 @@
+﻿@model C2C.BusinessEntities.C2CEntities.Group
+
+@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_NavLayout.cshtml";
+}
+<section id="edit-blog">
+    <div class="editor">
+        <h2>View</h2>
+        <fieldset>
+            <legend>Group</legend>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Title)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Title)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.UpdatedBy)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.UpdatedBy)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.UpdatedOn)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.UpdatedOn)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.IsCollege)
+            </div>
+            <div class="display-field">
+                @Html.DisplayTextFor(model => model.IsCollege)
+            </div>
+        </fieldset>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</section>
