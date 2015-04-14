@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ScriptSequence>
+  <ScriptDetail>
+    <Rootpath path="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\"></Rootpath>
+  </ScriptDetail>
+  <ScriptDetail>
+    <Script name="KC_FULL_AZURE" filetype="sql"></Script>
+    <Script name="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\Patches\01-12-2015\AZURE" filetype="sql"></Script>
+    <Script name="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\Patches\01-13-2015\AZURE" filetype="sql"></Script>
+    <Script name="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\Patches\01-15-2015\AZURE" filetype="sql"></Script>
+    <Script name="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DML Scripts\SMARTWASHROOM_DML_SCRIPT" filetype="sql"></Script>
+    <Script name="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DML Scripts\Patches\2-1-2014" filetype="sql"></Script>
+  </ScriptDetail>
+</ScriptSequence>

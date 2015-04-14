@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScriptSequence>
+  <ScriptDetail>
+    <Rootpath
+      path="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\" />
+  </ScriptDetail>
+  <ScriptDetail>
+    <Script
+      name="D:\KCSourcecode\02-09-2015 - Updated code\Phase1-branch\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\KC_FULL.sql"
+      filetype="sql" />
+    <Script
+      name="D:\KCSourcecode\02-09-2015 - Updated code\Phase1-branch\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\Patches\01-12-2015\Local.sql"
+      filetype="sql" />
+    <Script
+      name="D:\KCSourcecode\02-09-2015 - Updated code\Phase1-branch\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\Patches\01-13-2015\Local.sql"
+      filetype="sql" />
+    <Script
+      name="D:\KCSourcecode\02-09-2015 - Updated code\Phase1-branch\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\Patches\01-15-2015\Local.sql"
+      filetype="sql" />
+    <Script
+      name="D:\KCSourcecode\02-09-2015 - Updated code\Phase1-branch\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\Patches\02-03-2015\Local_Azure.sql"
+      filetype="sql" />
+    <Script
+      name="D:\KCSourcecode\02-09-2015 - Updated code\Phase1-branch\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\Patches\02-06-2015\Local_Azure.sql"
+      filetype="sql" />
+    <Script
+      name="D:\KCSourcecode\02-09-2015 - Updated code\Phase1-branch\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\Patches\02-08-2015\Local_Azure.sql"
+      filetype="sql" />
+    <Script
+      name="D:\KCSourcecode\02-09-2015 - Updated code\Phase1-branch\Phase1-branch\KC.SmartWashroom.Database\DML Scripts\SMARTWASHROOM_DML_SCRIPT.sql"
+      filetype="sql" />
+    <Script
+      name="D:\KCSourcecode\02-09-2015 - Updated code\Phase1-branch\Phase1-branch\KC.SmartWashroom.Database\DML Scripts\Patches\2-1-2014.sql"
+      filetype="sql" />
+    <Script
+      name="D:\KCSourcecode\02-09-2015 - Updated code\Phase1-branch\Phase1-branch\KC.SmartWashroom.Database\DML Scripts\Patches\02-03-2015.sql"
+      filetype="sql" />
+    <Script
+      name="D:\KCSourcecode\02-09-2015 - Updated code\Phase1-branch\Phase1-branch\KC.SmartWashroom.Database\DML Scripts\Patches\02-08-2015Local.sql"
+      filetype="sql" />
+  </ScriptDetail>
+</ScriptSequence>
+<!--<?xml version="1.0" encoding="utf-8" ?>
+<ScriptSequence>
+  <ScriptDetail>
+    <Rootpath path="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\"></Rootpath>
+  </ScriptDetail>
+  <ScriptDetail>
+    <Script name="KC_FULL" filetype="sql"></Script>
+    <Script name="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\Patches\01-12-2015\Local" filetype="sql"></Script>
+    <Script name="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\Patches\01-13-2015\Local" filetype="sql"></Script>
+    <Script name="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DDL Scripts\Patches\01-15-2015\Local" filetype="sql"></Script>
+    <Script name="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DML Scripts\SMARTWASHROOM_DML_SCRIPT" filetype="sql"></Script>
+    <Script name="D:\KCSourcecode\Phase1-branch_01_19_15\Phase1-branch\KC.SmartWashroom.Database\DML Scripts\Patches\2-1-2014" filetype="sql"></Script>
+  </ScriptDetail>
+</ScriptSequence>-->

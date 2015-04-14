@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<connectionstring>
+  <string value="Data Source=PC313589df7\SQLDEV2008R2;Initial Catalog=KCTESTDB;Integrated Security=True;User ID=sa-;Password=password-1"></string>
+</connectionstring>
